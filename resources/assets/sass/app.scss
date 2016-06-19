@@ -1,0 +1,22 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "partials/bootstrap-col-centering";
+
+@import "mixins";
+@import "general";
+
+@import "partials/navigation";
+@import "partials/header";
+@import "partials/banner";
+@import "partials/page-introduction";
+@import "partials/pages";
+
+
+
+@import "pages/nieuws";
+@import "pages/activiteiten";
+@import "pages/vacatures"; 
+@import "pages/partners";
+@import "pages/over-ons";
+@import "partials/footer";
+@import "pages/homepage";
+@import "partials/cards"; 

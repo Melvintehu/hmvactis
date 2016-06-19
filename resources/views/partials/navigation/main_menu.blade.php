@@ -1,0 +1,37 @@
+
+{{--  Maak gebruik van active class helper , checked of er een route is of niet of dat een url geselecteerd is.
+Wanneer dit waar is komt ereen active class. Ook URL:: is een goede helper ivm het vinden van de correcte folder--}}
+
+<li class="{{ active_class(if_route(['home']) || if_uri(['/'])) }}"><a href="{{ URL::to('/') }}">HOME</a></li>
+ <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">OVER ONS <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li ><a href="over-ons">De vereniging en besturen</a></li>
+		            <li><a href="lustrum">Lustrum</a></li>
+		            <li><a href="commissies">Commissies</a></li>
+
+		          </ul>
+		        </li>
+<li class="{{ active_class(if_route(['nieuws']) || if_uri(['nieuws'])) }}"><a href="{{ URL::to('nieuws') }}">NIEUWS</a></li>
+
+<li class="{{ active_class(if_route(['activiteiten']) || if_uri(['activiteiten'])) }}"><a href="{{ URL::to('activiteiten') }}">ACTIVITEITEN</a></li>
+
+<li class="{{ active_class(if_route(['partners']) || if_uri(['partners'])) }} dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PARTNERS <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="partners">Partners van hmvactis</a></li>
+		          	<li><a href="kortingen">Kortingen van onze partners</a></li>
+
+		          </ul>
+		        </li>
+
+
+
+<li class="{{ active_class(if_route(['vacatures']) || if_uri(['vacatures'])) }}"><a href="{{ URL::to('vacatures') }}">VACATURES</a></li>
+<li class="{{ active_class(if_route(['contact']) || if_uri(['contact'])) }}"><a href="{{ URL::to('contact') }}">CONTACT</a></li>
+<li class="{{ active_class(if_route(['login']) || if_uri(['login'])) }}"><a href="{{ URL::to('login') }}">LOGIN</a></li>
+<li class="{{ active_class(if_route(['lid-worden']) || if_uri(['lid-worden'])) }}"><a href="{{ URL::to('lid-worden') }}">LID WORDEN</a></li>
+
+				
+				
+				
