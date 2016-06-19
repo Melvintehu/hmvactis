@@ -21,7 +21,7 @@
                                         <table class="table table-hover">
                                             
                                             <tbody>
-                                               {!! Form::model($news, ['method' => 'PUT', 'action' => ['NewsController@update', $news->id ] ]) !!}
+                                               {!! Form::model($news, ['method' => 'PUT', 'action' => ['NewsController@update', $news->id ] ]) !!} 
                                                     {{ csrf_field() }}
                                                     @include('cms.pages.news.partials.form', ['submitButtonText' => 'Aanpassen' ])
 

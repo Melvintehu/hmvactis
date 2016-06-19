@@ -3,7 +3,7 @@ Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('input[name="_t
 Vue.directive('ajax', {
 
 	bind: function(){
-		$("form").submit(function (e) {
+		$("form #newsPhotoUpload").submit(function (e) {
 		    e.preventDefault();
 		    var formId = this.id;  // "this" is a reference to the submitted form
 		});
