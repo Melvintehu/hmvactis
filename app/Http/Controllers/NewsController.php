@@ -50,11 +50,11 @@ class NewsController extends Controller
         
         $name = time() . $file->getClientOriginalName();
 
-        $file->move('nieuws/photos', $name);
+        $file->move('application-photos/nieuws/photos', $name);
            
         // create a new photo    
 
-        $photo = Photo::create(['path' => "/nieuws/photos/{$name}"]);
+        $photo = Photo::create(['path' => "application-photos/nieuws/photos/{$name}"]);
         
         $news->photos()->attach($photo->id, ['type' => 'original']);
         return 'done';

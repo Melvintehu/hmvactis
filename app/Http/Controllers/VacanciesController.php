@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Vacancie;
 use App\PageSection;
 use App\Http\Requests;
+use App\Photo;
+use Image;
+
 
 class VacanciesController extends Controller
 {
@@ -30,7 +33,7 @@ class VacanciesController extends Controller
      */
     public function overzicht(){
          $data = [
-            'pageSection' => PageSection::where('id', 15)->first(),
+            'pageSection' => PageSection::where('id', 8)->first(),
             'vacancies' => Vacancie::all(),
             ];
 
@@ -68,7 +71,15 @@ class VacanciesController extends Controller
     public function show($id)
     {   
         $vacancie = Vacancie::findOrFail($id);
-        return view('cms.pages.vacancies.update', compact('vacancie'));
+        $photo = $vacancie->photos->first();
+
+
+        // dd($photo->path);
+        //$image  = Image::make("vacatures/photos/1466980684Logo full width.png");
+        
+        
+
+        return view('cms.pages.vacancies.update', compact('vacancie', 'photo'));
     }
 
     /**
@@ -109,4 +120,32 @@ class VacanciesController extends Controller
         $vacancie->delete();
         return redirect('cms/vacancies');
     }
+
+
+    public function addPhoto($id, Request $request)
+    {   
+
+        // check of er een foto bestaat voor dit nieuws id
+        $vacancie = Vacancie::findOrFail($id);
+
+        $photos  = $vacancie->photos;
+
+        if(!$photos->isEmpty()){
+            $photos->first()->delete();
+        }
+
+        $file =  $request->file('file');
+        
+        $name = time() . $file->getClientOriginalName();
+
+        $file->move('vacatures/photos', $name);
+           
+        // create a new photo    
+
+        $photo = Photo::create(['path' => "/vacatures/photos/{$name}"]);
+        
+        $vacancie->photos()->attach($photo->id, ['type' => 'original']);
+        return 'done';
+    }
+
 }

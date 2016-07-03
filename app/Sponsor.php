@@ -18,4 +18,9 @@ class Sponsor extends Model
     	return $this->hasMany('App\SponsorDiscount');
     }
 
+
+    public function photos(){
+        return $this->belongsToMany('App\Photo')->withPivot('type')->withTimeStamps();      
+    }  
+
 }

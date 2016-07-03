@@ -11,4 +11,11 @@ class Vacancie extends Model
     	'details',
     	'description', 
     ];
+
+    public function photos(){
+        return $this->belongsToMany('App\Photo')->withPivot('type')->withTimeStamps();      
+    }
+
+
+    
 }

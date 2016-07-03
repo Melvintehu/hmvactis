@@ -39,7 +39,13 @@ Route::group(['prefix' => 'cms'], function () {
 
     // photo upload routes
     Route::post('/news/{id}/photos', 'NewsController@addPhoto');
-
+    Route::post('/event/{id}/photos', 'EventsController@addPhoto');
+    Route::post('/committeeMember/{id}/photos', 'EventsController@addPhoto');
+    Route::post('/sponsor/{id}/photos', 'SponsorsController@addPhoto');
+    Route::post('/sponsorDiscount/{id}/photos', 'SponsorDiscountsController@addPhoto');
+    Route::post('/pageSection/{id}/photos', 'PageSectionsController@addPhoto');
+    Route::post('/boardMember/{id}/photos', 'BoardMembersController@addPhoto');
+    Route::post('/vacancie/{id}/photos', 'VacanciesController@addPhoto');
 
 });
 
@@ -47,9 +53,20 @@ Route::group(['prefix' => 'cms'], function () {
 
 Route::group([], function () {
 
-    Route::get('nieuws', 'NewsController@overzicht');
+   // pagina routes
     Route::get('/', 'PagesController@homepage');
+    Route::get('/commissies', 'CommitteesController@overzicht');
+    Route::get('/activiteiten', 'EventsController@overzicht');
+    Route::get('/kortingen', 'SponsorDiscountsController@overzicht');
+    Route::get('/lustrum', 'EventsController@lustrumOverzicht');
+    Route::get('/over-ons', 'PagesController@overOns');
+    Route::get('/partners', 'SponsorsController@overzicht');
+    Route::get('/vacatures', 'VacanciesController@overzicht');
+    Route::get('/nieuws', 'NewsController@overzicht');
+    Route::get('/contact', 'PagesController@contact');
+    
 
+    // tijdelijke routes
     Route::get('/commissie_voorbeeld', function () {
         return view('pages.commissie_voorbeeld');
     });
@@ -63,27 +80,21 @@ Route::group([], function () {
     });
 
 
-    Route::get('commissies', 'CommitteesController@overzicht');
-
-
-
-    Route::get('/activiteiten', 'EventsController@overzicht');
-    Route::get('kortingen', 'SponsorDiscountsController@overzicht');
-    Route::get('lustrum', 'EventsController@lustrumOverzicht');
-    Route::get('over-ons', 'PagesController@overOns');
-    Route::get('partners', 'SponsorsController@overzicht');
-    Route::get('vacatures', 'VacanciesController@overzicht');
-
-    Route::get('contact', 'PagesController@contact');
-
-    Route::get('lid-worden', function(){
-    	return view('pages.lid-worden');
+    // user omgeving routes, ook tijdelij
+    Route::get('/lid-worden', function(){
+        return view('pages.lid-worden');
     });
-
 
     Route::get('login', function(){
-    	return view('pages.login');
+        return view('pages.login');
     });
+
+
+
+ 
+
+
+
 });
 
 

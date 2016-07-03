@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Event;
+use App\Photo;
 use Carbon\carbon;
 use App\PageSection;
 use App\Http\Requests;
@@ -32,7 +33,7 @@ class EventsController extends Controller
 
     public function overzicht(){
         $data = [  
-            'pageSection'  => PageSection::where('id', 10)->first(),
+            'pageSection'  => PageSection::where('id', 4)->first(),
             'currentMonthsEvents' => Event::
                 where('lustrum_event', 'nee')
               ->where('date', '>', new Carbon('last day of previous month'))
@@ -132,4 +133,33 @@ class EventsController extends Controller
         $event->delete();
         return redirect('cms/events');
     }
+
+
+    public function addPhoto($id, Request $request)
+    {   
+
+        // check of er een foto bestaat voor dit nieuws id
+        $event = Event::findOrFail($id);
+
+        $photos  = $event->photos;
+
+        if(!$photos->isEmpty()){
+            $photos->first()->delete();
+        }
+
+        $file =  $request->file('file');
+        
+        $name = time() . $file->getClientOriginalName();
+
+        $file->move('activiteiten/photos', $name);
+           
+        // create a new photo    
+
+        $photo = Photo::create(['path' => "/activiteiten/photos/{$name}"]);
+        
+        $event->photos()->attach($photo->id, ['type' => 'original']);
+        return 'done';
+    }
+
+
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Committee;
 use App\CommitteeMember;
 use App\Http\Requests;
+use App\Photo;
 
 class CommitteeMembersController extends Controller
 {
@@ -100,5 +101,35 @@ class CommitteeMembersController extends Controller
 
 
          return redirect('cms/committeeMembers');
+
     }
+
+    public function addPhoto($id, Request $request)
+    {   
+
+        // check of er een foto bestaat voor dit nieuws id
+        $committeeMember = CommitteeMember::findOrFail($id);
+
+        $photos  = $committeeMember->photos;
+
+        if(!$photos->isEmpty()){
+            $photos->first()->delete();
+        }
+
+        $file =  $request->file('file');
+        
+        $name = time() . $file->getClientOriginalName();
+
+        $file->move('commissie_leden/photos', $name);
+           
+        // create a new photo    
+
+        $photo = Photo::create(['path' => "/commissie_leden/photos/{$name}"]);
+        
+        $committeeMember->photos()->attach($photo->id, ['type' => 'original']);
+        return 'done';
+    }
+
+
+
 }

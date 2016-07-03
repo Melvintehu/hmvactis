@@ -19,4 +19,14 @@ class Event extends Model
     	'description',
     	'lustrum_event'
     ];
+
+    public function photos(){
+        return $this->belongsToMany('App\Photo')->withPivot('type')->withTimeStamps();      
+    }
+
+    public function setMydateAttribute($date)
+    {
+        $this->attributes['publish_date'] = Carbon::createFromFormat('Y/M/d', $date);
+    }
+    
 }
