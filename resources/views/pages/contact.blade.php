@@ -10,16 +10,21 @@
 
 @section('content')
 
-	<div class="container">
+	<div class="container ">
 				
-		<h1 class="page-title"> CONTACT</h1>
+		
 
-		<div class="row ">
-			
-			<p style="margin-top:0px;" class="text"> 
-			{{ $data['pageSection']->description }}
-			</p>
+		<div class="row">
 
+			<div class="col-lg-12">
+				
+				<h1 class="page-title space-outside-lg"> CONTACT</h1>
+				
+				<p  class="text"> 
+					{{ $data['pageSection']->description }}
+				</p>
+
+			</div>
 		</div>
 		
 	</div>

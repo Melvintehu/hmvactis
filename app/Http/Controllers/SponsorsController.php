@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Sponsor;
 use App\PageSection;
 use App\Http\Requests;
+use App\Photo;
 
 class SponsorsController extends Controller
 {
@@ -25,7 +26,7 @@ class SponsorsController extends Controller
 
     public function overzicht(){
          $data = [
-            'pageSection' => PageSection::where('id', 13)->first(), 
+            'pageSection' => PageSection::where('id', 6)->first(), 
             'hoofdpartners' => Sponsor::where('main_partner', 'ja')->get(),
             'partners' => Sponsor::where('main_partner','nee')->get(),
             ];
@@ -106,4 +107,32 @@ class SponsorsController extends Controller
         $sponsor->delete();
         return redirect('cms/sponsors');
     }
+
+    public function addPhoto($id, Request $request)
+    {   
+
+        // check of er een foto bestaat voor dit nieuws id
+        $sponsor = Sponsor::findOrFail($id);
+
+        $photos  = $sponsor->photos;
+
+        if(!$photos->isEmpty()){
+            $photos->first()->delete();
+        }
+
+        $file =  $request->file('file');
+        
+        $name = time() . $file->getClientOriginalName();
+
+        $file->move('sponsor/photos', $name);
+           
+        // create a new photo    
+
+        $photo = Photo::create(['path' => "/sponsor/photos/{$name}"]);
+        
+        $sponsor->photos()->attach($photo->id, ['type' => 'original']);
+        return 'done';
+    }
+
+
 }

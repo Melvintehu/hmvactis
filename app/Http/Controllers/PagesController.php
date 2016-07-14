@@ -35,9 +35,9 @@ class PagesController extends Controller
     public function overOns(){
 
         $data = [
-            'inleidende_tekst' => PageSection::where('id', 7)->first(),
-            'de_vereniging' => PageSection::where('id', 8)->first(),
-            'onze_hoofddoelstelling' => PageSection::where('id', 9)->first(),
+            'inleidende_tekst' => PageSection::where('id', 1)->first(),
+            'de_vereniging' => PageSection::where('id', 2)->first(),
+            'onze_hoofddoelstelling' => PageSection::where('id', 3)->first(),
             'boards' => Board::where('id', 1)->first(),
             'news' => News::orderBy('publish_date', 'desc')->take(4)->get(),
         ];
@@ -62,7 +62,7 @@ class PagesController extends Controller
 
     public function contact(){
         $data = [
-            'pageSection' => PageSection::where('id', 16)->first(),
+            'pageSection' => PageSection::where('id', 9)->first(),
         ];
 
         return view('pages.contact', compact('data'));

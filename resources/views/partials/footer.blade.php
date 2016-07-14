@@ -22,23 +22,23 @@
 <div class="background-primary">
 	<div class="container">
 		<div class="footer-bottom">
-			<h1> HMV ACTIS </h1>
+			<h1 class="text-color-light"> HMV ACTIS </h1>
 
-			<div class="col-lg-5">
-				<p> Zernikeplein 7</p>
-				<p> 9747 AS Groningen</p>
-				<p> E bestuur@hmvactis.nl</p>
-				<p> T (050) 595-2525</p>
-				<p> Bestuurskamer T215</p>
-				<a href='contact' class="link"> Klik hier voor het contactformulier <span class="background-secondary round"> > </span> </a>						
+			<div class="col-lg-5 ">
+				<p class="text-color-light"> Zernikeplein 7</p>
+				<p class="text-color-light"> 9747 AS Groningen</p>
+				<p class="text-color-light"> E bestuur@hmvactis.nl</p>
+				<p class="text-color-light"> T (050) 595-2525</p>
+				<p class="text-color-light"> Bestuurskamer T215</p>
+				<a href='contact' class="link text-color-light"> Klik hier voor het contactformulier <span class="background-secondary round"> > </span> </a>						
 			</div>
 
 
 			<div class="col-lg-3">
-				<a href="#">  Algemene voorwaarden </a>
-				<a href="#"> Sitemap </a>
-				<a href="#"> Beleidsplan </a>
-				<a href="#"> Huishoudelijk Regelement</a>
+				<a class="text-color-light" href="#">  Algemene voorwaarden </a>
+				<a class="text-color-light" href="#"> Sitemap </a>
+				<a class="text-color-light" href="#"> Beleidsplan </a>
+				<a class="text-color-light" href="#"> Huishoudelijk Regelement</a>
 			</div>
 		</div>
 	</div>

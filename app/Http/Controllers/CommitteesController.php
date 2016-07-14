@@ -30,7 +30,7 @@ class CommitteesController extends Controller
      */
     public function overzicht(){
          $data = [
-            'pageSection' => PageSection::where('id', 12)->first(),
+            'pageSection' => PageSection::where('id', 5)->first(),
             ];
 
         return view('pages.commissies', compact('data'));

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Page;
 use App\PageSection;
 use App\Http\Requests;
+use App\Photo;
 
 class PageSectionsController extends Controller
 {
@@ -102,4 +103,33 @@ class PageSectionsController extends Controller
         return redirect('cms/pageSections');
 
     }
+
+
+    public function addPhoto($id, Request $request)
+    {   
+
+        // check of er een foto bestaat voor dit nieuws id
+        $pageSection = PageSection::findOrFail($id);
+
+        $photos  = $pageSection->photos;
+
+        if(!$photos->isEmpty()){
+            $photos->first()->delete();
+        }
+
+        $file =  $request->file('file');
+        
+        $name = time() . $file->getClientOriginalName();
+
+        $file->move('application-photos/secties/photos', $name);
+           
+        // create a new photo    
+
+        $photo = Photo::create(['path' => "application-photos/secties/photos/{$name}"]);
+        
+        $pageSection->photos()->attach($photo->id, ['type' => 'original']);
+        return 'done';
+    }
+
+
 }
