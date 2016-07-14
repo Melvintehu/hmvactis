@@ -5,19 +5,19 @@
 
 $light-color: white;
 $dark-color: #111111;
-$main-color : #2C3E50;
-$secondary-color : #27B899;
+$main-color : #95CD74;
+$secondary-color : #2C3636;
 $accent-color : #4EB96F;
 
-$background-color-light: #E4E4E4;
+$background-color-light: white;
 $background-color-dark: #000000;
 
 
 
 
-$font: 'Titillium Web', sans-serif;
+$font: 'Open Sans', sans-serif;
 
-$font-size-sm: 18px;
+$font-size-sm: 14px;
 $font-size-md: 24px;
 $font-size-lg: 38px;
 
@@ -29,7 +29,7 @@ $font-size-lg: 38px;
 
 
 body{
-	font-family: $font;
+
 	background: $background-color-light;
 	font-size: $font-size-sm;
 }
@@ -160,7 +160,7 @@ h3{ font-size: $font-size-sm; }
 /* Default color */
 
 h1, h2, h3, h4, h5{
-	color: $main-color;
+	color: $dark-color;
 }
 
 
