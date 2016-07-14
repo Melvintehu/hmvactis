@@ -4,10 +4,14 @@
 
 
 $light-color: white;
-$dark-color: #111111;
+$dark-color: #2C3636;
 $main-color : #95CD74;
 $secondary-color : #2C3636;
+<<<<<<< HEAD
 $accent-color : #D5D9DE;
+=======
+$accent-color : #d5d9de;
+>>>>>>> refs/remotes/origin/Eric
 
 $background-color-light: white;
 $background-color-dark: #000000;
@@ -23,7 +27,7 @@ $font-size-md: 24px;
 $font-size-lg: 38px;
 
 
-
+$input-height: 33px;
 
 
 
@@ -238,6 +242,7 @@ a.btn-round{
 
 .input{
 	width: 100%;
+	height: $input-height;
 	padding: 5px;
 	padding-left: 10px;
 }
@@ -249,12 +254,20 @@ a.btn-round{
 	padding-left: 10px;
 }
 
+<<<<<<< HEAD
 
 .input::placeholder, .textarea::placeholder{
 	color: $dark-color;
 	font-size: $font-size-xs;
 }
 
+=======
+.input-label{
+	height: $input-height;
+	line-height: $input-height;
+	width: 100%;
+}
+>>>>>>> refs/remotes/origin/Eric
 
 
 
