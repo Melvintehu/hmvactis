@@ -9,245 +9,248 @@
 
 
 @section('content')
-	<div class="container">
-		<div class="page">
+
+	<section class="container">
+
+		<div class="row">
+
 			{!! Form::open(['method' => 'POST', 'action' => 'ProfilesController@store' ]) !!}
 
-			<div class="col-lg-12">
-				<h1 class="page-title"> Lid worden </h1>
-			</div>
+			<div class="col-lg-12 text-center space-outside-sm">
+				<h2>PERSOONSGEGEVENS</h2>
+			</div>		
 
-			<div class="col-lg-12 text-center">
-				<h1>PERSOONSGEGEVENS</h1>
-			</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
+							VOLLEDIGE NAAM
+						</p>
+					</div>
 
-			<div class="col-lg-12">
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+	                    {!! Form::text('name', null, ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs
+									  ']); !!} 
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
+							STRAATNAAM & HUISNUMMER
+						</p>
+					</div>
+
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+
+						{!! Form::text('street', null, ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
+
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
+							PLAATS
+						</p>
+					</div>
+
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+
+						{!! Form::text('place', null, ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
+
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
+							TELEFOONNUMMER
+						</p>
+					</div>
+
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+
+						{!! Form::text('phone_number', null, ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
+
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
+							PRIVE E-MAILADRES
+						</p>
+					</div>
+
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+
+						{!! Form::text('email_address', null, ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
+
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
+							GEBOORTEDATUM
+						</p>
+					</div>
+
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+
+						{!! Form::date('birthdate', null, ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
+
+					</div>
+			</div>
+		</section>
+		
+		<section class="container">	
+
+			<div class="row">
+
+					<div class="col-lg-12 text-center space-outside-sm">
+						<h2>STUDIEGEGEVENS</h2>
+					</div>
 				
-				<div class="col-lg-4 bg-secondary label-lid space-outside-xs"> 
-					<div class="text-color-light">
-						VOLLEDIGE NAAM
-					</div>
-				</div>
-
-				<div class="col-lg-8"> 
-                    {!! Form::text('name', null, ['class' => 'input border 
-								  border-accent
-								  bg-accent 
-								  space-outside-xs']); !!} 
-				</div>
-
-				<div class="col-lg-4 bg-secondary label-lid space-outside-xs"> 
-					<div class="text-color-light">
-						STRAATNAAM & HUISNUMMER
-					</div>
-				</div>
-
-				<div class="col-lg-8"> 
-
-					{!! Form::text('street', null, ['class' => 'input border 
-								  border-accent
-								  bg-accent 
-								  space-outside-xs']); !!} 
-
-				</div>
-
-				<div class="col-lg-4 bg-secondary label-lid space-outside-xs"> 
-					<div class="text-color-light">
-						PLAATS
-					</div>
-				</div>
-
-				<div class="col-lg-8"> 
-
-					{!! Form::text('place', null, ['class' => 'input border 
-								  border-accent
-								  bg-accent 
-								  space-outside-xs']); !!} 
-
-				</div>
-
-				<div class="col-lg-4 bg-secondary label-lid space-outside-xs"> 
-					<div class="text-color-light">
-						TELEFOONNUMMER
-					</div>
-				</div>
-
-				<div class="col-lg-8"> 
-
-					{!! Form::text('phone_number', null, ['class' => 'input border 
-								  border-accent
-								  bg-accent 
-								  space-outside-xs']); !!} 
-
-				</div>
-
-				<div class="col-lg-4 bg-secondary label-lid space-outside-xs"> 
-					<div class="text-color-light">
-						PRIVE E-MAILADRES
-					</div>
-				</div>
-
-				<div class="col-lg-8"> 
-
-					{!! Form::text('email_address', null, ['class' => 'input border 
-								  border-accent
-								  bg-accent 
-								  space-outside-xs']); !!} 
-
-				</div>
-
-				<div class="col-lg-4 bg-secondary label-lid space-outside-xs"> 
-					<div class="text-color-light">
-						GEBOORTEDATUM
-					</div>
-				</div>
-
-				<div class="col-lg-8"> 
-
-					{!! Form::date('birthdate', null, ['class' => 'input border 
-								  border-accent
-								  bg-accent 
-								  space-outside-xs']); !!} 
-
-				</div>
-
-			<div class="col-lg-12 text-center">
-				<h1>STUDIEGEGEVENS</h1>
-			</div>
-
-			<div class="col-lg-12">
 				
-				<div class="col-lg-4 bg-secondary label-lid space-outside-xs"> 
-					<div class="text-color-light">
-						HUIDIGE STUDIE
-					</div>
-				</div>
 
-				<div class="col-lg-4"> 
-
-					{!! Form::text('current_study', null, ['class' => 'input border 
-								  border-accent
-								  bg-accent 
-								  space-outside-xs']); !!} 
-
-				</div>
-
-				<div class="col-lg-4"> 
-
-					<input class="input border 
-								  border-accent
-								  bg-accent 
-								  space-outside-xs" 
-					type="text">
-
-				</div>
-
-				<div class="col-lg-4 bg-secondary label-lid space-outside-xs"> 
-					<div class="text-color-light">
-						STUDIEJAAR
-					</div>
-				</div>
-
-				<div class="col-lg-8"> 
-
-					{!! Form::text('study_year', null, ['class' => 'input border 
-								  border-accent
-								  bg-accent 
-								  space-outside-xs']); !!} 
-
-				</div>
-
-				<div class="col-lg-4 bg-secondary label-lid space-outside-xs"> 
-					<div class="text-color-light">
-						STUDENTNUMMER
-					</div>
-				</div>
-
-				<div class="col-lg-8"> 
-
-					{!! Form::text('student_number', null, ['class' => 'input border 
-								  border-accent
-								  bg-accent 
-								  space-outside-xs']); !!} 
-
-				</div>
-
-			</div>
-
-			<div class="col-lg-12 text-center">
-				<h1>BETALINGSGEGEVENS</h1>
-			</div>
-
-			<div class="col-lg-12">
 				
-				<div class="col-lg-4 bg-secondary label-lid space-outside-xs"> 
-					<div class="text-color-light">
-						IBAN
+					
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+						<p class="text-color-light bg-secondary input-label space-inside-left-sm">
+							HUIDIGE STUDIE
+						</p>
 					</div>
-				</div>
 
-				<div class="col-lg-8"> 
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
 
-					{!! Form::text('iban', null, ['class' => 'input border 
-								  border-accent
-								  bg-accent 
-								  space-outside-xs']); !!} 
-				</div>
-
-
-				<div class="col-lg-4 bg-secondary label-lid space-outside-xs"> 
-					<div class="text-color-light">
-						T.N.V
-					</div>
-				</div>
-
-				<div class="col-lg-8"> 
-
-
-					{!! Form::text('tnv', null, ['class' => 'input border 
-								  border-accent
-								  bg-accent 
-								  space-outside-xs']); !!} 
-
-				</div>
-				<h6>* Wij gaan vertrouwelijk om met je gegevens. We zullen je gegevens nooit aan derden verstrekken.</h6>
-
-				<div class="col-lg-12 space-outside-up-md"> 
-					<h3>Lijkt het je leuk om meer te doen naast je studie?</h3>
-				</div>
-
-				<div class="col-lg-12 space-outside-up-md">
-
-					<div class="col-lg-1 space-outside-xs">
-
-						{!! Form::checkbox('subscribed', 1, ['class' => 'input border 
-								  border-accent
-								  bg-accent 
-								  space-outside-xs']); !!} 
+						{!! Form::text('current_study', null, ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
 
 					</div>
 
-					<div class="col-lg-11 space-outside-xs">
-						<p>Ja, ik heb interesse om een commissie/bestuursfunctie binnen HMV Actis te bekleden.</p>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+						<p class="text-color-light bg-secondary input-label space-inside-left-sm">
+							STUDIEJAAR
+						</p>
+					</div>
+
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+
+						{!! Form::text('study_year', null, ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
+
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+						<p class="text-color-light bg-secondary input-label space-inside-left-sm">
+							STUDENTNUMMER
+						</p>
+					</div>
+
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+
+						{!! Form::text('student_number', null, ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
+
 					</div>
 
 				</div>
 
-			</div>
+			</section>
+			
+			<section class="container">	
 
-				<div class="col-lg-12 space-outside-md"> 
+				<div class="row">
 
-					<input class="btn 
-									bg-secondary
-								  text-color-light
-								  space-outside-xs" 
-					type="submit" value="Inschrijven" name="inschrijven">
-					Door je in te schrijven ga je akkoord met onze <u>algemene voorwaarden.</u>
+					<div class="col-lg-12 text-center space-outside-sm">
+						<h2>BETALINGSGEGEVENS</h2>
+					</div>
+
+			
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+						<p class="text-color-light bg-secondary input-label space-inside-left-sm">
+							IBAN
+						</p>
+					</div>
+
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+
+						{!! Form::text('iban', null, ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
+					</div>
+
+
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+						<p class="text-color-light bg-secondary input-label space-inside-left-sm">
+							T.N.V
+						</p>
+					</div>
+
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+
+
+						{!! Form::text('tnv', null, ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
+
+					</div>
+
+					<p class="space-inside-left-sm">* Wij gaan vertrouwelijk om met je gegevens. We zullen je gegevens nooit aan derden verstrekken.</p>
+
+					<div class="col-lg-12 space-outside-up-md"> 
+						<h3>Lijkt het je leuk om meer te doen naast je studie?</h3>
+					</div>
+
+					<div class="col-lg-12 space-outside-up-md">
+
+						<div class="col-lg-1 space-outside-xs">
+
+							{!! Form::checkbox('subscribed', 1, ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
+
+						</div>
+
+						<div class="col-lg-11 space-outside-xs">
+							<p>Ja, ik heb interesse om een commissie/bestuursfunctie binnen HMV Actis te bekleden.</p>
+						</div>
+
+					</div>
+
+			
+
+					<div class="col-lg-12 space-outside-md"> 
+
+						<input class="btn 
+										bg-secondary
+									  text-color-light
+									  space-outside-xs" 
+						type="submit" value="Inschrijven" name="inschrijven">
+						<p class="space-outside-left-sm">Door je in te schrijven ga je akkoord met onze <u><a href="algemenepoep">algemene voorwaarden</a></u>.</p>
+
+					</div>
 
 				</div>
-
-			</div>
+			</section>
 			{!! Form::close() !!}
-		</div>
-	</div>
+		
+	
 @stop

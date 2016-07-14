@@ -22,7 +22,7 @@ $font-size-md: 24px;
 $font-size-lg: 38px;
 
 
-
+$input-height: 33px;
 
 
 
@@ -236,6 +236,7 @@ a.btn-round{
 
 .input{
 	width: 100%;
+	height: $input-height;
 	padding: 5px;
 }
 
@@ -245,7 +246,11 @@ a.btn-round{
 	padding: 5px;
 }
 
-
+.input-label{
+	height: $input-height;
+	line-height: $input-height;
+	width: 100%;
+}
 
 
 
