@@ -1,4 +1,4 @@
-@extends('cms.master')
+<!-- @extends('cms.master') -->
 
 
 

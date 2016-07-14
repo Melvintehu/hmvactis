@@ -12,7 +12,7 @@ class News extends Model
    		'date_added'
    	];
 
- 	protected $fillable = [
+ 	  protected $fillable = [
    		'title',
    		'publish_date',
    		'date_added',

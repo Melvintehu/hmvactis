@@ -8,6 +8,7 @@ use App\Sponsor;
 use App\PageSection;
 use App\SponsorDiscount;
 use App\Http\Requests;
+use App\Photo;
 
 class SponsorDiscountsController extends Controller
 {
@@ -27,7 +28,7 @@ class SponsorDiscountsController extends Controller
 
     public function overzicht(){
          $data = [
-            'pageSection' => PageSection::where('id', '14')->first(),
+            'pageSection' => PageSection::where('id', 7)->first(),
             'kortingen' => SponsorDiscount::all(),
             ];
 
@@ -110,4 +111,33 @@ class SponsorDiscountsController extends Controller
         $sponsorDiscount->delete();
         return redirect('cms/sponsorDiscounts');
     }
+
+    public function addPhoto($id, Request $request)
+    {   
+
+        // check of er een foto bestaat voor dit nieuws id
+        $sponsorDiscount = SponsorDiscount::findOrFail($id);
+
+        $photos  = $sponsorDiscount->photos;
+
+        if(!$photos->isEmpty()){
+            $photos->first()->delete();
+        }
+
+        $file =  $request->file('file');
+        
+        $name = time() . $file->getClientOriginalName();
+
+        $file->move('kortingen/photos', $name);
+           
+        // create a new photo    
+
+        $photo = Photo::create(['path' => "/kortingen/photos/{$name}"]);
+        
+        $sponsorDiscount->photos()->attach($photo->id, ['type' => 'original']);
+        return 'done';
+    }
+
+
+
 }

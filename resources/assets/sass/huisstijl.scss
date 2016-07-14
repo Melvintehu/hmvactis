@@ -1,0 +1,269 @@
+/* VARIABLES */
+
+
+
+
+$light-color: white;
+$dark-color: #111111;
+$main-color : #2C3E50;
+$secondary-color : #27B899;
+$accent-color : #4EB96F;
+
+$background-color-light: #E4E4E4;
+$background-color-dark: #000000;
+
+
+
+
+$font: 'Titillium Web', sans-serif;
+
+$font-size-sm: 18px;
+$font-size-md: 24px;
+$font-size-lg: 38px;
+
+
+
+
+
+
+
+
+body{
+	font-family: $font;
+	background: $background-color-light;
+	font-size: $font-size-sm;
+}
+
+a{ color: $dark-color; }
+
+
+
+/* COLORS */
+
+
+/* text colors */
+
+
+
+.text-color-light{
+	color: $light-color;
+}
+
+.text-color-dark{
+	color: $dark-color;
+}
+
+.text-color-main{
+	color: $main-color;
+}
+
+.text-color-secondary{
+	color: $secondary-color;
+}
+
+.text-color-accent{
+	color: $accent-color;
+}
+
+
+
+
+
+
+
+
+
+/* background colors */
+
+.bg-light{ 
+	background: $background-color-light; 
+	min-height: 1px;
+}
+
+.bg-dark{ 
+	background: $background-color-dark; 
+	min-height: 1px;
+}
+
+.bg-main{
+	background: $main-color !important;
+	min-height: 1px;
+}
+
+.bg-secondary{
+	background: $secondary-color;
+	min-height: 1px;
+}
+
+.bg-accent{
+	background: $accent-color;
+	min-height: 1px;
+}
+
+
+
+
+/* background hover colors */
+
+.hover-light:hover{ background: $background-color-light !important; }
+
+.hover-dark:hover{ background: $background-color-dark !important; }
+
+.hover-main:hover{ background: $main-color !important; }
+
+.hover-secondary{ background: $secondary-color !important; }
+
+.hover-accent{ background: $accent-color !important; }
+
+
+
+
+
+
+
+
+
+/* HEADINGS AND TEXT */
+
+
+/* font size classes */
+
+.font-sm{ font-size: $font-size-sm; }
+.font-md{ font-size: $font-size-md; }
+.font-lg{ font-size: $font-size-lg; }
+
+
+/* transforms */
+
+.uppercase{ text-transform: uppercase; }
+.lowercase{ text-transform: lowercase; }
+
+
+/* Heading sizes */
+
+h1{ font-size: $font-size-lg; }
+
+h2{ font-size: $font-size-md; }
+
+h3{ font-size: $font-size-sm; }
+
+
+
+
+
+
+
+
+
+/* Heading colors*/
+
+/* Default color */
+
+h1, h2, h3, h4, h5{
+	color: $main-color;
+}
+
+
+
+
+
+/* Other colors */
+
+h1.text-color-light, h2.text-color-light, h3.text-color-light, h4.text-color-light, h5.text-color-light, span.text-color-light, p.text-color-light, a.text-color-light{
+	color : $light-color;
+}
+
+h1.text-color-dark, h2.text-color-dark, h3.text-color-dark, h4.text-color-dark, h5.text-color-dark, span.text-color-dark, p.text-color-dark, a.text-color-dark{
+	color: $dark-color;
+}
+
+h1.text-color-main, h2.text-color-main, h3.text-color-main, h4.text-color-main, h5.text-color-main, span.text-color-main, p.text-color-main, a.text-color-main{
+	color: $main-color;
+}
+
+h1.text-color-secondary, h2.text-color-secondary, h3.text-color-secondary, h4.text-color-secondary, h5.text-color-secondary, span.text-color-secondary, p.text-color-secondary, a.text-color-secondary{
+	color: $secondary-color;
+}
+
+h1.text-color-accent, h2.text-color-accent, h3.text-color-accent, h4.text-color-accent, h5.text-color-accent, span.text-color-accent, p.text-color-accent, a.text-color-accent{
+	color: $accent-color;
+}
+
+
+
+
+
+
+
+
+
+/* BUTTONS */
+
+
+
+a.btn-standard, input[type=submit].btn-standard{
+	padding: 15px 55px;
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: $font-size-md;
+	border: none;
+	display: inline-block;
+}
+
+a.btn-round{
+	font-weight: 300;
+	font-size: $font-size-sm;
+
+	span{
+		margin-left: 20px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* FORM ELEMENTS */
+
+
+.input{
+	width: 100%;
+	padding: 5px;
+}
+
+.textarea{
+	width: 100%;
+	height: 180px;
+	padding: 5px;
+}
+
+
+
+
+
+
+/* BORDERS */
+
+
+
+
+.border-light{ border-color: $background-color-light; }
+
+.border-dark{ border-color: $background-color-dark; }
+
+.border-accent{ border-color: $accent-color; }
+
+.border-secondary{ border-color: $secondary-color; }
+
+.border-main{ border-color: $main-color; }
+
+
+

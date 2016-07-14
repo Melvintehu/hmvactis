@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Board;
 use App\BoardMember;
 use App\Http\Requests;
+use App\Photo;
 
 class BoardMembersController extends Controller
 {
@@ -100,4 +101,32 @@ class BoardMembersController extends Controller
         $boardMember->delete();
         return redirect('cms/boardMembers');
     }
+
+    public function addPhoto($id, Request $request)
+    {   
+
+        // check of er een foto bestaat voor dit nieuws id
+        $boardMember = BoardMember::findOrFail($id);
+
+        $photos  = $boardMember->photos;
+
+        if(!$photos->isEmpty()){
+            $photos->first()->delete();
+        }
+
+        $file =  $request->file('file');
+        
+        $name = time() . $file->getClientOriginalName();
+
+        $file->move('bestuurs_leden/photos', $name);
+           
+        // create a new photo    
+
+        $photo = Photo::create(['path' => "/bestuurs_leden/photos/{$name}"]);
+        
+        $boardMember->photos()->attach($photo->id, ['type' => 'original']);
+        return 'done';
+    }
+
+
 }

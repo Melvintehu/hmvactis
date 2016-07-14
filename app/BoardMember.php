@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class BoardMember extends Model
 {
 
-    protected $connection = "mongoDB";
 
     protected $fillable = [
     	'board_id',
@@ -22,4 +21,10 @@ class BoardMember extends Model
     public function board(){
     	return $this->belongsTo('App\Board');
     }
+
+    public function photos(){
+        return $this->belongsToMany('App\Photo')->withPivot('type')->withTimeStamps();      
+    }
+
+    
 }
