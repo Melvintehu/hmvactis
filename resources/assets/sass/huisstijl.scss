@@ -7,7 +7,7 @@ $light-color: white;
 $dark-color: #111111;
 $main-color : #95CD74;
 $secondary-color : #2C3636;
-$accent-color : #4EB96F;
+$accent-color : #D5D9DE;
 
 $background-color-light: white;
 $background-color-dark: #000000;
@@ -17,7 +17,8 @@ $background-color-dark: #000000;
 
 $font: 'Open Sans', sans-serif;
 
-$font-size-sm: 14px;
+$font-size-xs: 14px;
+$font-size-sm: 17px;
 $font-size-md: 24px;
 $font-size-lg: 38px;
 
@@ -128,6 +129,7 @@ a{ color: $dark-color; }
 
 /* font size classes */
 
+.font-xs{ font-size: $font-size-xs; }
 .font-sm{ font-size: $font-size-sm; }
 .font-md{ font-size: $font-size-md; }
 .font-lg{ font-size: $font-size-lg; }
@@ -206,14 +208,14 @@ a.btn-standard, input[type=submit].btn-standard{
 	color: white;
 	margin-left: auto;
 	margin-right: auto;
-	font-size: $font-size-md;
+
 	border: none;
 	display: inline-block;
 }
 
 a.btn-round{
 	font-weight: 300;
-	font-size: $font-size-sm;
+	
 
 	span{
 		margin-left: 20px;
@@ -237,14 +239,21 @@ a.btn-round{
 .input{
 	width: 100%;
 	padding: 5px;
+	padding-left: 10px;
 }
 
 .textarea{
 	width: 100%;
 	height: 180px;
 	padding: 5px;
+	padding-left: 10px;
 }
 
+
+.input::placeholder, .textarea::placeholder{
+	color: $dark-color;
+	font-size: $font-size-xs;
+}
 
 
 

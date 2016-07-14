@@ -14,31 +14,60 @@
 
 
 @section('content')
-	<div class="container">
-		<h1 class="page-title "> NIEUWS</h1>
-		<div class="row row-centered text-white">
-			@foreach($data['news'] as $nieuwsmessage)
-			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
-				<a href="#{{ $nieuwsmessage->id }}" >
-					<div class="card type-1 background-secondary">
-						<div class="top background-primary">
-						<?php      ?> 
-							<span >{{  $nieuwsmessage->publish_date->formatLocalized(' %d %B %Y') }}  </span>
-						</div>
-						<div class="image">
-							<img class="img-responsive" src="../images/imagetest2.png">
-						</div>
-						<div class="information background-primary">
-							<h4> {{ $nieuwsmessage->title }} </h4>
-							<p>{{ str_limit($nieuwsmessage->description, 150) }}</p>
-						</div>
-						<div style="clear:both;"></div>
-					</div>
-				</a>
+
+	<section class="container">
+		
+		<div class="row">
+			
+			<div class="col-lg-12">
+				
+				<h1 class="space-outside-down-lg"> NIEUWS </h1>
+
 			</div>
-		@endforeach
+
+			@foreach($data['news'] as $nieuwsmessage)
+
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-overflow ">
+
+				<a href="#{{ $nieuwsmessage->id }}" >
+
+					<div class="card type-1 background-secondary">
+
+						<div class="top background-primary">
+
+							<span class="text-color-light" >{{  $nieuwsmessage->publish_date->formatLocalized(' %d %B %Y') }}  </span>
+
+						</div>
+
+						<div class="image">
+
+							<img class="img-responsive" src="../images/imagetest2.png">
+
+						</div>
+
+						<div class="information background-primary">
+
+							<h4 class="text-color-light"> {{ $nieuwsmessage->title }} </h4>
+
+							<p class="text-color-light">{{ str_limit($nieuwsmessage->description, 150) }}</p>
+
+						</div>
+
+						<div style="clear:both;"></div>
+
+					</div>
+
+				</a>
+
+			</div>
+
+			@endforeach
+
 		</div>
-	</div>
+
+	</section>
+
+	
 
 
 	<div class="container">

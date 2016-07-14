@@ -19,27 +19,39 @@
 	</div>
 </div>
 
-<div class="background-primary">
-	<div class="container">
-		<div class="footer-bottom">
-			<h1 class="text-color-light"> HMV ACTIS </h1>
+<section class="bg-secondary hidden-xs">
+	
+	<div class="container ">
+		
+		<div class="row space-inside-lg xs-space-inside-sides-lg">
+			
+			<div class="col-lg-12">
+				
+				<h1 class="text-color-light">HMV ACTIS</h1>
 
-			<div class="col-lg-5 ">
-				<p class="text-color-light"> Zernikeplein 7</p>
-				<p class="text-color-light"> 9747 AS Groningen</p>
-				<p class="text-color-light"> E bestuur@hmvactis.nl</p>
-				<p class="text-color-light"> T (050) 595-2525</p>
-				<p class="text-color-light"> Bestuurskamer T215</p>
-				<a href='contact' class="link text-color-light"> Klik hier voor het contactformulier <span class="background-secondary round"> > </span> </a>						
 			</div>
 
+			<div class="col-lg-6 xs-space-outside-down-md">
+					
+				<p class="text-color-light block space-outside-xs space-outside-right-md left"> Zernikeplein 7</p>
+				<p class="text-color-light block space-outside-xs left"> 9747 AS Groningen</p>
+				<p class="text-color-light block space-outside-xs space-outside-right-md clear-left left"> E bestuur@hmvactis.nl</p>
+				<p class="text-color-light block space-outside-xs left"> T (050) 595-2525</p>
+				<p class="text-color-light block space-outside-xs clear-left"> Bestuurskamer T215</p>
+				<a href='contact' class="btn-round text-color-light"> Klik hier voor het contactformulier <span class="background-secondary circle circle-sm inline-block"> > </span> </a>
 
-			<div class="col-lg-3">
-				<a class="text-color-light" href="#">  Algemene voorwaarden </a>
-				<a class="text-color-light" href="#"> Sitemap </a>
-				<a class="text-color-light" href="#"> Beleidsplan </a>
-				<a class="text-color-light" href="#"> Huishoudelijk Regelement</a>
 			</div>
+
+			<div class="col-lg-6">
+				<a class="text-color-light block space-outside-xs" href="#">  Algemene voorwaarden </a>
+				<a class="text-color-light block space-outside-xs" href="#"> Sitemap </a>
+				<a class="text-color-light block space-outside-xs" href="#"> Beleidsplan </a>
+				<a class="text-color-light block space-outside-xs" href="#"> Huishoudelijk Regelement</a>
+			</div>
+
 		</div>
+
 	</div>
-</div>
+
+</section>
+
