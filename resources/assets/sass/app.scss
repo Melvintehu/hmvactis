@@ -3,10 +3,6 @@
 
 @import "mixins";
 @import "general";
-@import "reset";
-@import "common_used_classes";
-@import "base-rules";
-@import "huisstijl";
 
 
 @import "partials/navigation";
@@ -22,6 +18,14 @@
 @import "pages/vacatures"; 
 @import "pages/partners";
 @import "pages/over-ons";
+@import "pages/lid-worden";
 @import "partials/footer";
 @import "pages/homepage";
 @import "partials/cards"; 
+
+
+
+@import "reset";
+@import "common_used_classes";
+@import "base-rules";
+@import "huisstijl";

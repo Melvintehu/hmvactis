@@ -22,6 +22,11 @@ Route::group(['prefix' => 'cms'], function () {
         return view('cms.cms');
     });
 
+    Route::get('/logout', function()
+    {
+        Auth::logout();
+        return redirect('/cms');
+    });
 
     Route::resource('sponsorDiscounts', 'SponsorDiscountsController');
     Route::resource('boards', 'BoardsController');
@@ -85,6 +90,10 @@ Route::group([], function () {
         return view('pages.lid-worden');
     });
 
+    Route::get('/profiel', function(){
+        return view('pages.profiel');
+    });
+
     Route::get('login', function(){
         return view('pages.login');
     });
@@ -97,4 +106,6 @@ Route::group([], function () {
 
 });
 
+Route::resource('profile', 'ProfilesController');
 
+Route::get('/home', 'HomeController@index');
