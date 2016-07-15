@@ -90,6 +90,10 @@ Route::group([], function () {
         return view('pages.lid-worden');
     });
 
+    Route::get('/profiel', function(){
+        return view('pages.profiel');
+    });
+
     Route::get('login', function(){
         return view('pages.login');
     });
