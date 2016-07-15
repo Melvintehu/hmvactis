@@ -82,7 +82,7 @@
 
 			<div class="col-lg-12 space-inside-xs">
 				
-				<input type="submit" name="verzenden" class="btn-standard bg-secondary font-xs " value="verzenden">
+				<input type="submit" name="verzenden" class="btn-standard bg-secondary text-color-light font-xs " value="verzenden">
 
 			</div>
 
