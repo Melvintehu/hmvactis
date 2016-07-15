@@ -26,7 +26,7 @@
 							<th>Adres:</th><td>Padangstraat 7A</td>
 						</tr>
 						<tr>
-							<th>Telefoonnummer:</th><td>Eric Landheer</td>
+							<th>Telefoonnummer:</th><td>0646501798</td>
 						</tr>
 						<tr>
 							<th>Emailadres:</th><td>e.landheer@Mentechmedia.nl</td>
@@ -53,6 +53,7 @@
 							<td>Batsen met je schoonmoeder</td>
 							<td>28 juli 2016</td>
 							<td>15:30 in het Atrium</td>
+							<td>BUTTON UITSCHRIJVEN</td>
 						</tr>
 					</table>
 			</div>
