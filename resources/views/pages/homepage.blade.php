@@ -69,7 +69,7 @@
 
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 				
-				<a class="btn-standard bg-accent text-color-dark uppercase inline-block" href="/nieuws"> meer nieuws </a>
+				<a class="btn-standard bg-accent text-color-dark  inline-block" href="/nieuws"> meer nieuws </a>
 
 			</div>
 
