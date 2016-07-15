@@ -7,11 +7,8 @@ $light-color: white;
 $dark-color: #2C3636;
 $main-color : #95CD74;
 $secondary-color : #2C3636;
-<<<<<<< HEAD
-$accent-color : #D5D9DE;
-=======
+
 $accent-color : #d5d9de;
->>>>>>> refs/remotes/origin/Eric
 
 $background-color-light: white;
 $background-color-dark: #000000;
@@ -229,21 +226,17 @@ a.btn-round{
 	padding-left: 10px;
 }
 
-<<<<<<< HEAD
-
-.input::placeholder, .textarea::placeholder{
-	color: $dark-color;
-	font-size: $font-size-xs;
-}
-
-=======
 .input-label{
 	height: $input-height;
 	line-height: $input-height;
 	width: 100%;
 }
->>>>>>> refs/remotes/origin/Eric
 
+
+.input::placeholder, .textarea::placeholder{
+	color: $dark-color;
+	font-size: $font-size-xs;
+}
 
 
 

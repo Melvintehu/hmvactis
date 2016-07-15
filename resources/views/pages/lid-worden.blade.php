@@ -16,7 +16,7 @@
 
 			{!! Form::open(['method' => 'POST', 'action' => 'ProfilesController@store' ]) !!}
 
-			<div class="col-lg-12 text-center space-outside-sm">
+			<div class="col-lg-12 text-center space-outside-down-sm space-outside-up-lg">
 				<h2>PERSOONSGEGEVENS</h2>
 			</div>		
 
@@ -40,9 +40,18 @@
 						</p>
 					</div>
 
-					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+					<div class="col-lg-6 col-md-6 col-sm-8 col-xs-8"> 
 
 						{!! Form::text('street', null, ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
+
+					</div>
+
+					<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4"> 
+
+						{!! Form::text('house_number', null, ['class' => 'input border 
 									  border-accent
 									  bg-accent 
 									  space-outside-xs']); !!} 
@@ -115,7 +124,7 @@
 
 			<div class="row">
 
-					<div class="col-lg-12 text-center space-outside-sm">
+					<div class="col-lg-12 text-center space-outside-down-sm space-outside-up-lg">
 						<h2>STUDIEGEGEVENS</h2>
 					</div>
 				
@@ -176,7 +185,7 @@
 
 				<div class="row">
 
-					<div class="col-lg-12 text-center space-outside-sm">
+					<div class="col-lg-12 text-center space-outside-down-sm space-outside-up-lg">
 						<h2>BETALINGSGEGEVENS</h2>
 					</div>
 
