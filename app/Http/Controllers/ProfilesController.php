@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Profile;
 use App\Http\Requests;
+use Auth;
 
 class ProfilesController extends Controller
 {
@@ -16,7 +17,7 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -36,10 +37,13 @@ class ProfilesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $request->merge(['user_id' => Auth::id()]);
+
+       // $request->request->add(['user_id' => Auth::id()]);
         $profile = Profile::create($request->all());
-        
-        return redirect('lid-worden');
+
+        return redirect('/');
     }
 
     /**

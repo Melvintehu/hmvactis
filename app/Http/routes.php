@@ -22,11 +22,6 @@ Route::group(['prefix' => 'cms'], function () {
         return view('cms.cms');
     });
 
-    Route::get('/logout', function()
-    {
-        Auth::logout();
-        return redirect('/cms');
-    });
 
     Route::resource('sponsorDiscounts', 'SponsorDiscountsController');
     Route::resource('boards', 'BoardsController');
@@ -40,7 +35,7 @@ Route::group(['prefix' => 'cms'], function () {
     Route::resource('committees', 'CommitteesController');
     Route::resource('committeeMembers', 'CommitteeMembersController');
     Route::resource('vacancies', 'VacanciesController');
-
+    Route::resource('profile', 'ProfilesController');
 
     // photo upload routes
     Route::post('/news/{id}/photos', 'NewsController@addPhoto');
@@ -56,7 +51,32 @@ Route::group(['prefix' => 'cms'], function () {
 
 
 
-Route::group([], function () {
+
+    Route::auth();
+
+    Route::group(['middleware' => ['auth']], function(){
+
+       
+
+        // user omgeving routes, ook tijdelij
+        Route::get('/lid-worden', function(){
+            return view('pages.lid-worden');
+        });
+
+        Route::get('/logout', function()
+        {
+            Auth::logout();
+            return redirect('/');
+        });
+
+        Route::post('/inschrijven/{id}', 'EventsController@signUpUser');
+
+        Route::get('/profiel', 'PagesController@profiel');
+  
+
+    });
+
+
 
    // pagina routes
     Route::get('/', 'PagesController@homepage');
@@ -69,7 +89,7 @@ Route::group([], function () {
     Route::get('/vacatures', 'VacanciesController@overzicht');
     Route::get('/nieuws', 'NewsController@overzicht');
     Route::get('/contact', 'PagesController@contact');
-    
+    Route::get('/activiteit/{id}', 'PagesController@showActiviteit'); 
 
     // tijdelijke routes
     Route::get('/commissie_voorbeeld', function () {
@@ -85,27 +105,14 @@ Route::group([], function () {
     });
 
 
-    // user omgeving routes, ook tijdelij
-    Route::get('/lid-worden', function(){
-        return view('pages.lid-worden');
-    });
-
-    Route::get('/profiel', function(){
-        return view('pages.profiel');
-    });
-
-    Route::get('login', function(){
-        return view('pages.login');
-    });
 
 
+    Route::get('/home', 'HomeController@index');
 
  
 
 
 
-});
 
-Route::resource('profile', 'ProfilesController');
 
-Route::get('/home', 'HomeController@index');
+

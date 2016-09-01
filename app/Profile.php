@@ -20,5 +20,6 @@ class Profile extends Model
     	'iban',
     	'tnv',
     	'subscribed',
+        'user_id'
     ];
 }

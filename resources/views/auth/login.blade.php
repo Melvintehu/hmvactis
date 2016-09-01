@@ -1,21 +1,25 @@
+@section('title')
+Login CMS
+@stop
 
+@extends('master')
 @section('content')
+<div class="container">
+        
+        <h1 class="page-title"> INLOGGEN </h1>
+    
 <div class="container">
     <div class="row">
 
-        <div class="col-md-6 col-md-offset-3">
-            <img class='mentor4youlogo img-responsive' src="images/mentor4you-logo.jpg"/>
-            <div class="panel panel-default">
-                <div class="panel-heading text-center bg-accent"><h3>Inlogsysteem CMS</h3></div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+        <div class="col-md-12 space-outside-down-lg">
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Gebruikersnaam</label>
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                           
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input id="email" type="email" placeholder="Email" class="input border border-accent" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -26,10 +30,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Wachtwoord</label>
+                           
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
+                                <input id="password" type="password" placeholder="Wachtwoord" class="input border border-accent" name="password">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -40,16 +44,17 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-warning white">
-                                    <i class="fa fa-btn fa-sign-in"></i> Inloggen
-                                </button>
+                            <div class="col-md-6 ">
+                                 <input type="submit" class="btn-standard bg-secondary text-color-light " value="Inloggen">
+                                 <a href="/register" class="btn-standard bg-secondary  text-color-light" >Registreren </a>
                             </div>
+
                         </div>
                     </form>
-                </div>
-            </div>
         </div>
     </div>
 </div>
+
+        </div>
+    </div>
 @endsection

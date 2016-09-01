@@ -15,11 +15,11 @@
 
 @section('content')
 
-	<section class="container">
+	<section class="container space-outside-up-lg">
 		
 		<div class="row">
 			
-			<div class="col-lg-12">
+			<div class="col-lg-12 xs-text-center sm-text-center">
 				
 				<h1 class="space-outside-down-lg"> NIEUWS </h1>
 
@@ -47,11 +47,11 @@
 
 							</div>
 
-							<div class="information background-primary">
+							<div class="information background-primary ">
 
 								<h4 class="text-color-light"> {{ $nieuwsmessage->title }} </h4>
 
-								<p class="text-color-light">{{ str_limit($nieuwsmessage->description, 150) }}</p>
+								<p class="text-color-light ">{{ str_limit($nieuwsmessage->description, 150) }}</p>
 
 							</div>
 
@@ -85,7 +85,7 @@
 			
 			<div class="row space-outside-lg">
 				
-				<div class="col-lg-4  space-outside-down-lg">
+				<div class="col-lg-5  space-outside-lg">
 					
 					<div class="circle circle-xl bg-main block auto">
 						
@@ -96,7 +96,7 @@
 
 				</div>
 
-				<div class="col-lg-8 text-center">
+				<div class="col-lg-7 md-space-inside-sides-lg lg-space-inside-sides-lg">
 					
 					<h1 class="uppercase text-center text-color-light space-outside-down-md "> Agenda </h1>
 

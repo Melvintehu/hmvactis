@@ -121,9 +121,9 @@ a{ color: $dark-color; }
 
 .hover-main:hover{ background: $main-color !important; }
 
-.hover-secondary{ background: $secondary-color !important; }
+.hover-secondary:hover{ background: $secondary-color !important; }
 
-.hover-accent{ background: $accent-color !important; }
+.hover-accent:hover{ background: $accent-color !important; }
 
 
 
@@ -179,7 +179,7 @@ h3{ font-size: $font-size-sm; }
 
 
 
-a.btn-standard, input[type=submit].btn-standard{
+a.btn-standard, input[type=submit].btn-standard, button.btn-standard{
 	padding: 15px 55px;
 	
 	margin-left: auto;
@@ -256,6 +256,29 @@ a.btn-round{
 .border-main{ border-color: $main-color; }
 
 
+/* border shapes */
+
+.border-curved{ border-radius: 5px; }
+
+.border-curved-down{ 
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+ }
+
+.border-curved-up{ 
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px; 
+}
+
+.border-curved-right{
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.border-curved-left{
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;	
+}
 
 
 /* Heading colors*/

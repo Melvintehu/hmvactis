@@ -11,6 +11,9 @@ use App\Board;
 use Carbon\Carbon;
 use App\PageSection;
 use App\Http\Requests;
+use Auth;
+use App\Profile;
+
 
 class PagesController extends Controller
 {   
@@ -27,6 +30,8 @@ class PagesController extends Controller
     public function index(){
          $data = [
             'pages' => page::all(),
+            'profile' => Profile::where('user_id', '=', Auth::id()),
+
             ];
 
         return view('cms.pages.pages.overzicht', compact('data'));
@@ -66,6 +71,31 @@ class PagesController extends Controller
         ];
 
         return view('pages.contact', compact('data'));
+    }
+
+    public function profiel()
+    {
+             $data = [
+                           
+                'profile' => Profile::where('user_id', '=', Auth::id())->first(),
+                'events' =>  Auth::user()->events()->get(),
+            ];
+
+        return view('pages.profiel', compact('data'));
+
+    }
+
+    public function showActiviteit($id)
+    {
+
+        $data = [
+
+            'activiteit' => Event::find($id),
+
+        ];
+
+        return view('pages.activiteit_voorbeeld', compact('data'));
+
     }
 
 
