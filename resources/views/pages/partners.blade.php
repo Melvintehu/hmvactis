@@ -24,7 +24,7 @@
 				<h1> HOOFDPARTNER </h1>
 				@foreach($data['hoofdpartners'] as $hoofdpartner)
 				<div class="col-lg-12 col-md-4 col-sm-6 col-xs-12 ">
-					<a href="#{{ $hoofdpartner->id }}" >
+					<a href="partners/{{ $hoofdpartner->id }}" >
 						<div class="card type-1 background-secondary">
 							<div class="top background-primary">
 								<span >   </span>
@@ -51,7 +51,7 @@
 				<div class="row row-centered text-white">
 				@foreach($data['partners'] as $partner)
 					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"> 
-						<a href="#{{ $partner->id }}" >	
+						<a href="partners/{{ $partner->id }}" >	
 							<div class="card type-3 text-white">
 								<div class="top background-primary"></div>
 								<div class="image">

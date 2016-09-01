@@ -10,14 +10,19 @@
 	
 	<div class="container">
 		<div class="page">
-				<h1 class="page-title"> Feestcommissie </h1>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-centered">	
+				<div class="image round background-accent">
+					<img class="img-responsive icon" src="../images/{{ $data['committee']->name }}-icon.png">
+				</div>
+			</div>
+				<h1 class="page-title"> {{ $data['committee']->name }} </h1>
 		</div>
 	</div>
 
 	<div class="section background-primary text-white">
 		<div class="container">
 			<p class="text">  
-				Van leuke themafeesten tot aan een groot eindfeest in combinatie met andere studievereniging, de feestcommissie organiseert de vetste feesten! Elke eerste donderdag na studiefinanciering organiseert de feestcommissie een maandelijkse borrel in Partycafé de Doos met geregeld een gratis fust!
+				{{  $data['committee']->description }}
 			</p>
 		</div>
 	</div>

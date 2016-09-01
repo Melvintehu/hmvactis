@@ -19,7 +19,7 @@
 
 		<div class="row row-centered text-white">
 			@foreach($data['vacancies'] as $vacancie )
-			<a href="#">
+			<a href="vacatures/{{ $vacancie->id }}">
 			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
 				<div class="card type-1 background-primary">
 					<div class="top background-accent"> 
