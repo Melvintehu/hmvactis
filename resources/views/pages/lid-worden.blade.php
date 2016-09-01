@@ -149,7 +149,7 @@
 
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
 						<p class="text-color-light bg-secondary input-label space-inside-left-sm">
-							STUDIEJAAR
+							STARTJAAR STUDIE
 						</p>
 					</div>
 

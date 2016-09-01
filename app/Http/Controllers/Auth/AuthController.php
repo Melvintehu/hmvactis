@@ -62,11 +62,25 @@ class AuthController extends Controller
      * @return User
      */
     protected function create(array $data)
-    {
-        return User::create([
+    {   
+
+        /// to do save user to pivot Events
+
+
+
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        // dd($user->id);
+
+
+        
+        $user->events()->attach($data['event_id']);
+        dd($user);
+        //$employee->jobs()->attach($job_id, ['date_start' => date('Y-m-d H:i:s', time()) ]);
+        return $user;
     }
 }
