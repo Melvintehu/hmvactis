@@ -1,3 +1,24 @@
+<?php 
+
+namespace App\Http\Controllers;
+
+
+
+
+use Auth;
+use App\Profile;
+
+
+          
+                $profiel = Profile::where('user_id', '=', Auth::id())->get();
+
+  
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>

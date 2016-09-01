@@ -9,6 +9,8 @@ use App\Photo;
 use Carbon\carbon;
 use App\PageSection;
 use App\Http\Requests;
+use App\User;
+use Auth;
 
 class EventsController extends Controller
 {
@@ -30,6 +32,14 @@ class EventsController extends Controller
         return view('cms.pages.events.overzicht', compact('data'));
     }
 
+    public function signUpUser($id){
+
+        $user = User::find(Auth::user()->id);
+     
+
+        $user->events()->attach($id);
+        return redirect('/activiteit/'. $id);
+    }
 
     public function overzicht(){
         $data = [  

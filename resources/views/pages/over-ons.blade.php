@@ -10,48 +10,80 @@
 
 @section('content')
 
-	<div class="section background-primary">
+	<section class="bg-secondary">
+
 		<div class="container">
-			<div class="page text-white">
-				<h1 class="page-title "> OVER ONS </h1>
-			
-				<div class="col-lg-6">
-					<div class="text ">
-						<p> 
-							{{ $data['inleidende_tekst']->description }}
-						</p>	
+				
+			<div class="row xs-text-center">
+				
+				<div class="col-lg-12 space-outside-up-lg">
+
+					<div class="row ">
+						
+						<div class="col-lg-7 col-xs-12 col-sm-12">
+							
+
+							<h1 class="text-color-light  space-outside-down-sm"> OVER ONS </h1>
+								
+							<p class="text-color-light xs-space-outside-down-md sm-space-outside-down-md space-outside-down-lg"> 
+
+								{{ $data['inleidende_tekst']->description }}
+
+							</p>
+
+						</div>
+
+						<div class="col-lg-5  col-xs-12 col-sm-12 md-space-outside-down-lg sm-space-outside-down-lg xs-space-outside-down-lg text-left xs-space-inside-sides-md"> 
+
+							<h3 class="text-color-light space-outside-down-sm space-outside-up-sm"> Instituut voor Marketing Management</h3>
+
+							<p class="text-color-light block"><span class="circle circle-xs bg-main inline-block space-outside-right-xs"> </span>  International Business and Languages </p> 
+
+							<p class="text-color-light block"><span class="circle circle-xs bg-main inline-block space-outside-right-xs"> </span>  Small Business and Retail Management  </p> 
+
+							<p class="text-color-light block"><span class="circle circle-xs bg-main inline-block space-outside-right-xs"> </span>  Commerciële Economie </p> 
+
+						</div>	
+
 					</div>
+
 				</div>
-				<div class="col-lg-5 col-lg-offset-1 "> 
-					<div class="text">
-						<h3> Instituut voor Marketing Management</h3>
-						<p><span class="bulletpoint background-secondary round"> </span>  International Business and Languages </p> 
-						<p><span class="bulletpoint background-secondary round"> </span>  Small Business and Retail Management  </p> 
-						<p><span class="bulletpoint background-secondary round"> </span>  Commerciële Economie </p> 
-					</div>
-				</div>
+
+				
 
 				<div class="col-lg-12">
-					<div class="text">
-						<h3> De vereniging </h3>
-						<p> 
+
+						<h2 class="text-color-light space-outside-down-sm "> De vereniging </h2>
+
+						<p class="text-color-light"> 
+
 							{{ $data['de_vereniging']->description }}
+
 						</p>
-					</div>
+
+					
+
 				</div>
 
-				<div class="col-lg-12 ">
-					<div class="text">
-						<h3> Onze hoofdoelstelling </h3>
-						<p>
+				<div class="col-lg-12 space-outside-up-lg space-inside-down-lg">
+
+						<h2 class="text-color-light space-outside-down-sm "> Onze hoofdoelstelling </h2>
+
+						<p class="text-color-light">
+
 							{{ $data['onze_hoofddoelstelling']->description }}
+
 						</p>
-					</div>
+
+					
+
 				</div>
 
-			</div>	
+			</div>
+	
 		</div>	
-	</div>
+
+	</section>
 
 
 	<div class="container">
@@ -82,36 +114,78 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="page">
-			<h1 class="page-title"> HET LAATSTE NIEUWS </h1>
-			<div class="row row-centered text-white">
-			@foreach($data['news'] as $newsmessage)
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
-				<a href="#{{ $newsmessage->id }}" >
-					<div class="card type-1 background-secondary">
-						<div class="top background-primary">
-						<?php      ?> 
-							<span >{{  $newsmessage->publish_date->formatLocalized(' %d %B %Y') }}  </span>
-						</div>
-						<div class="image">
-							<img class="img-responsive" src="../images/imagetest2.png">
-						</div>
-						<div class="information background-primary">
-							<h4> {{ $newsmessage->title }} </h4>
-							<p>{{ str_limit($newsmessage->description, 150) }}</p>
-						</div>
-						<div style="clear:both;"></div>
-					</div>
-				</a>
+	<section class="container">
+		
+		<div class="row">
+			
+			<div class="col-lg-12 xs-text-center">
+				
+				<h1 class="space-outside-lg">HET LAATSTE NIEUWS </h1>
+
 			</div>
+
+			@foreach($data['news'] as $nieuwsmessage)
+
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-overflow ">
+
+				<div class="row">
+					
+					<a href="#{{ $nieuwsmessage->id }}" >
+
+						<div class="card type-1 background-secondary">
+
+							<div class="top background-primary">
+
+								<span class="text-color-light" >{{  $nieuwsmessage->publish_date->formatLocalized(' %d %B %Y') }}  </span>
+
+							</div>
+
+							<div class="image">
+
+								<img class="img-responsive" src="../images/imagetest2.png">
+
+							</div>
+
+							<div class="information background-primary">
+
+								<h4 class="text-color-light"> {{ $nieuwsmessage->title }} </h4>
+
+								<p class="text-color-light">{{ str_limit($nieuwsmessage->description, 150) }}</p>
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</div>
+
+					</a>
+
+				</div>
+
+			</div>
+
 			@endforeach
-			</div>
+
+
+
 		</div>
-	</div>
+
+	</section>
+
+
 
 	<div class="container">
-		<a href='/nieuws' class="link"> Klik hier voor meer nieuws <span class="background-primary round"> > </span> </a>
+		
+		<div class="row">
+			
+			<div class="col-lg-12 xs-text-center sm-text-center space-outside-down-lg">
+				
+				<a href="/nieuws" class="btn-standard bg-secondary text-color-light">Meer nieuws</a>
+
+			</div>
+
+		</div>
+
 	</div>
 
 

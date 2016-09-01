@@ -11,65 +11,154 @@
 @section('content')
 
 	<section class="container">
-		<div class="col-lg-12 space-outside-up-lg">
-			<h2>Ingelogd als: Eric Landheer</h2>
 
-			<hr class="divider">
-			<div class="col-lg-12 space-outside-up-md">
-				<h2>Persoonsgegevens</h2>
+		<div class="row">
+			
+			<div class="col-lg-12 space-outside-lg">
+				
+				<h1 class="xs-text-center sm-text-center"> Welkom  {{ $data['profile']->name }} </h1>
+
+			</div>
+
+			<div class="col-lg-12 bg-secondary padding-md">
+
+			<h2 class="space-outside-down-sm text-color-light xs-text-center sm-text-center">Persoonsgegevens </h2>
 
 				<table class="table">
-						<tr>
-							<th>Naam:</th><td>Eric Landheer</td>
-						</tr>
-						<tr>
-							<th>Adres:</th><td>Padangstraat 7A</td>
-						</tr>
-						<tr>
-							<th>Telefoonnummer:</th><td>0646501798</td>
-						</tr>
-						<tr>
-							<th>Emailadres:</th><td>e.landheer@Mentechmedia.nl</td>
-						</tr>
-						<tr>
-							<th>Geboortedatum:</th><td>02-02-1995</td>
-						</tr>
-						<tr>
-							<th>Studie:</th><td>HBO-ICT</td>
-						</tr>
-						<tr>
-							<th>Studiejaar:</th><td>4</td>
-						</tr>
-						<tr>
-							<th>IBAN:</th><td>NLABNA406062163</td>
-						</tr>
+
+					<tr>
+
+						<th class="text-color-light">Naam:</th><td  class="text-color-light">{{ $data['profile']->name }}</td>
+
+					</tr>
+
+					<tr>
+
+						<th  class="text-color-light">Adres:</th><td  class="text-color-light">{{ $data['profile']->street }} {{ $data['profile']->house_number }}</td>
+
+					</tr>
+
+					<tr>
+
+						<th  class="text-color-light">Telefoonnummer:</th><td  class="text-color-light">{{ $data['profile']->phone_number }}</td>
+
+					</tr>
+
+					<tr>
+						
+						<th  class="text-color-light">Emailadres:</th><td  class="text-color-light">{{ $data['profile']->email_address }}</td>
+
+
+					</tr>
+
+					<tr>
+
+						<th  class="text-color-light">Geboortedatum:</th><td  class="text-color-light">{{ $data['profile']->birthdate }}</td>
+
+					</tr>
+
+					<tr>
+
+						<th  class="text-color-light">Studie:</th><td  class="text-color-light">{{ $data['profile']->current_study }}</td>
+
+					</tr>
+
+					<tr>
+
+						<th  class="text-color-light">Studiejaar:</th><td  class="text-color-light">{{ $data['profile']->study_year }}</td>
+
+					</tr>
+
+					<tr>
+
+						<th  class="text-color-light">IBAN:</th><td  class="text-color-light">{{ $data['profile']->iban }}</td>
+
+					</tr>
+
 				</table>
-			</div>
-			<div class="col-lg-12 space-outside-up-md">
-				<h2>Geplande activiteiten:</h2>
 
-					<table class="table">
+				<div class="col-lg-12 text-center space-outside-up-md space-outside-down-md">
+						
+					<a class="btn-standard  bg-main text-color-light" href="#gegevens-aanpassen">Gegevens aanpassen</a>
+
+				</div>
+
+			</div>
+
+
+			<div class="col-lg-12">
+				
+				<div class="divider bg-accent space-outside-down-lg"></div>
+
+			</div>
+
+			<div class="col-lg-12 bg-accent border  border-accent space-inside-up-md space-outside-down-sm text-center">
+				
+				<p class="text-color-dark block space-outside-down-sm  font-md"> Zou je een functie binnen HMV Actis willen bekleden? Meld je dan nu aan! </p>
+
+				<a class="btn-standard bg-main text-color-light space-outside-down-lg space-outside-up-sm" href="#">Aanmelden</a>
+
+			</div>
+
+
+			<div class="col-lg-12">
+
+				<h2 class="space-outside-down-sm space-outside-up-md xs-text-center sm-text-center">Geplande activiteiten</h2>
+
+				<table class="table ">
+
+					@foreach($data['events'] as $event)
+
 						<tr>
-							<td>Batsen met je schoonmoeder</td>
-							<td>28 juli 2016</td>
-							<td>15:30 in het Atrium</td>
-							<td>BUTTON UITSCHRIJVEN</td>
+
+							<td >{{ $event->title }}</td>
+
+							<td> {{ $event->date }} </td>
+
+							<td> {{ $event->time }}  {{ $event->location }}</td>
+
+							<td>
+
+								{!! Form::open() !!}
+									
+									<a class="btn-standard hover-secondary bg-main text-color-light " href="">Uitschrijven</a>
+
+								{!! Form::open() !!}
+
+							</td>
+
 						</tr>
-					</table>
+
+					@endforeach	
+
+				</table>
+
 			</div>
 
-			<div class="col-lg-12 space-outside-up-md">
-				<h2>Afgelopen activiteiten:</h2>
+			<div class="col-lg-12 space-outside-up-md space-outside-down-lg">
+				
+				<h2 class="space-outside-down-sm xs-text-center sm-text-center">Afgelopen activiteiten</h2>
 
-					<table class="table">
-							<tr>
-								<td>Pokemon Go repease asdfasd fasdf</td>
-								<td>1 juli 2016</td>
-								<td>15:30 in de gehele wereld</td>
-							</tr>
-					</table>
+				<table class="table ">
+
+						<tr>
+
+							<td>Pokemon Go repease asdfasd fasdf</td>
+
+							<td>1 juli 2016</td>
+
+							<td>15:30 in de gehele wereld</td>
+
+						</tr>
+
+				</table>
+
 			</div>
+
 		</div>
+
+
+
 	</section>
 		
 	

@@ -6,9 +6,9 @@ Wanneer dit waar is komt ereen active class. Ook URL:: is een goede helper ivm h
  <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">OVER ONS <span class="caret"></span></a>
 		          <ul class="dropdown-menu">
-		            <li ><a href="over-ons">De vereniging en besturen</a></li>
-		            <li><a href="lustrum">Lustrum</a></li>
-		            <li><a href="commissies">Commissies</a></li>
+		            <li ><a href="/over-ons">De vereniging en besturen</a></li>
+	
+		            <li><a href="/commissies">Commissies</a></li>
 
 		          </ul>
 		        </li>
@@ -29,8 +29,33 @@ Wanneer dit waar is komt ereen active class. Ook URL:: is een goede helper ivm h
 
 <li class="{{ active_class(if_route(['vacatures']) || if_uri(['vacatures'])) }}"><a href="{{ URL::to('vacatures') }}">VACATURES</a></li>
 <li class="{{ active_class(if_route(['contact']) || if_uri(['contact'])) }}"><a href="{{ URL::to('contact') }}">CONTACT</a></li>
-<li class="{{ active_class(if_route(['login']) || if_uri(['login'])) }}"><a href="{{ URL::to('login') }}">LOGIN</a></li>
-<li class="{{ active_class(if_route(['lid-worden']) || if_uri(['lid-worden'])) }}"><a href="{{ URL::to('lid-worden') }}">LID WORDEN</a></li>
+
+
+@if (Auth::check())
+	
+	@if($profiel->isEmpty())
+
+		<li class="{{ active_class(if_route(['lid-worden']) || if_uri(['lid-worden'])) }}"><a href="{{ URL::to('lid-worden') }}">LID WORDEN</a></li>
+	@else
+
+		<li class="{{ active_class(if_route(['profiel']) || if_uri(['profiel'])) }}"><a href="{{ URL::to('profiel') }}">PROFIEL</a></li>
+
+
+	@endif
+
+
+
+
+
+
+	<li class="{{ active_class(if_route(['logout']) || if_uri(['logout'])) }}"><a href="{{ URL::to('logout') }}">LOGOUT</a></li>
+@else
+
+	<li class="{{ active_class(if_route(['login']) || if_uri(['login'])) }}"><a href="{{ URL::to('login') }}">LOGIN</a></li>
+
+@endif
+
+
 
 
 				

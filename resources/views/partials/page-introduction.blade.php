@@ -1,14 +1,23 @@
 <div class="row">
+
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		<div class="page-introduction text-white background-primary">
-				<div class="image">
+
+		<div class="space-inside-down-lg space-outside-down-lg  bg-secondary">
+
+				<div class="image image-responsive">
+
 					<img src="../images/bannerfoto.png">	
+
 				</div>	
-				<div class="text">
-					<p>	
-						{{ $data['pageSection']->description }}	
-					</p>
-				</div>	
+
+				<p class="text-color-light padding-sm">	
+
+					{{ $data['pageSection']->description }}	
+
+				</p>
+
 		</div> 
+
 	</div>
+
 </div>

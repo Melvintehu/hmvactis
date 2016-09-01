@@ -28,5 +28,10 @@ class Event extends Model
     {
         $this->attributes['publish_date'] = Carbon::createFromFormat('Y/M/d', $date);
     }
+
+
+    public function users(){
+        return $this->hasMany('App\User')->withTimeStamps();
+    }
     
 }
