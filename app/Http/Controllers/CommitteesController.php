@@ -31,6 +31,7 @@ class CommitteesController extends Controller
     public function overzicht(){
          $data = [
             'pageSection' => PageSection::where('id', 5)->first(),
+            'committees' => Committee::all(),
             ];
 
         return view('pages.commissies', compact('data'));

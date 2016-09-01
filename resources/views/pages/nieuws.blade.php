@@ -19,7 +19,7 @@
 				
 				
 					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
-						<a href="#{{ $nieuwsmessage->id }}" >
+						<a href="nieuws/{{ $nieuwsmessage->id }}" >
 							<div class="card type-1 background-secondary">
 								<div class="top background-primary">
 									<span >{{ $nieuwsmessage->publish_date->formatLocalized(' %d %B %Y') }}  </span>

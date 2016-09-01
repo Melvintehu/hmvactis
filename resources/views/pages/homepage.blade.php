@@ -31,7 +31,7 @@
 
 				<div class="row">
 					
-					<a href="#{{ $nieuwsmessage->id }}" >
+					<a href="nieuws/{{ $nieuwsmessage->id }}" >
 
 						<div class="card type-1 background-secondary">
 
@@ -118,7 +118,7 @@
 
 					@foreach($data['events'] as $event)
 
-						<a class="btn-round block space-outside-sm" href="#" > 
+						<a class="btn-round block space-outside-sm" href="activiteit/{{ $event->id }}" > 
 						
 							<span class="circle circle-sm bg-main inline-block text-color-light "> > </span>  
 
@@ -289,18 +289,24 @@
 
 			<h1 class="space-outside-down-lg"> PARTNERS </h1>
 				
-			<div class="slider1 ">
+			<div class='col-lg-3'>
+				<h2>Hoofdpartner(s)</h2>
+					@foreach($data['hoofdpartners'] as $hoofdpartner)
+						<p> {{ $hoofdpartner->name }} </p>
+				  		<a href='http://{{ $hoofdpartner->website }}'>LINK</a>
+					@endforeach
+			</div>
 
-			  	<div class="slide"><img src="http://placehold.it/350x150&text=FooBar1"></div>
-
-			  	<div class="slide"><img src="http://placehold.it/350x150&text=FooBar2"></div>
-
-			  	<div class="slide"><img src="http://placehold.it/350x150&text=FooBar3"></div>
-
-			  	<div class="slide"><img src="http://placehold.it/350x150&text=FooBar4"></div>
-
-			  	<div class="slide "><img src="http://placehold.it/350x150&text=FooBar5"></div>
-
+			<div class="col-lg-9">
+				<h2>Overige partners</h2>
+				<div class="slider1 ">
+					@foreach($data['partners'] as $partner)
+				  	<div class="slide">
+				  		<p> {{ $partner->name }} </p>
+				  		<a href='http://{{ $partner->website }}'><img src="http://placehold.it/350x150&text=FooBar1"></a>
+				  	</div>
+				  	@endforeach
+				</div>
 			</div>
 
 			<div class="col-lg-12 text-center">

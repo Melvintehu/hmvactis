@@ -19,7 +19,7 @@ Wanneer dit waar is komt ereen active class. Ook URL:: is een goede helper ivm h
 <li class="{{ active_class(if_route(['partners']) || if_uri(['partners'])) }} dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PARTNERS <span class="caret"></span></a>
 		          <ul class="dropdown-menu">
-		            <li><a href="partners">Partners van hmvactis</a></li>
+		            <li><a href="../partners">Partners van hmvactis</a></li>
 		          	<li><a href="kortingen">Kortingen van onze partners</a></li>
 
 		          </ul>
