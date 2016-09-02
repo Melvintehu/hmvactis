@@ -77,11 +77,7 @@
 
 				</table>
 
-				<div class="col-lg-12 text-center space-outside-up-md space-outside-down-md">
-						
-					<a class="btn-standard  bg-main text-color-light" href="#gegevens-aanpassen">Gegevens aanpassen</a>
-
-				</div>
+			
 
 			</div>
 
@@ -96,7 +92,7 @@
 				
 				<p class="text-color-dark block space-outside-down-sm  font-md"> Zou je een functie binnen HMV Actis willen bekleden? Meld je dan nu aan! </p>
 
-				<a class="btn-standard bg-main text-color-light space-outside-down-lg space-outside-up-sm" href="#">Aanmelden</a>
+				<a class="btn-standard bg-main text-color-light space-outside-down-lg space-outside-up-sm" href="/contact">Klik hier voor het contactformulier</a>
 
 			</div>
 
@@ -106,7 +102,9 @@
 				<h2 class="space-outside-down-sm space-outside-up-md xs-text-center sm-text-center">Geplande activiteiten</h2>
 
 				<table class="table ">
-
+					@if($data['events']->isEmpty())
+						<p class="font-xs"> Je hebt je nog niet ingeschreven voor een activiteit. </p>
+					@endif
 					@foreach($data['events'] as $event)
 
 						<tr>
@@ -119,11 +117,13 @@
 
 							<td>
 
-								{!! Form::open() !!}
+								 {!! Form::open(['method' => 'post', 'action' => [                             'EventsController@uitschrijven',  $event->id ]  ]) !!}
+									<button class="btn-standard hover-secondary bg-main text-color-light " href="">Uitschrijven</button>
+                                                                    
+								{!! Form::close() !!}
 									
-									<a class="btn-standard hover-secondary bg-main text-color-light " href="">Uitschrijven</a>
 
-								{!! Form::open() !!}
+								
 
 							</td>
 
@@ -135,7 +135,7 @@
 
 			</div>
 
-			<div class="col-lg-12 space-outside-up-md space-outside-down-lg">
+			<!-- <div class="col-lg-12 space-outside-up-md space-outside-down-lg">
 				
 				<h2 class="space-outside-down-sm xs-text-center sm-text-center">Afgelopen activiteiten</h2>
 
@@ -153,7 +153,7 @@
 
 				</table>
 
-			</div>
+			</div> -->
 
 		</div>
 

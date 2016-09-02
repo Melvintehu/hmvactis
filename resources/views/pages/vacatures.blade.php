@@ -13,9 +13,14 @@
 
 	<div class="container ">
 		
-		<h1 class="page-title"> VACATURES </h1>
+		<div class="row">
 			
-		@include('partials.page-introduction', $data['pageSection']) 
+			<h1 class="space-outside-lg xs-text-center"> VACATURES </h1>
+
+			@include('partials.page-introduction', $data['pageSection']) 
+
+		</div>
+			
 
 		<div class="row row-centered text-white">
 			@foreach($data['vacancies'] as $vacancie )
