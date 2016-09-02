@@ -161,11 +161,11 @@ class EventsController extends Controller
         
         $name = time() . $file->getClientOriginalName();
 
-        $file->move('activiteiten/photos', $name);
+        $file->move('application-photos/activiteiten/photos', $name);
            
         // create a new photo    
 
-        $photo = Photo::create(['path' => "/activiteiten/photos/{$name}"]);
+        $photo = Photo::create(['path' => "application-photos/activiteiten/photos/{$name}"]);
         
         $event->photos()->attach($photo->id, ['type' => 'original']);
         return 'done';
