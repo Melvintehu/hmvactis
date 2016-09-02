@@ -172,4 +172,14 @@ class EventsController extends Controller
     }
 
 
+    public function uitschrijven($id)
+    {
+        $user = Auth::user();
+
+
+        $user->events()->detach($id);
+
+        return redirect('/profiel');
+    }
+
 }

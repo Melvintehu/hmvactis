@@ -43,7 +43,7 @@
 
 							<div class="image">
 
-								<img class="img-responsive" src="../images/imagetest2.png">
+								<img class="img-responsive" src="{{$nieuwsmessage->photos->first()['path']}}">
 
 							</div>
 
@@ -303,7 +303,7 @@
 					@foreach($data['partners'] as $partner)
 				  	<div class="slide">
 				  		<p> {{ $partner->name }} </p>
-				  		<a href='http://{{ $partner->website }}'><img src="http://placehold.it/350x150&text=FooBar1"></a>
+				  		<a class="block" style="width:350px; height:150px;" href='http://{{ $partner->website }}'><img class="width-auto" src="{{$partner->photos->first()['path']}}"></a>
 				  	</div>
 				  	@endforeach
 				</div>

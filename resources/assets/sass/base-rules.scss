@@ -21,6 +21,10 @@ $circle-dist-xl: 225px;
 	
 /* all screens */	
 
+.reset-padding{
+	padding: 0px;
+}
+
 .padding-xl{ padding: $dist-xl; }
 .padding-lg{ padding: $dist-lg; }
 .padding-md{ padding: $dist-md; }
