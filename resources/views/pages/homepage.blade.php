@@ -100,22 +100,6 @@
 					
 					<h1 class="uppercase text-center text-color-light space-outside-down-md "> Agenda </h1>
 
-					<a class="btn-round block space-outside-sm" href="#" > 
-							
-						<span class="circle circle-sm bg-main inline-block text-color-light "> > </span> 
-
-						<span class="text-color-light"> {{ 13 }}  </span> <p class="text-color-light">- test </p>
-
-					</a>
-
-					<a class="btn-round block space-outside-sm" href="#" > 
-							
-						<span class="circle circle-sm bg-main inline-block text-color-light "> > </span> 
-
-						<span class="text-color-light"> {{ 13 }}  </span> <p class="text-color-light">- test </p>
-
-					</a>
-
 					@foreach($data['events'] as $event)
 
 						<a class="btn-round block space-outside-sm" href="activiteit/{{ $event->id }}" > 
@@ -290,11 +274,15 @@
 			<h1 class="space-outside-down-lg"> PARTNERS </h1>
 				
 			<div class='col-lg-3'>
-				<h2>Hoofdpartner(s)</h2>
+				<h2>Hoofdpartner</h2>
+				<div class="slider2 ">
 					@foreach($data['hoofdpartners'] as $hoofdpartner)
-						<p> {{ $hoofdpartner->name }} </p>
-				  		<a href='http://{{ $hoofdpartner->website }}'>LINK</a>
+						<div class="slide">
+				  		<p class="space-outside-sm"> {{ $hoofdpartner->name }} </p>
+				  		<a href='http://{{ $hoofdpartner->website }}'><img src="http://placehold.it/350x150&text=FooBar1"></a>
+				  	</div>
 					@endforeach
+				</div>
 			</div>
 
 			<div class="col-lg-9">
@@ -302,7 +290,7 @@
 				<div class="slider1 ">
 					@foreach($data['partners'] as $partner)
 				  	<div class="slide">
-				  		<p> {{ $partner->name }} </p>
+				  		<p class="space-outside-sm"> {{ $partner->name }} </p>
 				  		<a href='http://{{ $partner->website }}'><img src="http://placehold.it/350x150&text=FooBar1"></a>
 				  	</div>
 				  	@endforeach

@@ -36,7 +36,7 @@
 		<div class="page">
 			<div class="text">
 				<p>
-					{{ $data['nieuws']->description }}
+					{!! nl2br($data['nieuws']->description) !!}
 
 				</p>
 			</div>
