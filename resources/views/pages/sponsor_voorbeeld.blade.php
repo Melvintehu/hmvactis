@@ -63,7 +63,7 @@
 			
 			<div class="col-lg-7 col-xs-12 space-outside-down-lg xs-text-center">
 				
-				<p class="xs-space-inside-right-md-none xs-padding-sm space-inside-right-md"> <?php echo nl2br($data['sponsor']->description) ?> </p>
+				<p class="space-outside-md xs-space-inside-right-md-none xs-padding-sm space-inside-right-md"> {!! nl2br($data['sponsor']->description) !!} </p>
 
 			</div>
 
