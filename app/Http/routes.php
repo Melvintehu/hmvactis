@@ -81,13 +81,17 @@ Route::group(['prefix' => 'cms'], function () {
    // pagina routes
     Route::get('/', 'PagesController@homepage');
     Route::get('/commissies', 'CommitteesController@overzicht');
+    Route::get('/commissies/{id}', 'PagesController@showCommissie');
     Route::get('/activiteiten', 'EventsController@overzicht');
     Route::get('/kortingen', 'SponsorDiscountsController@overzicht');
     Route::get('/lustrum', 'EventsController@lustrumOverzicht');
     Route::get('/over-ons', 'PagesController@overOns');
     Route::get('/partners', 'SponsorsController@overzicht');
+    Route::get('/partners/{id}', 'PagesController@showSponsor');
     Route::get('/vacatures', 'VacanciesController@overzicht');
+    Route::get('/vacatures/{id}', 'PagesController@showVacature');
     Route::get('/nieuws', 'NewsController@overzicht');
+    Route::get('/nieuws/{id}', 'PagesController@showNieuws'); 
     Route::get('/contact', 'PagesController@contact');
     Route::get('/activiteit/{id}', 'PagesController@showActiviteit'); 
 
@@ -108,6 +112,7 @@ Route::group(['prefix' => 'cms'], function () {
 
 
     Route::get('/home', 'HomeController@index');
+
 
  
 
