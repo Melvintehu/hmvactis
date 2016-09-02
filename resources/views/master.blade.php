@@ -53,10 +53,18 @@ use App\Profile;
          </script>
         <script type="text/javascript">
           $('.slider1').bxSlider({
-            slideWidth: 300,
+            slideWidth: 275,
             minSlides: 2,
             maxSlides: 3,
             slideMargin: 10
+          });
+
+          $('.slider2').bxSlider({
+            slideWidth: 275,
+            minSlides: 2,
+            maxSlides: 3,
+            slideMargin: 10,
+            pager: false
           });
 
      </script>

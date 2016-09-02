@@ -18,7 +18,7 @@
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="text">
 								<p>
-								{{ $data['vacature']->details }}
+								{!! nl2br($data['vacature']->details) !!}
 								</p>
 							</div>
 						</div>
@@ -38,7 +38,7 @@
 		<div class="page">
 			<div class="text">
 				<p>
-					{{ $data['vacature']->description }}
+					{!! nl2br($data['vacature']->description) !!}
 
 				</p>
 			</div>

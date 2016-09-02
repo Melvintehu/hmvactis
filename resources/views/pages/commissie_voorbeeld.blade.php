@@ -22,7 +22,7 @@
 	<div class="section background-primary text-white">
 		<div class="container">
 			<p class="text">  
-				{{  $data['committee']->description }}
+				{!! nl2br($data['committee']->description) !!}
 			</p>
 		</div>
 	</div>
