@@ -25,7 +25,11 @@
 									<span >{{ $nieuwsmessage->publish_date->formatLocalized(' %d %B %Y') }}  </span>
 								</div>
 								<div class="image">
-									<img class="img-responsive" src="{{$nieuwsmessage->photos->first()['path']}}">
+									@if($nieuwsmessage->photos->first()['path'] != null)	
+										<img class="img-responsive" src="{{$nieuwsmessage->photos->first()['path']}}">
+									@else
+										<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+									@endif
 								</div>
 								<div class="information background-primary">
 									<h4> {{ $nieuwsmessage->title }} </h4>

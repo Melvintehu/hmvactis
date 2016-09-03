@@ -97,13 +97,17 @@
 						<div class="top background-primary">
 							
 						</div>
-						<div class="information ">
+						<div class="information text-center">
 							<h3> {{ $boardMember->name }} </h3>
 							<h5> {{ $boardMember->role }} </h5>
 							<h5> {{ $boardMember->study }} </h5>
 						</div>
 						<div class="image round">
-							<img class="img-responsive" src="{{$boardMember->photos->first()['path']}}">
+							@if($boardMember->photos->first()['path'] != null)	
+								<img class="img-responsive" src="{{$boardMember->photos->first()['path']}}">
+							@else
+								<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+							@endif
 						</div>
 						<div style="clear:both;"></div>
 					</div>
@@ -142,7 +146,11 @@
 
 							<div class="image">
 
-								<img class="img-responsive" src="{{$nieuwsmessage->photos->first()['path']}}">
+								@if($nieuwsmessage->photos->first()['path'] != null)	
+									<img class="img-responsive" src="{{$nieuwsmessage->photos->first()['path']}}">
+								@else
+									<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+								@endif
 
 							</div>
 

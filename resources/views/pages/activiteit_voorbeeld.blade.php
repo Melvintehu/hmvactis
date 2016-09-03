@@ -72,7 +72,12 @@
 
 					<div class="image xs-space-inside-sides-lg"> 
 
-						<img src="../{{$data['activiteit']->photos->first()['path']}}">
+						@if($data['activiteit']->photos->first()['path'] != null)	
+									<img class="" src="../{{$data['activiteit']->photos->first()['path']}}">
+								@else
+									<img class="" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+								@endif
+
 
 					</div>
 

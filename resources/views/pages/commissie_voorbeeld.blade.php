@@ -10,13 +10,15 @@
 	
 	<div class="container">
 		<div class="page">
-			<div class="col-lg-3">	
-				<div class="image round background-accent">
-					<img class="img-responsive icon" src="../images/{{ $data['committee']->name }}-icon.png">
+			<div class='row'>
+				<div class="col-lg-2 space-outside-md">	
+					<div class="space-inside-md space-inside-sides-md image round background-accent">
+						<img class="img-responsive" src="../images/{{ $data['committee']->name }}-icon.png">
+					</div>
 				</div>
-			</div>
-			<div class="col-lg-9">
-				<h1 class="page-title"> {{ $data['committee']->name }} </h1>
+				<div class="col-lg-10 space-outside-md">
+					<h1 class="page-title"> {{ $data['committee']->name }} </h1>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -37,15 +39,22 @@
 					<div class="top background-primary">
 						<span >30 maart 2016  </span>
 					</div>
-					<div class="information ">
+					<div class="information text-center">
 						<h3>{{ $committeemember->name }}</h3>
 						<h5>{{ $committeemember->role }}</h5>
 						<h5>{{ $committeemember->study }}</h5>
 					</div>
+					@if($committeemember->photos->first()['path'] != null)
 					<div class="image round">
 						<img class="img-responsive" src="../{{$committeemember->photos->first()['path']}}">
 					</div>
 					<div style="clear:both;"></div>
+					@else
+					<div class="image round">
+						<img class="img-responsive" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+					</div>
+					<div style="clear:both;"></div>
+					@endif
 				</div>
 			</div>
 		@endforeach
