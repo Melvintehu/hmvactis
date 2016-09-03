@@ -30,8 +30,10 @@ class Event extends Model
     }
 
 
+ 
+
     public function users(){
-        return $this->hasMany('App\User')->withTimeStamps();
-    }
+        return $this->belongsToMany('App\User')->withTimeStamps();      
+    }  
     
 }
