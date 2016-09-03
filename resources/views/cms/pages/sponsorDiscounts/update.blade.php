@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <h1>Partner kortingen toevoegen </h1>
+    <h1>Partner kortingen aanpassen </h1>
     <hr>
 
     <div class="row">

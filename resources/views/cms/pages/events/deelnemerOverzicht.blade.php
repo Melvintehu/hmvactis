@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <h1>Deelnemer Overzicht </h1>
+    <h1>Deelnemersoverzicht voor {{ $data['event']->title }} op {{ $data['event']->date }}</h1>
     <hr>
 
     <div class="row">
@@ -11,7 +11,7 @@
             <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default">
-                           
+                           <a href="../../events">Ga terug</a>
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -19,22 +19,20 @@
                                             <table class="table table-hover">
                                                 <thead>
                                                     <tr>
-                                                        <th>#</th>
-                                                        <th>Titel</th>
-                                                        <th>Locatie</th>
-                                                        <th>Datum</th>
-                                                        <th>Beschrijving</th>
-                                                        <th>Lustrum activiteit</th>
-                                                        <th>Tijdstip</th>
-                                                        <th style='color:red'> X </th>
+                                                        <th> # </th>
+                                                        <th>Naam</th>
+                                                        
                                                     </tr>
                                                 </thead>
                                                 <tbody>
 
+                                                <?php $i = 1; ?>
                                                     @foreach($data['event']->users as $user)
                                                     <tr>
+                                                         <td>{{ $i }}</td>
                                                          <td> {{ $user->name }} </td>
                                                         
+                                                        <?php $i++; ?>
                                                     </tr>
                                                     @endForeach
                                                 </tbody>

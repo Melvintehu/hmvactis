@@ -48,10 +48,10 @@ Wanneer dit waar is komt ereen active class. Ook URL:: is een goede helper ivm h
 
 
 
-	<li class="{{ active_class(if_route(['logout']) || if_uri(['logout'])) }}"><a href="{{ URL::to('logout') }}">LOGOUT</a></li>
+	<li class="{{ active_class(if_route(['logout']) || if_uri(['logout'])) }}"><a href="{{ URL::to('logout') }}">UITLOGGEN</a></li>
 @else
 
-	<li class="{{ active_class(if_route(['login']) || if_uri(['login'])) }}"><a href="{{ URL::to('login') }}">LOGIN</a></li>
+	<li class="{{ active_class(if_route(['login']) || if_uri(['login'])) }}"><a href="{{ URL::to('login') }}">INLOGGEN</a></li>
 
 @endif
 

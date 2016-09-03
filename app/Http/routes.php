@@ -14,9 +14,10 @@
 */
 
 // cms routes
+Route::auth();
 
-Route::group(['prefix' => 'cms'], function () {
-
+Route::group(['prefix' => 'cms'],  function () {
+    Route::group(['middleware' => ['auth']], function(){
     
     Route::get('/', function(){
         return view('cms.cms');
@@ -50,13 +51,13 @@ Route::group(['prefix' => 'cms'], function () {
 
     // get routes
     Route::get('/event/{id}/deelnemers', 'EventsController@displayDeelnemers');
-
+    });
 });
 
 
 
 
-    Route::auth();
+    
 
     Route::group(['middleware' => ['auth']], function(){
 
