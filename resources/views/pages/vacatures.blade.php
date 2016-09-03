@@ -31,7 +31,11 @@
 					
 					</div>
 					<div class="image">
-						<img class="img-responsive" src="{{$vacancie->photos->first()['path']}}">
+						@if($vacancie->photos->first()['path'] != null)	
+									<img class="" src="{{$vacancie->photos->first()['path']}}">
+								@else
+									<img class="" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+								@endif
 					</div>
 
 					<div class="information">

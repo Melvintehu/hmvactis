@@ -72,8 +72,11 @@
 
 					<div class="image lg-rect-lg xs-space-inside-sides-lg"> 
 
-
-						<img class="responsive-image height-auto" src="../{{$data['activiteit']->photos->first()['path']}}">
+						@if($data['activiteit']->photos->first()['path'] != null)	
+									<img class="responsive-image height-auto" src="../{{$data['activiteit']->photos->first()['path']}}">
+								@else
+									<img class="responsive-image height-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+								@endif
 
 
 					</div>

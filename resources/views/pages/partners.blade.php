@@ -86,8 +86,12 @@
 								<div class="top background-primary"></div>
 
 								<div class="image">
-
-									<img src="{{$partner->photos->first()['path']}}">
+									@if($partner->photos->first()['path'] != null)
+							  			<img class="" src="{{$partner->photos->first()['path']}}">
+							  		@else
+							  			<img class="" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+							  		@endif
+									
 
 								</div>
 
