@@ -17,21 +17,23 @@
 			<div class="row row-centered text-white">
 				@foreach($data['kortingen'] as $korting)
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-					<div class="card type-1 background-primary">
-						<div class="top background-accent"> 
-						
-						</div>
-						<div class="image">
-							<img class="img-responsive" src="../images/imagetest2.png">
-						</div>
-
-						<div class="information">
-							<h4> {{ $korting->sponsor->name }}</h4>
-							<p> {{ $korting->description }} </p>
+					<a href='/kortingen/{{ $korting->id }}'>
+						<div class="card type-1 background-primary">
+							<div class="top background-accent"> 
 							
+							</div>
+							<div class="image">
+								<img class="img-responsive" src="{{$korting->photos->first()['path']}}">
+							</div>
 
+							<div class="information">
+								<h4> {{ $korting->sponsor->name }}</h4>
+								<p> {{ $korting->description }} </p>
+								
+
+							</div>
 						</div>
-					</div>
+					</a>
 				</div>		
 				@endforeach
 			</div>				

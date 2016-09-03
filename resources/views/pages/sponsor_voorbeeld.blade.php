@@ -43,7 +43,8 @@
 
 					<div class="image lg-rect-lg xs-space-inside-sides-lg"> 
 
-						<img class="responsive-image height-autox" src="../images/nieuwstest.png">
+						<img src="../{{$data['sponsor']->photos->first()['path']}}">
+
 
 					</div>
 
