@@ -55,7 +55,7 @@
 
 		<div class="verdeler"></div>
 
-		<a href='commissies' class="link"> Ga terug <span class="background-secondary round"> > </span> </a>
+		<a href='../commissies' class="link"> Ga terug <span class="background-secondary round"> > </span> </a>
 
 	</div>
 
