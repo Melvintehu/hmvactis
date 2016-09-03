@@ -120,11 +120,11 @@ class CommitteeMembersController extends Controller
         
         $name = time() . $file->getClientOriginalName();
 
-        $file->move('commissie_leden/photos', $name);
+        $file->move('application-photos/commissie_leden/photos', $name);
            
         // create a new photo    
 
-        $photo = Photo::create(['path' => "/commissie_leden/photos/{$name}"]);
+        $photo = Photo::create(['path' => "application-photos/commissie_leden/photos/{$name}"]);
         
         $committeeMember->photos()->attach($photo->id, ['type' => 'original']);
         return 'done';

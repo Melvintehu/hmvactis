@@ -279,7 +279,7 @@
 					@foreach($data['hoofdpartners'] as $hoofdpartner)
 						<div class="slide">
 				  		<p class="space-outside-sm"> {{ $hoofdpartner->name }} </p>
-				  		<a href='http://{{ $hoofdpartner->website }}'><img src="http://placehold.it/350x150&text=FooBar1"></a>
+				  		<a href='http://{{ $hoofdpartner->website }}'><img src="{{$hoofdpartner->photos->first()['path']}}"></a>
 				  	</div>
 					@endforeach
 				</div>

@@ -38,7 +38,7 @@
 
 							<div class="image ">
 
-								<img class="responsive-image height-auto" src="../images/imagetest2.png">
+								<img class="responsive-image height-auto" src="{{$event->photos->first()['path']}}">
 
 							</div>
 

@@ -40,7 +40,7 @@ Route::group(['prefix' => 'cms'], function () {
     // photo upload routes
     Route::post('/news/{id}/photos', 'NewsController@addPhoto');
     Route::post('/event/{id}/photos', 'EventsController@addPhoto');
-    Route::post('/committeeMember/{id}/photos', 'EventsController@addPhoto');
+    Route::post('/committeeMember/{id}/photos', 'CommitteeMembersController@addPhoto');
     Route::post('/sponsor/{id}/photos', 'SponsorsController@addPhoto');
     Route::post('/sponsorDiscount/{id}/photos', 'SponsorDiscountsController@addPhoto');
     Route::post('/pageSection/{id}/photos', 'PageSectionsController@addPhoto');
@@ -88,6 +88,7 @@ Route::group(['prefix' => 'cms'], function () {
     Route::get('/commissies/{id}', 'PagesController@showCommissie');
     Route::get('/activiteiten', 'EventsController@overzicht');
     Route::get('/kortingen', 'SponsorDiscountsController@overzicht');
+    Route::get('/kortingen/{id}', 'PagesController@showKorting');
     Route::get('/lustrum', 'EventsController@lustrumOverzicht');
     Route::get('/over-ons', 'PagesController@overOns');
     Route::get('/partners', 'SponsorsController@overzicht');
