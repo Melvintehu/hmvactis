@@ -23,7 +23,12 @@
 		</div>
 
 	</div>
-
-
-
+@if (Auth::check())
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 space-inside-down-sm text-right">
+		<p><strong>Ingelogd als: </strong>{{ Auth::user()->name }}</p>
+		@if($profiel->isEmpty())<br/>
+			<a href='lid-worden'>Word lid!</a>
+		@endif
+	</div>
+@endif
 </div>
