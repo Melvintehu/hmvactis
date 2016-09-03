@@ -30,7 +30,7 @@
 
                                                    {!! Form::model($committeeMember, ['method' => 'PUT', 'action' => [ 'CommitteeMembersController@update', $committeeMember->id ]]) !!}
 
-                                                        @include('cms.pages.committeeMembers.partials.form', ['submitButtonText' => 'Toevoegen' , 'committees' => $committees])
+                                                        @include('cms.pages.committeeMembers.partials.form', ['submitButtonText' => 'Aanpassen' ])
 
                                                     {!! Form::close() !!}
 

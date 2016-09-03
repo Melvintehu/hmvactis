@@ -36,18 +36,18 @@
 						
 						<div style="padding:0;" class="col-lg-4 col-md-4 ">
 
-							<div class="image ">
+							<div class="image lg-rect-lg">
 								@if($event->photos->first()['path'] != null)	
-									<img class="img-responsive" src="{{$event->photos->first()['path']}}">
+									<img class="responsive-image height-auto" src="{{$event->photos->first()['path']}}">
 								@else
-									<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+									<img class="responsive-image height-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
 								@endif
 
 							</div>
 
 						</div>
 
-						<div class="col-lg-8 col-md-8  lg-space-inside-left-sm xs-space-outside-up-sm sm-space-outside-up-md md-space-outside-up-md    text-left">
+						<div class="col-lg-8 col-md-8  lg-space-inside-left-sm xs-space-outside-up-sm sm-space-outside-up-md     text-left">
 							
 							<div class="row  space-inside-sides-md space-inside-xs">
 								

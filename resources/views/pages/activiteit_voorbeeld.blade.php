@@ -70,12 +70,12 @@
 
 				<div style="padding:0;" class="col-lg-5 col-md-4 col-sm-12 col-xs-12">
 
-					<div class="image xs-space-inside-sides-lg"> 
+					<div class="image lg-rect-lg xs-space-inside-sides-lg"> 
 
 						@if($data['activiteit']->photos->first()['path'] != null)	
-									<img class="" src="../{{$data['activiteit']->photos->first()['path']}}">
+									<img class="responsive-image height-auto" src="../{{$data['activiteit']->photos->first()['path']}}">
 								@else
-									<img class="" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+									<img class="responsive-image height-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
 								@endif
 
 

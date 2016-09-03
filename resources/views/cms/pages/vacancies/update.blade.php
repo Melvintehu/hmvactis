@@ -50,13 +50,18 @@
                                         <table class="table table-hover">
                                             
                                             <tbody>
+
                                              @foreach($vacancie->photos as $photo)
+
                                                 <td>
 
                                                    <div id='newsPhoto' class="col-lg-3">    <img style="width:100%" src="{{ $photo->path }}"> </div>
 
+
                                                 </td>
+                                                
                                              @endforeach
+
 
                                             </tbody>
 
