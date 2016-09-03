@@ -25,7 +25,7 @@
 									<span >{{ $nieuwsmessage->publish_date->formatLocalized(' %d %B %Y') }}  </span>
 								</div>
 								<div class="image">
-									<img class="img-responsive" src="{{$nieuwsmessage->photos->first()['path']}}">
+									<img class="img-responsive" src="../images/imagetest2.png">
 								</div>
 								<div class="information background-primary">
 									<h4> {{ $nieuwsmessage->title }} </h4>

@@ -43,7 +43,7 @@
 
 					<div class="image xs-space-inside-sides-lg"> 
 
-						<img src="../{{$data['sponsor']->photos->first()['path']}}">
+						<img src="../images/nieuwstest.png">
 
 					</div>
 

@@ -10,7 +10,6 @@ use App\Event;
 use App\Board;
 use App\Vacancie;
 use App\Committee;
-use App\CommitteeMember;
 use App\Sponsor;
 use Carbon\Carbon;
 use App\PageSection;
@@ -123,7 +122,6 @@ class PagesController extends Controller
         $data = [
 
             'committee' => Committee::find($id),
-            'committeemembers' => CommitteeMember::where('committee_id', $id)->get(),
 
         ];
 

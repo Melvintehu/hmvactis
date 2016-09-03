@@ -31,7 +31,7 @@
 					
 					</div>
 					<div class="image">
-						<img class="img-responsive" src="{{$vacancie->photos->first()['path']}}">
+						<img class="img-responsive" src="../images/imagetest2.png">
 					</div>
 
 					<div class="information">

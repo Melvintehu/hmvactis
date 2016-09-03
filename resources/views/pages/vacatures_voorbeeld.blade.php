@@ -26,7 +26,7 @@
 
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 						<div class="image"> 
-							<img src="../{{$data['vacature']->photos->first()['path']}}">
+							<img src="../images/nieuwstest.png">
 						</div>
 					</div>
 			</div>
