@@ -36,6 +36,7 @@ Route::group(['prefix' => 'cms'], function () {
     Route::resource('committeeMembers', 'CommitteeMembersController');
     Route::resource('vacancies', 'VacanciesController');
     Route::resource('profile', 'ProfilesController');
+    Route::resource('user', 'UserController');
 
     // photo upload routes
     Route::post('/news/{id}/photos', 'NewsController@addPhoto');
