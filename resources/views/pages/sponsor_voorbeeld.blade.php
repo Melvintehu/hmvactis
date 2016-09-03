@@ -43,7 +43,11 @@
 
 					<div class="image lg-rect-lg xs-space-inside-sides-lg"> 
 
-						<img src="../{{$data['sponsor']->photos->first()['path']}}">
+						@if($data['sponsor']->photos->first()['path'] != null)
+							  			<img class="" src="{{$data['sponsor']->photos->first()['path']}}">
+							  		@else
+							  			<img class="" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+							  		@endif
 
 
 					</div>

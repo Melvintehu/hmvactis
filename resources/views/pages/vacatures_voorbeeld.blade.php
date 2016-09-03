@@ -24,9 +24,13 @@
 						</div>
 					</div>
 
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-inside-down-lg">
 						<div class="image"> 
-							<img src="../{{$data['vacature']->photos->first()['path']}}">
+							@if($data['vacature']->photos->first()['path'] != null)	
+								<img class="" src="../{{$data['vacature']->photos->first()['path']}}">
+							@else
+								<img class="" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+							@endif
 						</div>
 					</div>
 			</div>

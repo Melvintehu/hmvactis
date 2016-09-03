@@ -23,7 +23,11 @@
 							
 							</div>
 							<div class="image">
-								<img class="img-responsive" src="{{$korting->photos->first()['path']}}">
+								@if($korting->photos->first()['path'] != null)	
+									<img class="" src="{{$korting->photos->first()['path']}}">
+								@else
+									<img class="" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+								@endif
 							</div>
 
 							<div class="information">

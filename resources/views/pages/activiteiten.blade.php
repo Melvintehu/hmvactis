@@ -30,15 +30,18 @@
 
 				<a href="activiteit/{{ $event->id }}">
 					
-				<div class="col-lg-12 ">
+				<div class="col-lg-12 space-outside-down-sm">
 
 					<div class="row">
 						
 						<div style="padding:0;" class="col-lg-4 col-md-4 ">
 
 							<div class="image lg-rect-lg">
-
-								<img class="responsive-image height-auto" src="{{$event->photos->first()['path']}}">
+								@if($event->photos->first()['path'] != null)	
+									<img class="responsive-image height-auto" src="{{$event->photos->first()['path']}}">
+								@else
+									<img class="responsive-image height-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+								@endif
 
 							</div>
 

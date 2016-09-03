@@ -42,8 +42,11 @@
 							</div>
 
 							<div class="image">
-
+							@if($nieuwsmessage->photos->first()['path'] != null)	
 								<img class="img-responsive" src="{{$nieuwsmessage->photos->first()['path']}}">
+							@else
+								<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+							@endif
 
 							</div>
 
@@ -279,7 +282,12 @@
 					@foreach($data['hoofdpartners'] as $hoofdpartner)
 						<div class="slide">
 				  		<p class="space-outside-sm"> {{ $hoofdpartner->name }} </p>
-				  		<a href='http://{{ $hoofdpartner->website }}'><img src="{{$hoofdpartner->photos->first()['path']}}"></a>
+				  		<a href='http://{{ $hoofdpartner->website }}'>
+				  		@if($hoofdpartner->photos->first()['path'] != null)	
+				  			<img src="{{$hoofdpartner->photos->first()['path']}}"></a>
+				  		@else
+				  			<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+				  		@endif
 				  	</div>
 					@endforeach
 				</div>
@@ -292,7 +300,14 @@
 				  	<div class="slide">
 
 				  		<p> {{ $partner->name }} </p>
-				  		<a class="block" style="width:350px; height:150px;" href='http://{{ $partner->website }}'><img class="width-auto" src="{{$partner->photos->first()['path']}}"></a>
+				  		<a class="block" style="width:350px; height:150px;" href='http://{{ $partner->website }}'>
+
+				  		@if($partner->photos->first()['path'] != null)
+				  			<img class="width-auto" src="{{$partner->photos->first()['path']}}">
+				  		@else
+				  			<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+				  		@endif
+				  		</a>
 
 				  	</div>
 				  	@endforeach
