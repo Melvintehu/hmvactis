@@ -11,6 +11,7 @@ use App\Board;
 use App\Vacancie;
 use App\Committee;
 use App\CommitteeMember;
+use App\SponsorDiscount;
 use App\Sponsor;
 use Carbon\Carbon;
 use App\PageSection;
@@ -154,6 +155,19 @@ class PagesController extends Controller
         ];
 
         return view('pages.vacatures_voorbeeld', compact('data'));
+
+    }
+
+    public function showKorting($id)
+    {
+
+        $data = [
+
+            'korting' => SponsorDiscount::find($id),
+
+        ];
+
+        return view('pages.kortingen_voorbeeld', compact('data'));
 
     }
 

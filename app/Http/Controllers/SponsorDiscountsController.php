@@ -128,11 +128,11 @@ class SponsorDiscountsController extends Controller
         
         $name = time() . $file->getClientOriginalName();
 
-        $file->move('kortingen/photos', $name);
+        $file->move('application-photos/kortingen/photos', $name);
            
         // create a new photo    
 
-        $photo = Photo::create(['path' => "/kortingen/photos/{$name}"]);
+        $photo = Photo::create(['path' => "application-photos/kortingen/photos/{$name}"]);
         
         $sponsorDiscount->photos()->attach($photo->id, ['type' => 'original']);
         return 'done';

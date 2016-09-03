@@ -103,7 +103,7 @@
 							<h5> {{ $boardMember->study }} </h5>
 						</div>
 						<div class="image round">
-							<img class="img-responsive" src="../images/fototest.jpg">
+							<img class="img-responsive" src="{{$boardMember->photos->first()['path']}}">
 						</div>
 						<div style="clear:both;"></div>
 					</div>
@@ -142,7 +142,7 @@
 
 							<div class="image">
 
-								<img class="img-responsive" src="../images/imagetest2.png">
+								<img class="img-responsive" src="{{$nieuwsmessage->photos->first()['path']}}">
 
 							</div>
 
