@@ -41,7 +41,7 @@
                                                             {!! Form::close() !!}  
                                                         </td>
                                                         <td >
-                                                            {!! Form::open(['method' => 'GET', 'action' => [                                'VacanciesController@show',  $vacancie->id ]  ]) !!}
+                                                            {!! Form::open(['method' => 'GET', 'action' => [                                'VacanciesController@edit',  $vacancie->id ]  ]) !!}
                                                                 @include('cms.pages.partials.update_form')      
                                                             {!! Form::close() !!}  
                                                         </td>

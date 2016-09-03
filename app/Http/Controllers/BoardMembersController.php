@@ -118,11 +118,11 @@ class BoardMembersController extends Controller
         
         $name = time() . $file->getClientOriginalName();
 
-        $file->move('bestuurs_leden/photos', $name);
+        $file->move('application-photos/bestuurs_leden/photos', $name);
            
         // create a new photo    
 
-        $photo = Photo::create(['path' => "/bestuurs_leden/photos/{$name}"]);
+        $photo = Photo::create(['path' => "application-photos/bestuurs_leden/photos/{$name}"]);
         
         $boardMember->photos()->attach($photo->id, ['type' => 'original']);
         return 'done';

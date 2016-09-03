@@ -43,7 +43,7 @@
 
 					<div class="image lg-rect-lg xs-space-inside-sides-lg"> 
 
-						<img class="responsive-image height-auto" src="../images/nieuwstest.png">
+						<img class="responsive-image height-autox" src="../images/nieuwstest.png">
 
 					</div>
 

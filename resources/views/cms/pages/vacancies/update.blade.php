@@ -51,11 +51,13 @@
                                             
                                             <tbody>
                                              
+                                                 @foreach($vacancie->photos as $photo)
                                                 <td>
 
-                                                   <!--  LEVERT FOUTMELDING <div id='newsPhoto' class="col-lg-3">    <img style="width:100%" src="{{ $photo->path }}"> </div> -->
+                                                    <div id='newsPhoto' class="col-lg-3">    <img style="width:100%" src="{{ $photo->path }}"> </div>
 
                                                 </td>
+                                                @endforeach
                                              
 
                                             </tbody>
