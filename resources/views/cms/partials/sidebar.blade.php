@@ -99,6 +99,12 @@
                 </ul>
             </li>
 
+            <li class="has-submenu "><a href="#"><i class="ion-person"></i> <span class="nav-label">Ingelogd als: {{ Auth::user()->name }}</span></a>
+                <ul class="list-styled">
+                    <li><a href="{{ URL::to('logout') }}"><i class="ion-power"></i> Uitloggen </a></li>
+                </ul>
+            </li>
+
         </ul>
     </nav>
 

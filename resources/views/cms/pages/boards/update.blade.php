@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <h1>Een bestuur toevoegen </h1>
+    <h1>Een bestuur aanpassen </h1>
     <hr>
 
     <div class="row">

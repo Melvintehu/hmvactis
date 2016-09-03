@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <h1>Pagina secties toevoegen </h1>
+    <h1>Pagina secties aanpassen </h1>
     <hr>
 
     <div class="row">
