@@ -34,7 +34,7 @@
 								
 								<div class="image">
 
-									<img class="img-responsive" src="../images/imagetest2.png">
+									<img class="img-responsive" src="{{$hoofdpartner->photos->first()['path']}}">
 
 								</div>
 								
@@ -87,7 +87,7 @@
 
 								<div class="image">
 
-									<img src="../images/nieuwstest.png">
+									<img src="{{$partner->photos->first()['path']}}">
 
 								</div>
 
