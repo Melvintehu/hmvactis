@@ -72,7 +72,7 @@
 
 					<div class="image xs-space-inside-sides-lg"> 
 
-						<img src="../images/nieuwstest.png">
+						<img src="../{{$data['activiteit']->photos->first()['path']}}">
 
 					</div>
 
