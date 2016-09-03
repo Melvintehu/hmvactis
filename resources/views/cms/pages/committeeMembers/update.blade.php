@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Commissielid toevoegen </h1>
+    <h1>Commissielid aanpassen </h1>
 
     <hr>
 
@@ -73,7 +73,7 @@
                                                    @foreach($committeeMember->photos as $photo)
                                                     <td>
 
-                                                        <div id='newsPhoto' class="col-lg-3">    <img style="width:100%" src="{{ $photo->path }}"> </div>
+                                                        <div id='newsPhoto' class="col-lg-3">    <img style="width:100%" src="/{{ $photo->path }}"> </div>
 
                                                     </td>
                                                     @endforeach

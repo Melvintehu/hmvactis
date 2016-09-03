@@ -78,10 +78,10 @@ class AuthController extends Controller
 
 
         if(isset($data['event_id'])){
-            dd('werkt niet');
+           
             $user->events()->attach($data['event_id']);
 
-            dd($user);
+         
         }
         //$employee->jobs()->attach($job_id, ['date_start' => date('Y-m-d H:i:s', time()) ]);
         return $user;

@@ -22,4 +22,7 @@ class Profile extends Model
     	'subscribed',
         'user_id'
     ];
+
+
+    
 }

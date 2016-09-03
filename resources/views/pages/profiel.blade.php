@@ -104,16 +104,31 @@
 				<table class="table ">
 					@if($data['events']->isEmpty())
 						<p class="font-xs"> Je hebt je nog niet ingeschreven voor een activiteit. </p>
-					@endif
+					@else
+
+						<tr> 
+
+							<td> Titel </td>
+
+							<td> Datum </td>
+
+							<td> Tijd </td>
+
+							<td> Locatie </td>
+
+						</tr>	
+
 					@foreach($data['events'] as $event)
 
 						<tr>
 
-							<td >{{ $event->title }}</td>
+							<td > {{ $event->title }}</td>
 
-							<td> {{ $event->date }} </td>
+							<td> {{ substr($event->date, 0,10) }} </td>
 
-							<td> {{ $event->time }}  {{ $event->location }}</td>
+							<td> {{ substr($event->time,0,5) }}   </td>
+
+							<td> {{ $event->location }} </td>
 
 							<td>
 
@@ -130,7 +145,7 @@
 						</tr>
 
 					@endforeach	
-
+					@endif
 				</table>
 
 			</div>
