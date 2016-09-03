@@ -182,4 +182,15 @@ class EventsController extends Controller
         return redirect('/profiel');
     }
 
+    public function displayDeelnemers($id)
+    {
+        $data = [
+            'event' => Event::find($id),
+
+        ];
+
+      
+        return view('cms.pages.events.deelnemerOverzicht', compact('data'));
+    }
+
 }

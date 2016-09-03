@@ -49,6 +49,11 @@
                                                                 @include('cms.pages.partials.update_form')      
                                                             {!! Form::close() !!}  
                                                         </td>
+                                                        <td >
+                                                            {!! Form::open(['method' => 'GET', 'action' => [                             'EventsController@displayDeelnemers',  $event->id ]  ]) !!}
+                                                                <input type="submit" class="btn btn-primary" value="Deelnemers bekijken">
+                                                            {!! Form::close() !!}  
+                                                        </td>
                                                     </tr>
                                                     @endForeach
                                                 </tbody>
