@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <h1> Commissies Overzicht </h1>
+    <h1> Commissieleden Overzicht </h1>
     <hr>
 
     <div class="row">
