@@ -82,10 +82,13 @@ class CommitteeMembersController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
         $committeeMember = CommitteeMember::findOrFail($id);
         $committeeMember->update($request->all());
+
         
-        return redirect();
+        return redirect('cms/committeeMembers');
     }
 
     /**

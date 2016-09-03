@@ -41,9 +41,10 @@
 
 				<div style="padding:0;" class="col-lg-5 col-md-4 col-sm-12 col-xs-12">
 
-					<div class="image xs-space-inside-sides-lg"> 
+					<div class="image lg-rect-lg xs-space-inside-sides-lg"> 
 
 						<img src="../{{$data['sponsor']->photos->first()['path']}}">
+
 
 					</div>
 

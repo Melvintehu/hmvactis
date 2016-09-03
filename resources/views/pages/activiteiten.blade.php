@@ -36,7 +36,7 @@
 						
 						<div style="padding:0;" class="col-lg-4 col-md-4 ">
 
-							<div class="image ">
+							<div class="image lg-rect-lg">
 
 								<img class="responsive-image height-auto" src="{{$event->photos->first()['path']}}">
 
@@ -44,7 +44,7 @@
 
 						</div>
 
-						<div class="col-lg-8 col-md-8  lg-space-inside-left-sm xs-space-outside-up-sm sm-space-outside-up-md md-space-outside-up-md    text-left">
+						<div class="col-lg-8 col-md-8  lg-space-inside-left-sm xs-space-outside-up-sm sm-space-outside-up-md     text-left">
 							
 							<div class="row  space-inside-sides-md space-inside-xs">
 								

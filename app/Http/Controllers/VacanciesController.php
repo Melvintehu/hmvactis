@@ -70,16 +70,7 @@ class VacanciesController extends Controller
      */
     public function show($id)
     {   
-        $vacancie = Vacancie::findOrFail($id);
-        $photo = $vacancie->photos->first();
-
-
-        // dd($photo->path);
-        //$image  = Image::make("vacatures/photos/1466980684Logo full width.png");
         
-        
-
-        return view('cms.pages.vacancies.update', compact('vacancie', 'photo'));
     }
 
     /**
@@ -90,7 +81,10 @@ class VacanciesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $vacancie = Vacancie::findOrFail($id);
+   
+
+        return view('cms.pages.vacancies.update', compact('vacancie'));
     }
 
     /**
@@ -138,11 +132,11 @@ class VacanciesController extends Controller
         
         $name = time() . $file->getClientOriginalName();
 
-        $file->move('vacatures/photos', $name);
+        $file->move('application-photos/vacatures/photos', $name);
            
         // create a new photo    
 
-        $photo = Photo::create(['path' => "/vacatures/photos/{$name}"]);
+        $photo = Photo::create(['path' => "application-photos/vacatures/photos/{$name}"]);
         
         $vacancie->photos()->attach($photo->id, ['type' => 'original']);
         return 'done';
