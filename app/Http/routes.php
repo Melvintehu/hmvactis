@@ -49,8 +49,7 @@ Route::group(['prefix' => 'cms'], function () {
     Route::post('/vacancie/{id}/photos', 'VacanciesController@addPhoto');
 
     // get routes
-    Route::post('/profiel/{id}', 'EventsController@uitschrijven');
-
+    Route::get('/event/{id}/deelnemers', 'EventsController@displayDeelnemers');
 
 });
 
@@ -77,6 +76,7 @@ Route::group(['prefix' => 'cms'], function () {
         Route::post('/inschrijven/{id}', 'EventsController@signUpUser');
 
         Route::get('/profiel', 'PagesController@profiel');
+        Route::post('/profiel/{id}', 'EventsController@uitschrijven');
   
 
     });
