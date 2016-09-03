@@ -28,4 +28,8 @@ class User extends Authenticatable
     public function events(){
         return $this->belongsToMany('App\Event');
     } 
+
+    public function profile(){
+        return $this->hasOne('App\Profile');
+    }
 }

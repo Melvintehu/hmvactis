@@ -87,8 +87,8 @@
 
             <li class="has-submenu "><a href="#"><i class="ion-person-stalker"></i> <span class="nav-label">Leden</span></a>
                 <ul class="list-styled">
-                    <li><a href="#overzicht"><i class="ion-grid"></i> Overzicht </a></li>
-                    <li><a href="#toevoegen"><i class="ion-person-add"></i> Toevoegen</a></li>
+                    <li><a href="{{ URL::to("cms/user") }}"><i class="ion-grid"></i> Overzicht </a></li>
+                    <li><a href="{{ URL::to("cms/user/create") }}"><i class="ion-person-add"></i> Toevoegen</a></li>
                 </ul>
             </li>
 
