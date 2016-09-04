@@ -53,12 +53,7 @@
                 </ul>
             </li>
 
-            <li class="has-submenu "><a href="#"><i class="ion-location"></i> <span
-                            class="nav-label">Contactgegevens</span></a>
-                <ul class="list-styled">
-                    <li><a href="{{ URL::to("cms/information") }}"><i class="ion-grid"></i> Overzicht</a></li>
-                </ul>
-            </li>
+            
             <li class="has-submenu "><a href="#"><i class="ion-earth"></i> <span class="nav-label">Nieuws</span></a>
                 <ul class="list-styled">
                     <li><a href="{{ URL::to("cms/news") }}"> <i class="ion-grid"></i> Overzicht </a></li>

@@ -2,20 +2,10 @@
 
 namespace App\Http\Controllers;
 
-
-
-
 use Auth;
 use App\Profile;
-
-
           
-                $profiel = Profile::where('user_id', '=', Auth::id())->get();
-
-  
-
-
-
+    $profiel = Profile::where('user_id', '=', Auth::id())->get();
 ?>
 
 
@@ -28,6 +18,7 @@ use App\Profile;
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="../css/app.css">
         <link rel="stylesheet" type="text/css" href="../css/jquery.bxslider.css">
+        
     </head>
     <body>
 
@@ -68,5 +59,13 @@ use App\Profile;
           });
 
      </script>
+
+        <script src="/js/imgcentering.js"></script>
+       <!--   <script type="text/javascript">
+        $(document).ready( function() {
+
+            $(".image img").imgCentering();
+        }); 
+        </script> -->
     </body>
 </html>

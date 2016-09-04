@@ -29,7 +29,7 @@
 
 							<div class="text xs-space-outside-down-lg sm-space-outside-down-lg">
 
-								<a href="http://{{ $data['sponsor']->website }}"><p class="text-color-light">Bezoek de website!</p></a>
+								<a href="http://{{ $data['sponsor']->website }}"><p class="text-color-light">Klik hier Bezoek de website!</p></a>
 
 							</div>
 
@@ -44,9 +44,9 @@
 					<div class="image lg-rect-lg xs-space-inside-sides-lg"> 
 
 						@if($data['sponsor']->photos->first()['path'] != null)
-							  			<img class="" src="{{$data['sponsor']->photos->first()['path']}}">
+							  			<img class="width-auto" src="/{{$data['sponsor']->photos->first()['path']}}">
 							  		@else
-							  			<img class="" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+							  			<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
 							  		@endif
 
 
@@ -62,11 +62,11 @@
 	</div>
 
 	<!-- Section inschrijven voor activiteit -->
-	<section class="container space-outside-down-lg">
+	<section class="container ">
 		
 		<div class="row">
 			
-			<div class="col-lg-7 col-xs-12 space-outside-down-lg xs-text-center">
+			<div class="col-lg-7 col-xs-12 space-inside-lg xs-text-center">
 				
 				<p class="space-outside-md xs-space-inside-right-md-none xs-padding-sm space-inside-right-md"> {!! nl2br($data['sponsor']->description) !!} </p>
 
@@ -77,7 +77,21 @@
 	</section>
 
 	
+	<div class="container-fluid bg-accent space-outside-down-lg space-inside-sides-xl">
+		
+		<div class="row ">
+			
+			<div class="col-lg-12 space-inside-lg text-center">
 
+				<p class="block space-outside-down-md">Bent u geïnteresseerd in het samenwerken met HMV Actis? <br>Neem gerust contact met ons op.</p>
+				
+				<a class="btn-standard bg-main text-color-light" href="/contact"> Contact opnemen </a>
+
+			</div>
+
+		</div>
+
+	</div>
 
 
 
