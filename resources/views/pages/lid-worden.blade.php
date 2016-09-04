@@ -14,8 +14,8 @@
 
 		<div class="row">
 
-			{!! Form::open(['method' => 'POST', 'action' => 'ProfilesController@store' ]) !!}
-
+			 <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+			 	 {{ csrf_field() }}
 			<div class="col-lg-12 text-center space-outside-down-sm space-outside-up-lg">
 				<h2>PERSOONSGEGEVENS</h2>
 			</div>		
@@ -96,13 +96,17 @@
 
 					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
 
-						{!! Form::text('email_address', null, ['class' => 'input border 
+						{!! Form::text('email', null, ['class' => 'input border 
 									  border-accent
 									  bg-accent 
 									  space-outside-xs']); !!} 
 
 					</div>
-
+					@if ($errors->has('email'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                            @endif
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
 						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
 							GEBOORTEDATUM
@@ -117,6 +121,38 @@
 									  space-outside-xs']); !!} 
 
 					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
+							WACHTWOORD
+						</p>
+					</div>
+
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+
+						{!! Form::password('password', ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
+
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
+							WACHTWOORD HERHALEN
+						</p>
+					</div>
+
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+
+						{!! Form::password('password_confirmation', ['class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
+
+					</div>
+				
+
+
 			</div>
 		</section>
 		
@@ -186,10 +222,21 @@
 				<div class="row">
 
 					<div class="col-lg-12 text-center space-outside-down-sm space-outside-up-lg">
+
 						<h2>BETALINGSGEGEVENS</h2>
+				
+						<p class="text-left space-outside-md font-xs">
+							
+							Hierbij geef ik HMV Actis toestemming om contributie van mijn giro-/bankrekening af te schrijven. Dit betreft een gratis lidmaatschap voor het schooljaar 2016 – 2017 (alleen geldig bij inschrijvingen vóór 19/09/2016). Vervolgens wordt het lidmaatschap automatisch verlengd en zal er jaarlijks contributie van €12,- worden afgeschreven. Wederopzegging dient binnen twee maanden voor de start van het nieuwe collegejaar, 31 augustus 2017, ingediend te worden. 
+							<br><br>
+							<span class="bold">Let op: </span> je wordt niet automatisch uitgeschreven als je klaar/gestopt bent met je studie. Je dient hier zelf melding van te maken door een mail te sturen naar bestuur@hmvactis.nl.
+
+						</p>
+
 					</div>
 
-			
+				
+
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
 						<p class="text-color-light bg-secondary input-label space-inside-left-sm">
 							IBAN
@@ -259,7 +306,7 @@
 
 				</div>
 			</section>
-			{!! Form::close() !!}
+			</form>
 		
 	
 @stop

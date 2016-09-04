@@ -15,6 +15,7 @@
 		<h1 class="page-title"> INLOGGEN </h1>
 	
 <div class="container">
+
     <div class="row">
 
         <div class="col-md-12 space-outside-down-lg">
@@ -57,9 +58,11 @@
 
                         </div>
                     </form>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+
+      
 
 		</div>
 	</div>

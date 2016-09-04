@@ -5,8 +5,12 @@
 		<div class="space-inside-down-lg space-outside-down-lg  bg-secondary">
 
 				<div class="image image-responsive">
-
-					<img src="../images/bannerfoto.png">	
+					@if($data['pageSection']->photos->first()['path'] != null)	
+						<img class="responsive-image height-auto" src="{{$data['pageSection']->photos->first()['path']}}">
+					@else
+						<img class="height-auto" src="../images/bannerfoto.png">
+					@endif
+						
 
 				</div>	
 
