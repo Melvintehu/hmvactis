@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <h1>Vacatures toevoegen </h1>
+    <h1>Vacatures aanpassen </h1>
     <hr>
 
     <div class="row">

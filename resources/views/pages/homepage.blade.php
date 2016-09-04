@@ -109,7 +109,7 @@
 						
 							<span class="circle circle-sm bg-main inline-block text-color-light "> > </span>  
 
-							<span class="text-color-light"> {{ $event->date->day }}   </span> <p class="text-color-light">- - {{ $event->title }}  </p>
+							<span class="text-color-light"> {{ $event->date->day }}   </span> <p class="text-color-light"> - {{ $event->title }}  </p>
 
 						</a>
 							
@@ -279,15 +279,17 @@
 			<div class='col-lg-3'>
 				<h2>Hoofdpartner</h2>
 				<div class="slider2 ">
-					@foreach($data['hoofdpartners'] as $hoofdpartner)
-						<div class="slide">
-				  		<p class="space-outside-sm"> {{ $hoofdpartner->name }} </p>
-				  		<a href='http://{{ $hoofdpartner->website }}'>
-				  		@if($hoofdpartner->photos->first()['path'] != null)	
-				  			<img src="{{$hoofdpartner->photos->first()['path']}}"></a>
-				  		@else
-				  			<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
-				  		@endif
+				@foreach($data['hoofdpartners'] as $hoofdpartner)
+					<div class="slide">
+						
+							
+					  		<p class="space-outside-sm"> {{ $hoofdpartner->name }} </p>
+					  		<a href='http://{{ $hoofdpartner->website }}'>
+					  		@if($hoofdpartner->photos->first()['path'] != null)	
+					  			<img class="width-auto" src="{{$hoofdpartner->photos->first()['path']}}"></a>
+					  		@else
+					  			<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+					  		@endif
 				  	</div>
 					@endforeach
 				</div>

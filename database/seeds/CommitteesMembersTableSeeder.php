@@ -19,14 +19,14 @@ class CommitteesMembersTableSeeder extends Seeder
     		$committeemember->delete();
     	}
 
-    	$feestcommissie = 17;
-    	$acquisitiecommissie = 18;
-    	$buitenlandsereiscommissie = 19;
-    	$marketingcommissie = 20;
-    	$lustrumcommissie = 21;
-    	$lezexcommissie = 22;
-    	$onderzoekscommissie = 23;
-    	$businessscommissie = 24;
+    	$feestcommissie = 1;
+    	$acquisitiecommissie = 2;
+    	$buitenlandsereiscommissie = 3;
+    	$marketingcommissie = 4;
+    	$lustrumcommissie = 5;
+    	$lezexcommissie = 6;
+    	$onderzoekscommissie = 7;
+    	$businessscommissie = 8;
 
 
     	$committeemembers = [
