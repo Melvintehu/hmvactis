@@ -1,5 +1,5 @@
 @section('title')
-Login CMS
+Inloggen
 @stop
 
 @extends('master')

@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('title')
-	Sponsoren
+	{{ $data['sponsor']->name }}
 @stop
 
 @section('content')
