@@ -96,6 +96,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/nieuws', 'NewsController@overzicht');
     Route::get('/nieuws/{id}', 'PagesController@showNieuws'); 
     Route::get('/contact', 'PagesController@contact');
+
     Route::get('/activiteit/{id}', 'PagesController@showActiviteit'); 
 
     // tijdelijke routes
@@ -113,6 +114,7 @@ Route::group(['middleware' => ['auth']], function(){
 
 
     Route::get('/mail/lid-worden', 'MailController@lidWorden');
+    Route::post('/mail/contact-mail', 'MailController@contactMail');
 
 
     Route::get('/home', 'HomeController@index');
