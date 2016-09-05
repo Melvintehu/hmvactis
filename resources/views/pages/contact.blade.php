@@ -50,41 +50,47 @@
 
 			</div>
 
+			{!! Form::open(['method' => 'POST', 'action' => 'MailController@contactMail' ]) !!}
+
+			
+
 			<div class="col-lg-7 space-inside-xs">
-				
-				<input placeholder="voornaam" class="input border border-accent bg-accent" type="text" name="voornaam">
+
+    		{!! Form::text('voornaam', null, ['placeholder' => 'Voornaam', 'class' => 'input border border-accent bg-accent']) !!}
 
 			</div>
 
 			<div class="col-lg-7 space-inside-xs">
 				
-				<input placeholder="voornaam" class="input border border-accent bg-accent" type="text" name="voornaam">
+				{!! Form::text('achternaam', null, ['placeholder' => 'Achternaam', 'class' => 'input border border-accent bg-accent']) !!}
 
 			</div>
 
 			<div class="col-lg-7 space-inside-xs">
 				
-				<input placeholder="voornaam" class="input border border-accent bg-accent" type="text" name="voornaam">
+				{!! Form::text('emailadres', null, ['placeholder' => 'Emailadres', 'class' => 'input border border-accent bg-accent']) !!}
 
 			</div>
 
 			<div class="col-lg-7 space-inside-xs">
 				
-				<input placeholder="voornaam" class="input border border-accent bg-accent" type="text" name="voornaam">
+				{!! Form::text('telefoonnummer', null, ['placeholder' => 'Telefoonnummer', 'class' => 'input border border-accent bg-accent']) !!}
 
 			</div>
 
 			<div class="col-lg-12 space-inside-xs">
-				
-				<textarea class="textarea border border-accent bg-accent" placeholder="Uw bericht of opmerking"></textarea>
+
+				{!! Form::textarea('bericht', null, ['placeholder' => 'Uw bericht of opmerking', 'class' => 'textarea border border-accent bg-accent']) !!}
 
 			</div>
 
 			<div class="col-lg-12 space-inside-xs">
-				
-				<input type="submit" name="verzenden" class="btn-standard bg-secondary text-color-light font-xs " value="verzenden">
+
+				 {!! Form::submit('Verzenden', ['class' => 'btn-standard bg-secondary text-color-light font-xs ']) !!}
 
 			</div>
+
+			{!! Form::close() !!}
 
 			<div class="col-lg-12 space-inside-xs">
 				

@@ -96,6 +96,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/nieuws', 'NewsController@overzicht');
     Route::get('/nieuws/{id}', 'PagesController@showNieuws'); 
     Route::get('/contact', 'PagesController@contact');
+
     Route::get('/activiteit/{id}', 'PagesController@showActiviteit'); 
 
     // tijdelijke routes
@@ -112,18 +113,8 @@ Route::group(['middleware' => ['auth']], function(){
     });
 
 
-    Route::get('/test', function()
-    {
-        $beautymail = app()->make(Snowfire\Beautymail\Beautymail::class);
-        $beautymail->send('emails.welcome', [], function($message)
-        {
-            $message
-                ->from('info@hmvactis.nl', 'HMV Actis')
-                ->to('e.landheer@mentechmedia.nl', 'Eric Landheer')
-                ->subject('Bedankt voor het aanmelden op HMV Actis!');
-        });
-
-    });
+    Route::get('/mail/lid-worden', 'MailController@lidWorden');
+    Route::post('/mail/contact-mail', 'MailController@contactMail');
 
 
     Route::get('/home', 'HomeController@index');

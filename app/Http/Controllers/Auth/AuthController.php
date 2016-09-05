@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
-
+use App\MailController;
 
 class AuthController extends Controller
 {
@@ -136,6 +136,7 @@ class AuthController extends Controller
 
         if(isset($data['inschrijven'])){
 
+            $mail = new MailController();
         
             $profile = new Profile();
 
@@ -155,10 +156,10 @@ class AuthController extends Controller
             $profile->subscribed = $data['subscribed'];
             $profile->admin = false;
             $profile->active = true;
-            
-
 
             $profile->save();
+
+            $mail->lidWorden($profile->name, $profile->email_address);
         }
 
         
