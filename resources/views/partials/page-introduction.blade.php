@@ -8,7 +8,7 @@
 					@if($data['pageSection']->photos->first()['path'] != null)	
 						<img class="responsive-image height-auto" src="{{$data['pageSection']->photos->first()['path']}}">
 					@else
-						<img class="height-auto" src="../images/bannerfoto.png">
+						<img class="height-auto" src="../images/bannerfoto2.jpg">
 					@endif
 						
 

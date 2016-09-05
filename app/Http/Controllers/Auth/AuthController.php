@@ -52,6 +52,22 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
 
+        if(isset($data['inschrijven'])){
+
+            return Validator::make($data, [
+                'name' => 'required|max:255',
+                'email' => 'required|email|max:255|unique:users',
+                'password' => 'required|min:6|confirmed',
+                'street' => 'required',
+                'house_number' => 'required',
+                'place' => 'required',
+                'phone_number' => 'required',
+                'birthdate' => 'required',
+                
+            ]);
+
+        }
+
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',

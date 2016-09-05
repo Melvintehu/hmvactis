@@ -61,11 +61,13 @@ use App\Profile;
      </script>
 
         <script src="/js/imgcentering.js"></script>
-       <!--   <script type="text/javascript">
+         <script type="text/javascript">
         $(document).ready( function() {
 
-            $(".image img").imgCentering();
+            $(".imageCentered img").imgCentering();
         }); 
-        </script> -->
+        </script>
+        <script type="text/javascript" src="js/main.js"></script>
+        
     </body>
 </html>

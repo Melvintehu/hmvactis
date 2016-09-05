@@ -9,11 +9,11 @@
 
 			<p class="text-color-light block space-outside-md">De komende weken kan je gratis lid worden van HMV Actis, <br> wacht niet langer en meld je aan!</p>
 
-			<a class="btn-standard bg-secondary text-color-light" href="">LID WORDEN</a>
+			<a class="btn-standard bg-secondary text-color-light" href="/lid-worden">LID WORDEN</a>
 			
 			<div  class="overlay-banner"></div>
 
-			<img class="responsive-image"  src="../images/bannerfoto.png"  alt='banner image hmvactis' />
+			<img class="responsive-image height-auto" style="position:absolute;bottom:0px;top:0px;"  src="../images/bannerfoto2.jpg"  alt='banner image hmvactis' />
 		
 		</div>
 

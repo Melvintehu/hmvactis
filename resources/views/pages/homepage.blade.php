@@ -279,38 +279,40 @@
 
 			<h1 class="space-outside-down-lg xs-text-center"> PARTNERS </h1>
 				
-			<div class='col-lg-4 col-xs-12 xs-space-outside-down-md'>
-				<h2 class="xs-text-center">Hoofdpartner</h2>
-		
-
-
-		
-			
+			<div class='col-lg-4 col-xs-12 xs-space-outside-down-md space-inside-right-xs'>
 				
-				<div class="space-outside-up-sm" style="min-height:50px;">
+				<h2 class="xs-text-center">Hoofdpartner</h2>
+				
+				
+		  	
 
-			  		<p> {{ $data['hoofdpartners']->name }} </p>
-			  		
-			  	</div>
-		  		
+					  	<div class="space-outside-up-sm" style="min-height:50px;">
 
-		  		<a class="block space-outside-down-sm" href='http://{{ $data['hoofdpartners']->website }}'>
+					  		<p > {{ $data['hoofdpartners']->name }} </p>
+					  		
+					  	</div>
 
-			  		<div style="height:150px;width:200px;" class="image">
+				  		<a class="block space-outside-down-sm" href='http://{{ $data['hoofdpartners']->website }}'>
 
-				  		@if($data['hoofdpartners']->photos->first()['path'] != null)	
+				  			<div style="height:200px;" class="image space-inside-up-md">
+						  				
+						  		@if($data['hoofdpartners']->photos->first()['path'] != null)
+						  		
+						  			<img class="height-auto" src="{{$data['hoofdpartners']->photos->first()['path']}}">
 
-				  			<img class=""  src="{{$data['hoofdpartners']->photos->first()['path']}}">
+						  		@else
+						  		
+						  			<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
 
-				  		@else
+						  		@endif
+				  			</div>
 
-				  			<img  class="width-auto"  src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+				  		</a>
 
-				  		@endif
+				  
+			
 
-		  			</div>
-
-		  		</a>
+			
 
 			</div>
 			
@@ -330,20 +332,19 @@
 					  		
 					  	</div>
 
+				  		<a class="block space-outside-down-sm" href='http://{{ $partner->website }}'>
 
-				  		<a  class="block space-outside-down-sm" href='http://{{ $partner->website }}'>
+				  			<div style="height:150px;width:200px;" class="image imageCentered">
+						  				
+						  		@if($partner->photos->first()['path'] != null)
+						  		
+						  			<img src="{{$partner->photos->first()['path']}}">
 
-				  			<div style="height:150px;width:200px;" class="image">
-				  				
-				  		@if($partner->photos->first()['path'] != null)
-				  		
-				  			<img   src="{{$partner->photos->first()['path']}}">
+						  		@else
+						  		
+						  			<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
 
-				  		@else
-				  		
-				  			<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
-
-				  		@endif
+						  		@endif
 				  			</div>
 
 				  		</a>
@@ -376,5 +377,3 @@
 
 
 
-
-</script>
