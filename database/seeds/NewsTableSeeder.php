@@ -34,7 +34,7 @@ class NewsTableSeeder extends Seeder
     		['HMV Actis heeft een nieuwe Website!', '2016-02-08', 'HMV Actis heeft in samenwerking met MEN Technology & Media de laatste maanden hard gewerkt om een nieuwe website op te zetten. De vernieuwde website zal je nog beter op de hoogte houden van de komende activiteiten en nieuws. De komende maanden zal de site uitgebreid en verder uitgerold worden, dus stay in touch!'],
 
     		['Oud besturen diner', '2016-01-14', 'Ter gelegenheid van ons 5e lustrum nodigt HMV Actis alle besturen van de afgelopen 4 jaar uit voor een Lustrum diner. Het diner zal plaats vinden bij Benz in Groningen.'],
-
+            ['Start introductie week 2016-2017', '2016-09-05', 'Ter gelegenheid van ons 5e lustrum nodigt HMV Actis alle besturen van de afgelopen 4 jaar uit voor een Lustrum diner. Het diner zal plaats vinden bij Benz in Groningen.'],
     		
     	];
 
