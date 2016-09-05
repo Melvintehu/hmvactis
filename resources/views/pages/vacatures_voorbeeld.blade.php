@@ -8,7 +8,7 @@
 
 @section('content')
 	
-	<section class="bg-secondary">
+	<section class="bg-secondary no-overflow">
 		
 		<div class="container space-inside-lg">
 			
@@ -63,13 +63,13 @@
 
 	</section>
 
-	<div class="container">
+	<div class="container no-overflow">
 
 		<div class="row">
 
-			<div class="col-lg-12 space-outside-md">
+			<div class="col-lg-12 space-outside-md ">
 
-				<p>
+				<p class="xs-text-center">
 
 					{!! nl2br($data['vacature']->description) !!}
 
@@ -79,8 +79,13 @@
 
 			<div class="divider bg-accent "></div>
 
-			<a href='/vacatures' class="btn-standard bg-main text-color-light space-outside-md"> Ga terug </a>
 
+		</div>
+
+		<div class="col-lg-12 xs-text-center space-outside-down-md">
+
+			<a href='/vacatures' class="btn-standard bg-main text-color-light space-outside-md block"> Ga terug </a>
+			
 		</div>
 
 	</div>

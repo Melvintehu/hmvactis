@@ -146,7 +146,7 @@ class AuthController extends Controller
             $profile->email_address = $user->email;
             $profile->birthdate = $data['birthdate'];
             $profile->current_study = $data['current_study'];
-            $profile->study_year = $data['current_study'];
+            $profile->study_year = $data['study_year'];
             $profile->student_number = $data['student_number'];
             $profile->iban = $data['iban'];
             $profile->tnv = $data['tnv'];
