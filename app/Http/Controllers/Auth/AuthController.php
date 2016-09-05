@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Profile;
+use Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -37,7 +39,9 @@ class AuthController extends Controller
      */
     public function __construct()
     {
+        
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+
     }
 
     /**
@@ -48,6 +52,47 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
+       
+
+
+        if(isset($data['inschrijven'])){
+
+            if(Auth::check()){
+                 return Validator::make($data, [
+                'street' => 'required',
+                'house_number' => 'required',
+                'place' => 'required',
+                'phone_number' => 'required',
+                'birthdate' => 'required',
+                'current_study' => 'required',
+                'study_year' => 'required|min:4|max:4|',
+                'student_number' => 'required',
+                'iban' => 'required',
+                'tnv' => 'required'
+
+            ]);
+            }
+
+
+            return Validator::make($data, [
+                'name' => 'required|max:255',
+                'email' => 'required|email|max:255|unique:users',
+                'password' => 'required|min:6|confirmed',
+                'street' => 'required',
+                'house_number' => 'required',
+                'place' => 'required',
+                'phone_number' => 'required',
+                'birthdate' => 'required',
+                'current_study' => 'required',
+                'study_year' => 'required|min:4|max:4|',
+                'student_number' => 'required',
+                'iban' => 'required',
+                'tnv' => 'required'
+
+            ]);
+
+        }
+
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
@@ -64,26 +109,55 @@ class AuthController extends Controller
     protected function create(array $data)
     {   
 
-        /// to do save user to pivot Events
+        
+        if(!Auth::check()){
 
+            // gebruikers account aanmaken
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+            ]);
 
+        }else{
+            $user = Auth::user();
 
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
-
-        // dd($user->id);
-
-
-        if(isset($data['event_id'])){
-           
-            $user->events()->attach($data['event_id']);
-
-         
         }
-        //$employee->jobs()->attach($job_id, ['date_start' => date('Y-m-d H:i:s', time()) ]);
+
+        // inschrijven voor een activiteit
+        if(isset($data['event_id']))
+        {
+            $user->events()->attach($data['event_id']);
+        }
+        
+        // gebruiker lid worden
+
+        if(isset($data['inschrijven'])){
+
+        
+            $profile = new Profile();
+
+            $profile->user_id = $user->id;
+            $profile->name = $user->name;
+            $profile->street = $data['street'];
+            $profile->place = $data['place'];
+            $profile->house_number = $data['house_number'];
+            $profile->phone_number = $data['phone_number'];
+            $profile->email_address = $user->email;
+            $profile->birthdate = $data['birthdate'];
+            $profile->current_study = $data['current_study'];
+            $profile->study_year = $data['study_year'];
+            $profile->student_number = $data['student_number'];
+            $profile->iban = $data['iban'];
+            $profile->tnv = $data['tnv'];
+            $profile->subscribed = $data['subscribed'];
+            $profile->admin = false;
+            $profile->active = true;
+            
+            $profile->save();
+        }
+
+        // dd($profile
         return $user;
     }
 }

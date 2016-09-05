@@ -10,7 +10,7 @@
 
 @section('content')
 
-	<div class="container ">
+	<div class="container no-overflow">
 		
 		<div class="row">
 		
@@ -148,6 +148,12 @@
 				</div>
 			
 			@endForeach
+
+			@if($data['nextMonthsEvents'] != null)
+
+				<div class="text-left font-xs space-outside-xs space-inside-sides-sm">Er zijn nog geen activiteiten gepland voor deze maand. </div>
+
+			@endif
 
 			</div>
 

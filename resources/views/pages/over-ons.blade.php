@@ -134,7 +134,7 @@
 
 				<div class="row">
 					
-					<a href="#{{ $nieuwsmessage->id }}" >
+					<a href="nieuws/{{ $nieuwsmessage->id }}" >
 
 						<div class="card type-1 background-secondary">
 

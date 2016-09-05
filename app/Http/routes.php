@@ -18,70 +18,66 @@ Route::auth();
 
 Route::group(['prefix' => 'cms'],  function () {
     Route::group(['middleware' => ['auth']], function(){
-    
-    Route::get('/', function(){
-        return view('cms.cms');
-    });
+   
+        Route::get('/', function(){
+            return view('cms.cms');
+        });
 
 
-    Route::resource('sponsorDiscounts', 'SponsorDiscountsController');
-    Route::resource('boards', 'BoardsController');
-    Route::resource('boardMembers', 'BoardMembersController');
-    Route::resource('information', 'InformationController');
-    Route::resource('pages', 'PagesController');
-    Route::resource('pageSections', 'PageSectionsController');
-    Route::resource('news', 'NewsController');
-    Route::resource('events', 'EventsController');
-    Route::resource('sponsors', 'SponsorsController');
-    Route::resource('committees', 'CommitteesController');
-    Route::resource('committeeMembers', 'CommitteeMembersController');
-    Route::resource('vacancies', 'VacanciesController');
-    Route::resource('profile', 'ProfilesController');
-    Route::resource('user', 'UserController');
+        
+        Route::resource('sponsorDiscounts', 'SponsorDiscountsController');
+        Route::resource('boards', 'BoardsController');
+        Route::resource('boardMembers', 'BoardMembersController');
+        Route::resource('information', 'InformationController');
+        Route::resource('pages', 'PagesController');
+        Route::resource('pageSections', 'PageSectionsController');
+        Route::resource('news', 'NewsController');
+        Route::resource('events', 'EventsController');
+        Route::resource('sponsors', 'SponsorsController');
+        Route::resource('committees', 'CommitteesController');
+        Route::resource('committeeMembers', 'CommitteeMembersController');
+        Route::resource('vacancies', 'VacanciesController');
+        Route::resource('profile', 'ProfilesController');
+        Route::resource('user', 'UserController');
 
-    // photo upload routes
-    Route::post('/news/{id}/photos', 'NewsController@addPhoto');
-    Route::post('/event/{id}/photos', 'EventsController@addPhoto');
-    Route::post('/committeeMember/{id}/photos', 'CommitteeMembersController@addPhoto');
-    Route::post('/sponsor/{id}/photos', 'SponsorsController@addPhoto');
-    Route::post('/sponsorDiscount/{id}/photos', 'SponsorDiscountsController@addPhoto');
-    Route::post('/pageSection/{id}/photos', 'PageSectionsController@addPhoto');
-    Route::post('/boardMember/{id}/photos', 'BoardMembersController@addPhoto');
-    Route::post('/vacancie/{id}/photos', 'VacanciesController@addPhoto');
+        // photo upload routes
+        Route::post('/news/{id}/photos', 'NewsController@addPhoto');
+        Route::post('/event/{id}/photos', 'EventsController@addPhoto');
+        Route::post('/committeeMember/{id}/photos', 'CommitteeMembersController@addPhoto');
+        Route::post('/sponsor/{id}/photos', 'SponsorsController@addPhoto');
+        Route::post('/sponsorDiscount/{id}/photos', 'SponsorDiscountsController@addPhoto');
+        Route::post('/pageSection/{id}/photos', 'PageSectionsController@addPhoto');
+        Route::post('/boardMember/{id}/photos', 'BoardMembersController@addPhoto');
+        Route::post('/vacancie/{id}/photos', 'VacanciesController@addPhoto');
 
-    // get routes
-    Route::get('/event/{id}/deelnemers', 'EventsController@displayDeelnemers');
+        // get routes
+        Route::get('/event/{id}/deelnemers', 'EventsController@displayDeelnemers');
+
     });
 });
 
 
+Route::group(['middleware' => ['auth']], function(){
+    // user omgeving routes, ook tijdelij
+   
 
-
-    
-
-    Route::group(['middleware' => ['auth']], function(){
-
-       
-
-        // user omgeving routes, ook tijdelij
-        Route::get('/lid-worden', function(){
-            return view('pages.lid-worden');
-        });
-
-        Route::get('/logout', function()
-        {
-            Auth::logout();
-            return redirect('/');
-        });
-
-        Route::post('/inschrijven/{id}', 'EventsController@signUpUser');
-
-        Route::get('/profiel', 'PagesController@profiel');
-        Route::post('/profiel/{id}', 'EventsController@uitschrijven');
-  
-
+    Route::get('/logout', function()
+    {
+        Auth::logout();
+        return redirect('/');
     });
 
+  
+
+});
+
+    Route::post('/inschrijven/{id}', 'EventsController@signUpUser');
+
+    Route::get('/profiel', 'PagesController@profiel');
+    Route::post('/profiel/{id}', 'EventsController@uitschrijven');
+    Route::get('/lid-worden', function(){
+        return view('pages.lid-worden');
+    });
 
 
    // pagina routes

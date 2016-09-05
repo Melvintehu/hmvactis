@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <h1>Deelnemersoverzicht voor {{ $data['event']->title }} op {{ $data['event']->date }}</h1>
+    <h1>Deelnemersoverzicht voor {{ $data['event']->title }} op {{ substr($data['event']->date,0,10) }}</h1>
     <hr>
 
     <div class="row">

@@ -2,7 +2,7 @@
 
 @section('title')
 	
-	Homepage
+	Partners
 
 @stop
 
@@ -10,7 +10,7 @@
 
 @section('content')
 
-	<div class="container">
+	<div class="container no-overflow">
 
 		<div class="row">
 			
@@ -20,7 +20,7 @@
 
 			<div class="verdeler"> </div>
 
-			<h1 class="space-outside-lg"> HOOFDPARTNER </h1>
+			<h1 class="space-outside-lg text-center"> HOOFDPARTNER </h1>
 
 				@foreach($data['hoofdpartners'] as $hoofdpartner)
 
@@ -32,7 +32,7 @@
 
 							<div class="col-lg-4 reset-padding">
 								
-								<div class="image">
+								<div class="image xs-space-outside-down-md">
 
 									<img class="img-responsive" src="{{$hoofdpartner->photos->first()['path']}}">
 
@@ -40,9 +40,9 @@
 								
 							</div>
 
-							<div class="col-lg-8"> 
+							<div class="col-lg-8 space-outside-down-lg space-inside-left-md"> 
 
-								<h2> {{ $hoofdpartner->name }} </h2>
+								<h2 class="space-outside-down-sm"> {{ $hoofdpartner->name }} </h2>
 
 								<p > 
 
@@ -71,7 +71,7 @@
 
 				<div style="clear: both; "></div>
 
-				<h1> OVERIGE PARTNERS </h1>
+				<h1 class="space-outside-down-lg text-center"> OVERIGE PARTNERS </h1>
 
 				<div class="row row-centered text-white">
 

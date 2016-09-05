@@ -59,13 +59,13 @@ class PagesController extends Controller
        
         $data = [
             'news' => News::orderBy('publish_date', 'desc')->take(4)->get(),
-            'netwerk' => PageSection::where('id', 3)->first(),
-            'zelfontplooing' => PageSection::where('id', 4)->first(),
-            'cv_building' => PageSection::where('id', 5)->first(),
-            'gezelligheid' => PageSection::where('id', 6)->first(),
+            'netwerk' => PageSection::where('id', 10)->first(),
+            'zelfontplooing' => PageSection::where('id', 11)->first(),
+            'cv_building' => PageSection::where('id', 12)->first(),
+            'gezelligheid' => PageSection::where('id', 13)->first(),
             'events' => Event::where('date', '>', new Carbon('last day of previous month'))->where('date', '<', new Carbon('first day of next month'))->where('lustrum_event', 'nee')->take(4)->get(),
             'partners' => Sponsor::where('main_partner','nee')->get(),
-            'hoofdpartners' => Sponsor::where('main_partner','ja')->get(),
+            'hoofdpartners' => Sponsor::where('main_partner','ja')->first(),
         ];
 
 

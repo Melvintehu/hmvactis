@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('title')
-	Feestcommissie
+	{{ $data['activiteit']->title }}
 @stop
 
 
@@ -31,7 +31,7 @@
 
 @section('content')
 	
-	<div class="bg-secondary "> 
+	<div class="bg-secondary no-overflow"> 
 
 		<div class="container">
 			
@@ -44,13 +44,13 @@
 					<div class="row">
 						
 
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 xs-space-inside-left-xl">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
 
 							<h1 class="text-color-light"> {{ $data['activiteit']->title }} </h1>
 
 						</div>
 
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 xs-space-inside-left-xl">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
 
 							<div class="text xs-space-outside-down-lg sm-space-outside-down-lg">
 

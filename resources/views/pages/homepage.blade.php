@@ -45,7 +45,7 @@
 							@if($nieuwsmessage->photos->first()['path'] != null)	
 								<img class="img-responsive" src="{{$nieuwsmessage->photos->first()['path']}}">
 							@else
-								<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+								<img class="height-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
 							@endif
 
 							</div>
@@ -90,18 +90,21 @@
 				
 				<div class="col-lg-5  space-outside-lg">
 					
-					<div class="circle circle-xl bg-main block auto">
-						
-						<p class="font-lg light text-color-light uppercase font-secondary"> {{ Carbon::now()->formatLocalized('%B') }}  </p>
+					<a href="/activiteiten">
+					
+						<div class="circle circle-xl bg-main block auto">
+							
+							<p class="font-md light text-color-light   uppercase font-secondary"> {{ Carbon::now()->formatLocalized('%B') }}  </p>
 
-					</div>
+						</div>
 
+					</a>
 
 				</div>
 
 				<div class="col-lg-7 md-space-inside-sides-lg lg-space-inside-sides-lg">
 					
-					<h1 class="uppercase text-center text-color-light space-outside-down-md "> Agenda </h1>
+					<h1 class="uppercase xs-text-center text-color-light space-outside-down-md "> Agenda </h1>
 
 					@foreach($data['events'] as $event)
 
@@ -274,46 +277,84 @@
 		
 		<div class="row">
 
-			<h1 class="space-outside-down-lg"> PARTNERS </h1>
+			<h1 class="space-outside-down-lg xs-text-center"> PARTNERS </h1>
 				
-			<div class='col-lg-3'>
-				<h2>Hoofdpartner</h2>
-				<div class="slider2 ">
-				@foreach($data['hoofdpartners'] as $hoofdpartner)
-					<div class="slide">
-						
-							
-					  		<p class="space-outside-sm"> {{ $hoofdpartner->name }} </p>
-					  		<a href='http://{{ $hoofdpartner->website }}'>
-					  		@if($hoofdpartner->photos->first()['path'] != null)	
-					  			<img class="width-auto" src="{{$hoofdpartner->photos->first()['path']}}"></a>
-					  		@else
-					  			<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
-					  		@endif
-				  	</div>
-					@endforeach
-				</div>
+			<div class='col-lg-4 col-xs-12 xs-space-outside-down-md space-inside-right-xs'>
+				
+				<h2 class="xs-text-center">Hoofdpartner</h2>
+				
+				
+		  	
+
+					  	<div class="space-outside-up-sm" style="min-height:50px;">
+
+					  		<p > {{ $data['hoofdpartners']->name }} </p>
+					  		
+					  	</div>
+
+				  		<a class="block space-outside-down-sm" href='http://{{ $data['hoofdpartners']->website }}'>
+
+				  			<div style="height:200px;" class="image space-inside-up-md">
+						  				
+						  		@if($data['hoofdpartners']->photos->first()['path'] != null)
+						  		
+						  			<img class="height-auto" src="{{$data['hoofdpartners']->photos->first()['path']}}">
+
+						  		@else
+						  		
+						  			<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+
+						  		@endif
+				  			</div>
+
+				  		</a>
+
+				  
+			
+
+			
+
 			</div>
+			
+			<div class="col-lg-8">
 
-			<div class="col-lg-9">
-				<h2>Overige partners</h2>
+				<h2 class="xs-text-center">Overige partners</h2>
+
 				<div class="slider1 ">
+
 					@foreach($data['partners'] as $partner)
-				  	<div class="slide">
 
-				  		<p> {{ $partner->name }} </p>
-				  		<a class="block" style="width:350px; height:150px;" href='http://{{ $partner->website }}'>
+				  	<div class="slide ">
 
-				  		@if($partner->photos->first()['path'] != null)
-				  			<img class="width-auto" src="{{$partner->photos->first()['path']}}">
-				  		@else
-				  			<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
-				  		@endif
+					  	<div class="space-outside-up-sm" style="min-height:50px;">
+
+					  		<p > {{ $partner->name }} </p>
+					  		
+					  	</div>
+
+				  		<a class="block space-outside-down-sm" href='http://{{ $partner->website }}'>
+
+				  			<div style="height:150px;width:200px;" class="image imageCentered">
+						  				
+						  		@if($partner->photos->first()['path'] != null)
+						  		
+						  			<img src="{{$partner->photos->first()['path']}}">
+
+						  		@else
+						  		
+						  			<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+
+						  		@endif
+				  			</div>
+
 				  		</a>
 
 				  	</div>
+
 				  	@endforeach
+
 				</div>
+
 			</div>
 
 			<div class="col-lg-12 text-center">
@@ -332,3 +373,7 @@
 
 
 @stop
+
+
+
+

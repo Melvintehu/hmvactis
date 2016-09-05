@@ -57,7 +57,7 @@ class EventsController extends Controller
               ->get(),
 
         ];
-
+        
         return view('pages.activiteiten', compact('data'));
     }
 
