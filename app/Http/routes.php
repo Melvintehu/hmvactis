@@ -112,18 +112,7 @@ Route::group(['middleware' => ['auth']], function(){
     });
 
 
-    Route::get('/test', function()
-    {
-        $beautymail = app()->make(Snowfire\Beautymail\Beautymail::class);
-        $beautymail->send('emails.welcome', [], function($message)
-        {
-            $message
-                ->from('info@hmvactis.nl', 'HMV Actis')
-                ->to('e.landheer@mentechmedia.nl', 'Eric Landheer')
-                ->subject('Bedankt voor het aanmelden op HMV Actis!');
-        });
-
-    });
+    Route::get('/mail/lid-worden', 'MailController@lidWorden');
 
 
     Route::get('/home', 'HomeController@index');
