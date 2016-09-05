@@ -28,6 +28,8 @@ class PagesTableSeeder extends Seeder
 
     	$pages = [
 
+
+
     		'Over ons' => [
     			['introductie tekst', 'over ons', 'HMV Actis, ook wel Hanze Marketing Vereniging Actis, is ontstaan op 20 december 1991. HMV Actis is de studievereniging voor het Instituut voor Marketing Management (IMM) aan de Hanzehogeschool te Groningen.'],
     			['de vereniging', 'De vereniging', 'HMV Actis organiseert elk jaar verschillende activiteiten om de afstand tussen haar leden en het bedrijfsleven te verkleinen. Het bestuur van HMV Actis kan niet zelf alle actviteiten organiseren, daarom zijn commissies onmisbaar. Er worden door het jaar door verschillende lezingen georganiseerd, workshops en bedrijfsbezoeken. Daarnaast wordt er een congres en career event georganiseerd en nog vele andere activiteiten, dit is allemaal voor en door de leden van HMV Actis. Het bestuur van HMV Actis is een eenjarig bestuur, dat wil zeggen dat elk studiejaar HMV Actis een nieuw bestuur heeft. Dit jaar heeft HMV Actis alweer het 5e Lustrum bestuur. Het beleidsplan van het 5e Lustrum bestuur vind je onder aan de website, net als het Huishoudelijk Reglement.'],
@@ -62,6 +64,13 @@ class PagesTableSeeder extends Seeder
     		'Contact' => [
     			['Contact', 'Contact', 'Heeft u een vraag of wilt u meer weten over HMV Actis? Wij horen het graag! Maak gebruik van het onderstaande contact formulier en we nemen zo snel mogelijk contact met u op.']
     		],
+
+            'Homepage' => [
+                ['Netwerken', 'Netwerken', 'HEen goed netwerk biedt kansen. Je kunt hierbij denken aan opdrachten, banen, projecten, kennis, toekomstige nieuwe klanten of goederen. De beste kansen worden altijd gedeeld binnen het eigen netwerk van personen, vaak al voordat ze überhaupt naar buiten komen.'],
+                ['Zelfontplooiing', 'Zelfontplooiing', 'Weet jij nog niet goed wat je na je studie wilt doen? Door lid te zijn bij HMV Actis heb je de mogelijkheid om met verschillende bedrijven en mensen in contact te komen of commissiewerk te gaan doen. Daarnaast kan je met veel activiteiten die HMV Actis organiseert praktijkpunten verdienen.'],
+                ['Cv building', 'Cv building', 'Bedrijven hechten veel waarde aan nevenactiviteiten die een student heeft ondernomen naast zijn studie. HMV Actis geeft de kans jezelf te onderscheiden en een kickstart te geven aan je carrière. Wil jij je inzetten voor de vereniging in de vorm van commissiewerk of bestuur? Neem dan contact met ons op.'],
+                ['Gezelligheid', 'Gezelligheid', 'Wat is een vereniging zonder informele activiteiten! Elk jaar vindt er een gala, year beginning- en ending party plaats met daarbij elke maand een gezellige borrel in Partycafé de Doos met geregeld een gratis bier! Daarnaast organiseert HMV Actis ook activiteiten zoals paintballen, karten en andere leuke activiteiten met leuke kortingen!'],
+            ],
 
     	];
 

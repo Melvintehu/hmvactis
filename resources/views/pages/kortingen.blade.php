@@ -10,11 +10,11 @@
 
 @section('content')
 
-	<div class="container">
+	<div class="container no-overflow">
 
 		<div class="row">
 
-			<h1 class="space-outside-lg"> KORTINGEN </h1>
+			<h1 class="space-outside-lg xs-text-center"> KORTINGEN </h1>
 
 			@include('partials.page-introduction', $data['pageSection'])
 
@@ -46,7 +46,7 @@
 
 							</div>
 
-							<div class="information">
+							<div class="information no-overflow">
 
 								<h4> {{ $korting->sponsor->name }}</h4>
 

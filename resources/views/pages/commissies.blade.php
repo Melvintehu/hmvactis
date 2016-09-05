@@ -10,11 +10,11 @@
 
 @section('content')
 
-	<div class="container">
+	<div class="container no-overflow">
 
 		<div class="row">
 
-			<h1 class="space-outside-lg"> COMMISSIES </h1>
+			<h1 class="space-outside-lg xs-text-center"> COMMISSIES </h1>
 
 			@include('partials.page-introduction', $data['pageSection'])
 

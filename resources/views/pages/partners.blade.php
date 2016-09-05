@@ -2,7 +2,7 @@
 
 @section('title')
 	
-	Homepage
+	Partners
 
 @stop
 
@@ -10,7 +10,7 @@
 
 @section('content')
 
-	<div class="container">
+	<div class="container no-overflow">
 
 		<div class="row">
 			

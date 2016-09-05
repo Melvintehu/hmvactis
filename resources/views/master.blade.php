@@ -12,6 +12,9 @@ use App\Profile;
 <!DOCTYPE html>
 <html>
     <head>
+              <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width">
         <title>@yield('title') || HMV Actis</title>
 
         <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
@@ -61,11 +64,13 @@ use App\Profile;
      </script>
 
         <script src="/js/imgcentering.js"></script>
-       <!--   <script type="text/javascript">
+         <script type="text/javascript">
         $(document).ready( function() {
 
-            $(".image img").imgCentering();
+            $(".imageCentered img").imgCentering();
         }); 
-        </script> -->
+        </script>
+        <script type="text/javascript" src="js/main.js"></script>
+        
     </body>
 </html>
