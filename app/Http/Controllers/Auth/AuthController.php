@@ -10,6 +10,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+
+
 class AuthController extends Controller
 {
     /*
@@ -154,10 +156,12 @@ class AuthController extends Controller
             $profile->admin = false;
             $profile->active = true;
             
+
+
             $profile->save();
         }
 
-        // dd($profile
+        
         return $user;
     }
 }
