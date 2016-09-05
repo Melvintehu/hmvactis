@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('title')
-	Feestcommissie
+	{{ $data['activiteit']->title }}
 @stop
 
 
