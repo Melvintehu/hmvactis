@@ -64,6 +64,7 @@
 
 					<!-- Inputs -->
 
+					@if(!Auth::check())
 
 					<!-- VOLLEDIGE NAAM -->
 
@@ -87,6 +88,8 @@
 
 					</div>
 
+					@endif
+
 
 					<!-- STRAATNAAM EN HUISNUMMER -->
 
@@ -106,12 +109,12 @@
 									  border-accent
 									  bg-accent 
 									  space-outside-xs']); !!} 
-									  
+
 						@if ($errors->has('street'))
 
 	                        <span class="help-block">
 
-	                            <strong>{{ $errors->first('street') }}</strong>
+	                            <strong>Vul de straat in.</strong>
 
 	                        </span>
 
@@ -125,6 +128,16 @@
 									  border-accent
 									  bg-accent 
 									  space-outside-xs']); !!} 
+
+						@if ($errors->has('house_number'))
+
+	                        <span class="help-block">
+
+	                            <strong>Vul het huisnummer in.</strong>
+
+	                        </span>
+
+	                    @endif
 
 					</div>
 
@@ -149,6 +162,16 @@
 									  bg-accent 
 									  space-outside-xs']); !!} 
 
+						@if ($errors->has('place'))
+
+	                        <span class="help-block">
+
+	                            <strong>Vul je woonplaats in.</strong>
+
+	                        </span>
+
+	                    @endif
+
 					</div>
 
 
@@ -172,7 +195,20 @@
 									  bg-accent 
 									  space-outside-xs']); !!} 
 
+						@if ($errors->has('phone_number'))
+
+	                        <span class="help-block">
+
+	                            <strong>Vul je telefoonnummer in.</strong>
+
+	                        </span>
+
+	                    @endif
+
 					</div>
+
+
+					@if(!Auth::check())
 
 
 					<!-- EMAILADRES -->
@@ -198,7 +234,7 @@
 
                             <span class="help-block">
 
-                                <strong>{{ $errors->first('email') }}</strong>
+                                <strong>Vul je emailadres in.</strong>
 
                             </span>
 
@@ -206,6 +242,7 @@
 
 					</div>
 
+					@endif
 
 					<!-- Geboortedatum -->
 
@@ -226,8 +263,19 @@
 									  bg-accent 
 									  space-outside-xs']); !!} 
 
+						@if ($errors->has('birthdate'))
+
+	                        <span class="help-block">
+
+	                            <strong>Vul je geboortedatum in.</strong>
+
+	                        </span>
+
+	                    @endif			  
+
 					</div>
 
+					@if(!Auth::check())
 
 					<!-- Wachtwoord -->
 
@@ -271,6 +319,8 @@
 									  space-outside-xs']); !!} 
 
 					</div>
+
+					@endif
 
 				</div>
 
@@ -322,6 +372,16 @@
 							  bg-accent 
 							  space-outside-xs']); !!} 
 
+				@if ($errors->has('current_study'))
+
+	                        <span class="help-block">
+
+	                            <strong>Vul je huidige studie in.</strong>
+
+	                        </span>
+
+	                    @endif
+
 			</div>
 
 
@@ -344,6 +404,16 @@
 							  bg-accent 
 							  space-outside-xs']); !!} 
 
+				@if ($errors->has('study_year'))
+
+                    <span class="help-block">
+
+                        <strong>Vul het jaar waarin je bent gaan studeren in.</strong>
+
+                    </span>
+
+                @endif
+
 			</div>
 
 			<!-- STUDENTNUMMER -->
@@ -365,6 +435,16 @@
 							  bg-accent 
 							  space-outside-xs']); !!} 
 
+				@if ($errors->has('student_number'))
+
+                    <span class="help-block">
+
+                        <strong>Vul je student_number in.</strong>
+
+                    </span>
+
+                @endif
+
 			</div>		
 
 			<div class="col-lg-12 space-outside-up-md text-center">
@@ -372,8 +452,6 @@
 				<a " class="to-step-1 btn-standard bg-secondary text-color-light" href="#"> Terug naar stap 1</a>
 
 				<a  class="to-step-3 btn-standard bg-main text-color-light" href="#"> Ga naar stap 3</a>
-
-
 
 			</div>
 
@@ -423,6 +501,17 @@
 							  border-accent
 							  bg-accent 
 							  space-outside-xs']); !!} 
+
+				@if ($errors->has('iban'))
+
+                    <span class="help-block">
+
+                        <strong>Vul je IBAN in.</strong>
+
+                    </span>
+
+                @endif
+
 			</div>
 
 
@@ -445,6 +534,16 @@
 							  border-accent
 							  bg-accent 
 							  space-outside-xs']); !!} 
+
+				@if ($errors->has('tnv'))
+
+                    <span class="help-block">
+
+                        <strong>Vul de naam van de rekeninghouder in.</strong>
+
+                    </span>
+
+                @endif
 
 			</div>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Profile;
+use Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -38,7 +39,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-
+        
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
 
     }
@@ -51,8 +52,27 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
+       
+
 
         if(isset($data['inschrijven'])){
+
+            if(Auth::check()){
+                 return Validator::make($data, [
+                'street' => 'required',
+                'house_number' => 'required',
+                'place' => 'required',
+                'phone_number' => 'required',
+                'birthdate' => 'required',
+                'current_study' => 'required',
+                'study_year' => 'required|min:4|max:4|',
+                'student_number' => 'required',
+                'iban' => 'required',
+                'tnv' => 'required'
+
+            ]);
+            }
+
 
             return Validator::make($data, [
                 'name' => 'required|max:255',
@@ -63,7 +83,12 @@ class AuthController extends Controller
                 'place' => 'required',
                 'phone_number' => 'required',
                 'birthdate' => 'required',
-                
+                'current_study' => 'required',
+                'study_year' => 'required|min:4|max:4|',
+                'student_number' => 'required',
+                'iban' => 'required',
+                'tnv' => 'required'
+
             ]);
 
         }
@@ -85,17 +110,19 @@ class AuthController extends Controller
     {   
 
         
+        if(!Auth::check()){
 
+            // gebruikers account aanmaken
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+            ]);
 
+        }else{
+            $user = Auth::user();
 
-       
-
-        // gebruikers account aanmaken
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        }
 
         // inschrijven voor een activiteit
         if(isset($data['event_id']))
@@ -107,10 +134,11 @@ class AuthController extends Controller
 
         if(isset($data['inschrijven'])){
 
+        
             $profile = new Profile();
 
             $profile->user_id = $user->id;
-            $profile->name = $data['name'];
+            $profile->name = $user->name;
             $profile->street = $data['street'];
             $profile->place = $data['place'];
             $profile->house_number = $data['house_number'];
@@ -125,7 +153,7 @@ class AuthController extends Controller
             $profile->subscribed = $data['subscribed'];
             $profile->admin = false;
             $profile->active = true;
-
+            
             $profile->save();
         }
 
