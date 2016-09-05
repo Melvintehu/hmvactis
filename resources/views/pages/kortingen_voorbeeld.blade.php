@@ -8,32 +8,62 @@
 
 @section('content')
 	
-	<div class="section background-primary text-white">
+	<div class="bg-secondary "> 
+
 		<div class="container">
-			<div class="page">
-					<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<h1 class="page-title"> {{ $data['korting']->sponsor->name }} </h1>
+			
+			<div class="row space-outside-lg">
+				
+
+				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+
+
+					<div class="row">
+						
+
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 xs-space-inside-left-xl">
+
+							<h1 class="text-color-light"> {{ $data['korting']->sponsor->name }} </h1>
+
 						</div>
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="text-color-light">
-								{{ $data['korting']->title }}
+
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 xs-space-inside-left-xl">
+
+							<div class="text xs-space-outside-down-lg sm-space-outside-down-lg">
+
+								<p class="text-color-light"> {{ $data['korting']->title }} </p>
+
 							</div>
+
 						</div>
+
 					</div>
 
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-inside-down-lg">
-						<div class="image"> 
-							@if($data['korting']->photos->first()['path'] != null)	
-										<img class="" src="../{{$data['korting']->photos->first()['path']}}">
-									@else
-										<img class="" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
-									@endif
-						</div>
+				</div>
+
+				<div style="padding:0;" class="col-lg-5 col-md-4 col-sm-12 col-xs-12">
+
+					<div class="image lg-rect-lg xs-space-inside-sides-lg"> 
+
+						@if($data['korting']->photos->first()['path'] != null)	
+							<img class="width-auto" src="../{{$data['korting']->photos->first()['path']}}">
+						@else
+							<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+						@endif
+
+
 					</div>
+
+				</div>
+
 			</div>
+
+
+
 		</div>
 	</div>
+
+	
 
 
 	<div class="container">
