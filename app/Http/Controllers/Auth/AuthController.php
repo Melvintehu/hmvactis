@@ -10,8 +10,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
-use App\Http\Controllers\MailController;
-
 class AuthController extends Controller
 {
     /*

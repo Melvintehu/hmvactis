@@ -84,7 +84,7 @@
 									  border-accent
 									  bg-accent 
 									  space-outside-xs
-									  ']); !!} 
+									  ', 'id' => 'name' ]); !!} 
 
 					</div>
 
@@ -105,7 +105,7 @@
 
 					<div class="col-lg-6 col-md-6 col-sm-8 col-xs-8"> 
 
-						{!! Form::text('street', null, ['class' => 'input border 
+						{!! Form::text('street', null, ['id' => 'street', 'class' => 'input border 
 									  border-accent
 									  bg-accent 
 									  space-outside-xs']); !!} 
@@ -124,7 +124,7 @@
 
 					<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4"> 
 
-						{!! Form::text('house_number', null, ['class' => 'input border 
+						{!! Form::text('house_number', null, ['id' => 'house_number', 'class' => 'input border 
 									  border-accent
 									  bg-accent 
 									  space-outside-xs']); !!} 
@@ -157,7 +157,7 @@
 
 					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
 
-						{!! Form::text('place', null, ['class' => 'input border 
+						{!! Form::text('place', null, ['id' => 'place','class' => 'input border 
 									  border-accent
 									  bg-accent 
 									  space-outside-xs']); !!} 
@@ -190,7 +190,7 @@
 
 					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
 
-						{!! Form::text('phone_number', null, ['class' => 'input border 
+						{!! Form::text('phone_number', null, ['id' => 'phone_number','class' => 'input border 
 									  border-accent
 									  bg-accent 
 									  space-outside-xs']); !!} 
@@ -225,7 +225,7 @@
 
 					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
 
-						{!! Form::text('email', null, ['class' => 'input border 
+						{!! Form::text('email', null, ['id' => 'email','class' => 'input border 
 									  border-accent
 									  bg-accent 
 									  space-outside-xs']); !!} 
@@ -258,7 +258,7 @@
 
 					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
 
-						{!! Form::date('birthdate', null, ['class' => 'input border 
+						{!! Form::date('birthdate', null, ['id' => 'birthdate','class' => 'input border 
 									  border-accent
 									  bg-accent 
 									  space-outside-xs']); !!} 
@@ -291,7 +291,7 @@
 
 					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
 
-						{!! Form::password('password', ['class' => 'input border 
+						{!! Form::password('password', ['id' => 'password','class' => 'input border 
 									  border-accent
 									  bg-accent 
 									  space-outside-xs']); !!} 
@@ -313,7 +313,7 @@
 
 					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
 
-						{!! Form::password('password_confirmation', ['class' => 'input border 
+						{!! Form::password('password_confirmation', ['id' => 'password_confirmation','class' => 'input border 
 									  border-accent
 									  bg-accent 
 									  space-outside-xs']); !!} 
@@ -328,7 +328,7 @@
 
 			<div class="col-lg-12 space-outside-up-md text-center">
 				
-				<a  class="to-step-2 btn-standard bg-main text-color-light" href="#"> Ga naar stap 2</a>
+				<a id="next-1" class="to-step-2 btn-standard bg-main text-color-light" href="#"> Ga naar stap 2</a>
 
 			</div>
 
@@ -344,35 +344,39 @@
 
 		<div class="row">
 			
-			<!-- Titel -->
+			<div class="col-lg-12">
+				
+				<div class="row">
 
-			<div class="col-lg-12 text-center space-outside-down-sm space-outside-up-lg">
+					<!-- Titel -->
 
-				<h2>STUDIEGEGEVENS</h2>
+					<div class="col-lg-12 text-center space-outside-down-sm space-outside-up-lg">
 
-			</div>
-			
+						<h2>STUDIEGEGEVENS</h2>
 
-			<!-- HUIDIGE STUDIE -->
+					</div>
+					
 
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+					<!-- HUIDIGE STUDIE -->
 
-				<p class="text-color-light bg-secondary input-label space-inside-left-sm">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
 
-					HUIDIGE STUDIE
+						<p class="text-color-light bg-secondary input-label space-inside-left-sm">
 
-				</p>
+							HUIDIGE STUDIE
 
-			</div>
+						</p>
 
-			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+					</div>
 
-				{!! Form::text('current_study', null, ['class' => 'input border 
-							  border-accent
-							  bg-accent 
-							  space-outside-xs']); !!} 
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
 
-				@if ($errors->has('current_study'))
+						{!! Form::text('current_study', null, ['id' => 'current_study','class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
+
+						@if ($errors->has('current_study'))
 
 	                        <span class="help-block">
 
@@ -382,74 +386,82 @@
 
 	                    @endif
 
-			</div>
+					</div>
 
 
-			<!-- STARTJAAR STUDIE -->
+					<!-- STARTJAAR STUDIE -->
 
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
 
-				<p class="text-color-light bg-secondary input-label space-inside-left-sm">
+						<p class="text-color-light bg-secondary input-label space-inside-left-sm">
 
-					STARTJAAR STUDIE
+							STARTJAAR STUDIE
 
-				</p>
+						</p>
 
-			</div>
+					</div>
 
-			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
 
-				{!! Form::text('study_year', null, ['class' => 'input border 
-							  border-accent
-							  bg-accent 
-							  space-outside-xs']); !!} 
+						{!! Form::text('study_year', null, ['id' => 'study_year','class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
 
-				@if ($errors->has('study_year'))
+						@if ($errors->has('study_year'))
 
-                    <span class="help-block">
+		                    <span class="help-block">
 
-                        <strong>Vul het jaar waarin je bent gaan studeren in.</strong>
+		                        <strong>Vul het jaar waarin je bent gaan studeren in.</strong>
 
-                    </span>
+		                    </span>
 
-                @endif
+		                @endif
 
-			</div>
+					</div>
 
-			<!-- STUDENTNUMMER -->
+					<!-- STUDENTNUMMER -->
 
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
 
-				<p class="text-color-light bg-secondary input-label space-inside-left-sm">
+						<p class="text-color-light bg-secondary input-label space-inside-left-sm">
 
-					STUDENTNUMMER
+							STUDENTNUMMER
 
-				</p>
+						</p>
 
-			</div>
+					</div>
 
-			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
 
-				{!! Form::text('student_number', null, ['class' => 'input border 
-							  border-accent
-							  bg-accent 
-							  space-outside-xs']); !!} 
+						{!! Form::text('student_number', null, ['id' => 'student_number','class' => 'input border 
+									  border-accent
+									  bg-accent 
+									  space-outside-xs']); !!} 
 
-				@if ($errors->has('student_number'))
+						@if ($errors->has('student_number'))
 
-                    <span class="help-block">
+		                    <span class="help-block">
 
-                        <strong>Vul je student_number in.</strong>
+		                        <strong>Vul je student_number in.</strong>
 
-                    </span>
+		                    </span>
 
-                @endif
+		                @endif
 
-			</div>		
+					</div>		
 
-			<div class="col-lg-12 space-outside-up-md text-center">
-				
-				<a " class="to-step-1 btn-standard bg-secondary text-color-light" href="#"> Terug naar stap 1</a>
+					
+
+					
+
+				</div>
+
+			</div>	
+
+			<div class="col-lg-12 space-inside-up-md text-center">
+						
+				<a class="to-step-1 btn-standard xs-space-outside-down-md bg-secondary text-color-light" href="#"> Terug naar stap 1</a>
 
 				<a  class="to-step-3 btn-standard bg-main text-color-light" href="#"> Ga naar stap 3</a>
 
@@ -497,7 +509,7 @@
 
 			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
 
-				{!! Form::text('iban', null, ['class' => 'input border 
+				{!! Form::text('iban', null, ['id' => 'iban','class' => 'input border 
 							  border-accent
 							  bg-accent 
 							  space-outside-xs']); !!} 
@@ -530,7 +542,7 @@
 			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
 
 
-				{!! Form::text('tnv', null, ['class' => 'input border 
+				{!! Form::text('tnv', null, ['id' => 'tnv','class' => 'input border 
 							  border-accent
 							  bg-accent 
 							  space-outside-xs']); !!} 
