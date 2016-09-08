@@ -6,7 +6,7 @@ Inloggen
 @section('content')
 <div class="container fadeInDown wow">
         
-        <h1 class="page-title"> INLOGGEN </h1>
+        <h1 class="space-outside-lg xs-text-center"> INLOGGEN </h1>
     
 <div class="container">
     <div class="row ">
@@ -43,9 +43,9 @@ Inloggen
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 ">
-                                 <input type="submit" class="btn-standard bg-secondary text-color-light " value="Inloggen">
+                        <div class="form-group space-outside-up-md">
+                            <div class="col-md-6 col-xs-12 xs-text-center">
+                                 <input type="submit" class="btn-standard bg-main xs-space-outside-down-xs  text-color-light " value="Inloggen">
                                  <a href="/register" class="btn-standard bg-secondary  text-color-light" >Registreren </a>
                             </div>
 

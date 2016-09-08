@@ -53,7 +53,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 ">
-                                 <input type="submit" class="btn-standard bg-secondary text-color-light " value="Inloggen">
+                                 <input type="submit" class="btn-standard bg-secondary text-color-light xs-space-outside-down-md" value="Inloggen">
                                  <a href="/register" class="btn-standard bg-secondary  text-color-light" >Registreren </a>
                             </div>
 

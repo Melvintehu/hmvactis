@@ -6,7 +6,7 @@
 			
 			<a href='../../../'>
 
-				<div style="width:200px;max-width:100%;" class="image auto space-outside-up-md">
+				<div style="width:200px;max-width:100%;" class="image auto space-outside-up-md xs-space-outside-down-md">
 					
 					<img class="height-auto" src='../images/logo.png' >
 					
