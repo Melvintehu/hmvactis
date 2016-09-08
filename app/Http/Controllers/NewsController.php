@@ -27,7 +27,7 @@ class NewsController extends Controller
 
     public function overzicht(){
           $data = [
-            'nieuws' => News::all(),
+            'nieuws' => News::orderBy('publish_date', 'desc')->get(),
             ];
 
         return view('pages.nieuws', compact('data'));
