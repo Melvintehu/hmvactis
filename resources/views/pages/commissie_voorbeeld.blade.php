@@ -8,7 +8,7 @@
 
 @section('content')
 	
-	<div class="container">
+	<div class="container fadeInDown wow">
 		<div class="page">
 			<div class='row'>
 				<div class="col-lg-2 space-outside-md">	
@@ -23,7 +23,7 @@
 		</div>
 	</div>
 
-	<div class="section background-primary text-white">
+	<div class="section background-primary text-white fadeInDown wow">
 		<div class="container">
 			<p class="text">  
 				{!! nl2br($data['committee']->description) !!}
@@ -31,7 +31,7 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container fadeInDown wow">
 		<div class="row row-centered">
 		@foreach($data['committeemembers'] as $committeemember)
 			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-centered">

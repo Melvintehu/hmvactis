@@ -14,7 +14,7 @@
 		
 		{{ csrf_field() }}
 
-	<section class="container">
+	<section class="container fadeInDown wow">
 		
 		<div class="row">
 			
@@ -56,7 +56,7 @@
 
 					<!-- titel -->
 
-					<div class="col-lg-12 text-center space-outside-down-sm space-outside-up-lg">
+					<div class="col-lg-12 text-center space-outside-down-sm space-outside-up-lg fadeInDown wow">
 
 						<h2>PERSOONSGEGEVENS</h2>
 
@@ -68,7 +68,7 @@
 
 					<!-- VOLLEDIGE NAAM -->
 
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs fadeInDown wow"> 
 
 						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
 
@@ -78,7 +78,7 @@
 
 					</div>
 
-					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 fadeInDown wow"> 
 
 	                    {!! Form::text('name', null, ['class' => 'input border 
 									  border-accent
@@ -93,7 +93,7 @@
 
 					<!-- STRAATNAAM EN HUISNUMMER -->
 
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs fadeInDown wow"> 
 
 						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
 
@@ -103,7 +103,7 @@
 
 					</div>
 
-					<div class="col-lg-6 col-md-6 col-sm-8 col-xs-8"> 
+					<div class="col-lg-6 col-md-6 col-sm-8 col-xs-8 fadeInDown wow"> 
 
 						{!! Form::text('street', null, ['id' => 'street', 'class' => 'input border 
 									  border-accent
@@ -122,7 +122,7 @@
 
 					</div>
 
-					<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4"> 
+					<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 fadeInDown wow"> 
 
 						{!! Form::text('house_number', null, ['id' => 'house_number', 'class' => 'input border 
 									  border-accent
@@ -145,7 +145,7 @@
 
 					<!-- PLAATS -->
 
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs fadeInDown wow"> 
 
 						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
 
@@ -155,7 +155,7 @@
 
 					</div>
 
-					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 fadeInDown wow"> 
 
 						{!! Form::text('place', null, ['id' => 'place','class' => 'input border 
 									  border-accent
@@ -178,7 +178,7 @@
 
 					<!-- Telefoonnummer -->
 
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs fadeInDown wow"> 
 
 						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
 
@@ -188,7 +188,7 @@
 
 					</div>
 
-					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 fadeInDown wow"> 
 
 						{!! Form::text('phone_number', null, ['id' => 'phone_number','class' => 'input border 
 									  border-accent
@@ -213,7 +213,7 @@
 
 					<!-- EMAILADRES -->
 
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs fadeInDown wow"> 
 
 						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
 
@@ -223,7 +223,7 @@
 
 					</div>
 
-					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 fadeInDown wow"> 
 
 						{!! Form::text('email', null, ['id' => 'email','class' => 'input border 
 									  border-accent
@@ -246,7 +246,7 @@
 
 					<!-- Geboortedatum -->
 
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs fadeInDown wow"> 
 
 						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
 
@@ -256,7 +256,7 @@
 
 					</div>
 
-					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 fadeInDown wow"> 
 
 						{!! Form::date('birthdate', null, ['id' => 'birthdate','class' => 'input border 
 									  border-accent
@@ -279,7 +279,7 @@
 
 					<!-- Wachtwoord -->
 
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs fadeInDown wow"> 
 
 						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
 
@@ -289,7 +289,7 @@
 
 					</div>
 
-					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 fadeInDown wow"> 
 
 						{!! Form::password('password', ['id' => 'password','class' => 'input border 
 									  border-accent
@@ -301,7 +301,7 @@
 
 					<!-- Wachtwoord herhalen -->
 
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs"> 
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 space-outside-xs fadeInDown wow"> 
 
 						<p class="text-color-light input-label bg-secondary space-inside-left-sm">
 							
@@ -311,7 +311,7 @@
 
 					</div>
 
-					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 fadeInDown wow"> 
 
 						{!! Form::password('password_confirmation', ['id' => 'password_confirmation','class' => 'input border 
 									  border-accent
@@ -326,7 +326,7 @@
 
 			</div>
 
-			<div class="col-lg-12 space-outside-up-md text-center">
+			<div class="col-lg-12 space-outside-up-md text-center fadeInDown wow">
 				
 				<a id="next-1" class="to-step-2 btn-standard bg-main text-color-light" href="#"> Ga naar stap 2</a>
 
@@ -340,7 +340,7 @@
 
 
 	<!-- Stap 2 -->
-	<section id="step-2" class="container space-outside-down-lg">
+	<section id="step-2" class="container space-outside-down-lg fadeInDown wow">
 
 		<div class="row">
 			
@@ -473,7 +473,7 @@
 		
 	
 	<!-- Stap 3 -->		
-	<section id="step-3" class="container">	
+	<section id="step-3" class="container fadeInDown wow">	
 
 		<div class="row">
 

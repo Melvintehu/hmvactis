@@ -21,7 +21,8 @@ use App\Profile;
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="../css/app.css">
         <link rel="stylesheet" type="text/css" href="../css/jquery.bxslider.css">
-        
+        <link rel="stylesheet" type="text/css" href="../css/animate.css">
+
     </head>
     <body>
 
@@ -71,6 +72,9 @@ use App\Profile;
         }); 
         </script>
         <script type="text/javascript" src="js/main.js"></script>
-        
+        <script type="text/javascript" src="../js/wow.min.js"></script>
+        <script>
+            new WOW().init();
+        </script>
     </body>
 </html>

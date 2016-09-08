@@ -24,7 +24,7 @@
 
 				@foreach($data['hoofdpartners'] as $hoofdpartner)
 
-				<div class="col-lg-12 col-md-4 col-sm-6 col-xs-12 ">
+				<div class="col-lg-12 col-md-4 col-sm-6 col-xs-12 fadeInLeft wow">
 
 					<a href="partners/{{ $hoofdpartner->id }}" >
 
@@ -77,7 +77,7 @@
 
 				@foreach($data['partners'] as $partner)
 
-					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"> 
+					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 fadeInDown wow"> 
 
 						<a href="partners/{{ $partner->id }}" >	
 

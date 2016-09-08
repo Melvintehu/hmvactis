@@ -10,7 +10,7 @@
 
 @section('content')
 
-	<section class="container">
+	<section class="container fadeInDown wow">
 
 		<div class="row">
 			

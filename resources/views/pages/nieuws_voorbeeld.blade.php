@@ -12,7 +12,7 @@
 
 		<div class="container">
 
-			<div class="page">
+			<div class="page  fadeInDown wow">
 
 				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
 
@@ -58,7 +58,7 @@
 
 
 	<div class="container">
-		<div class="page">
+		<div class="page fadeInDown wow">
 			<div class="text">
 				<p>
 					{!! nl2br($data['nieuws']->description) !!}
@@ -75,7 +75,7 @@
 
 	<div class="container-fluid bg-accent space-outside-lg space-inside-sides-xl">
 		
-		<div class="row ">
+		<div class="row  fadeInDown wow">
 			
 			<div class="col-lg-12 space-inside-lg text-center">
 

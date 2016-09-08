@@ -27,7 +27,7 @@
 
 			<a href="vacatures/{{ $vacancie->id }}">
 
-			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 fadeInDown wow">
 
 				<div class="card type-1 background-primary">
 

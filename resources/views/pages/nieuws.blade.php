@@ -10,17 +10,17 @@
 
 @section('content')
 
-	<div class="container no-overflow ">
+	<div class="container no-overflow">
 
 		<div class="row">
 			
-		<h1 class="space-outside-lg xs-text-center "> NIEUWS</h1>
+		<h1 class="space-outside-lg xs-text-center  fadeInDown wow"> NIEUWS</h1>
 
 
 			<div class="row row-centered text-white">
 			@foreach($data['nieuws'] as $nieuwsmessage)
 				
-					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12  fadeInDown wow">
 
 						<a href="nieuws/{{ $nieuwsmessage->id }}" >
 

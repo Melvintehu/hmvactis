@@ -15,7 +15,7 @@
 
 @section('content')
 
-	<section class="container space-outside-up-lg">
+	<section class="container space-outside-up-lg fadeInDown wow">
 		
 		<div class="row">
 			
@@ -86,7 +86,7 @@
 
 		<div class="container">
 			
-			<div class="row space-outside-lg">
+			<div class="row space-outside-lg fadeInDown wow">
 				
 				<div class="col-lg-5  space-outside-lg">
 					
@@ -132,7 +132,7 @@
 
 	<div class="container">
 
-		<div class="row row-centered ">
+		<div class="row row-centered fadeInDown wow">
 				
 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
 
@@ -275,7 +275,7 @@
 
 	<div class="container space-outside-lg">
 		
-		<div class="row">
+		<div class="row fadeInDown wow">
 
 			<h1 class="space-outside-down-lg xs-text-center"> PARTNERS </h1>
 				

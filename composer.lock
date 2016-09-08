@@ -1243,12 +1243,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Snowfire/Beautymail.git",
-                "reference": "01f5e6a623d093d842bdee6f1efdf7cba0788be2"
+                "reference": "523f6043f2ea3be9684419c6223fd40b38d6eb20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Snowfire/Beautymail/zipball/01f5e6a623d093d842bdee6f1efdf7cba0788be2",
-                "reference": "01f5e6a623d093d842bdee6f1efdf7cba0788be2",
+                "url": "https://api.github.com/repos/Snowfire/Beautymail/zipball/523f6043f2ea3be9684419c6223fd40b38d6eb20",
+                "reference": "523f6043f2ea3be9684419c6223fd40b38d6eb20",
                 "shasum": ""
             },
             "require": {
@@ -1278,7 +1278,7 @@
                 "html",
                 "laravel"
             ],
-            "time": "2016-09-02 14:32:09"
+            "time": "2016-09-05 12:10:14"
         },
         {
             "name": "swiftmailer/swiftmailer",

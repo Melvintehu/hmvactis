@@ -35,7 +35,7 @@
 
 		<div class="container">
 			
-			<div class="row space-outside-lg">
+			<div class="row space-outside-lg fadeInDown wow">
 				
 
 				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
@@ -68,7 +68,7 @@
 
 				</div>
 
-				<div style="padding:0;" class="col-lg-5 col-md-4 col-sm-12 col-xs-12">
+				<div style="padding:0;" class="col-lg-5 col-md-4 col-sm-12 col-xs-12 ">
 
 					<div class="image lg-rect-lg xs-space-inside-sides-lg"> 
 
@@ -101,7 +101,7 @@
 	</div>
 
 
-	<div class="container">
+	<div class="container fadeInDown wow">
 		
 		<div class="row">
 			
@@ -134,7 +134,7 @@
 	@if (!Auth::check())
 
 	<!-- Section inschrijven voor activiteit -->
-	<section class="container space-outside-down-lg">
+	<section class="container space-outside-down-lg fadeInDown wow">
 		
 		<div class="row">
 			
@@ -255,7 +255,7 @@
 	@else
 
 	<!-- Section inschrijven voor activiteit -->
-	<section class="container space-outside-down-lg">
+	<section class="container space-outside-down-lg fadeInDown wow">
 		
 		<div class="row">
 			
