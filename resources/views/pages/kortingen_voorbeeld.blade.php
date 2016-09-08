@@ -15,7 +15,7 @@
 			<div class="row space-outside-lg">
 				
 
-				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 fadeInDown wow">
 
 
 					<div class="row">
@@ -67,7 +67,7 @@
 
 
 	<div class="container">
-		<div class="page">
+		<div class="page fadeInDown wow">
 			<div class="text">
 				<p>
 					{!! nl2br($data['korting']->description) !!}

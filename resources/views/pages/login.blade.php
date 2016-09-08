@@ -13,10 +13,11 @@
 	<div class="container">
 		
 		<h1 class="page-title"> INLOGGEN </h1>
-	
-<div class="container">
 
-    <div class="row">
+	</div>
+    <div class="container ">
+
+    <div class="row fadeInDown wow">
 
         <div class="col-md-12 space-outside-down-lg">
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">

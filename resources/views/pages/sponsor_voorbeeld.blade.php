@@ -10,7 +10,7 @@
 
 		<div class="container">
 			
-			<div class="row space-outside-lg">
+			<div class="row space-outside-lg fadeInDown wow">
 				
 
 				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
@@ -62,7 +62,7 @@
 	</div>
 
 	<!-- Section inschrijven voor activiteit -->
-	<section class="container ">
+	<section class="container fadeInDown wow">
 		
 		<div class="row">
 			
@@ -77,7 +77,7 @@
 	</section>
 
 	
-	<div class="container-fluid bg-accent space-outside-down-lg space-inside-sides-xl">
+	<div class="container-fluid bg-accent space-outside-down-lg space-inside-sides-xl fadeInDown wow">
 		
 		<div class="row ">
 			

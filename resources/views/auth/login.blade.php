@@ -4,12 +4,12 @@ Inloggen
 
 @extends('master')
 @section('content')
-<div class="container">
+<div class="container fadeInDown wow">
         
         <h1 class="space-outside-lg xs-text-center"> INLOGGEN </h1>
     
 <div class="container">
-    <div class="row">
+    <div class="row ">
 
         <div class="col-md-12 space-outside-down-lg">
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
