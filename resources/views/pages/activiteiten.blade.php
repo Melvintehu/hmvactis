@@ -30,7 +30,7 @@
 
 				<a href="activiteit/{{ $event->id }}">
 					
-				<div class="col-lg-12 space-outside-down-sm">
+				<div class="col-lg-12 space-outside-down-sm  fadeInLeft wow">
 
 					<div class="row">
 						

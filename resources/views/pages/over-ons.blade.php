@@ -14,7 +14,7 @@
 
 		<div class="container">
 				
-			<div class="row xs-text-center">
+			<div class="row xs-text-center fadeInDown wow">
 				
 				<div class="col-lg-12 space-outside-up-lg">
 
@@ -86,7 +86,7 @@
 	</section>
 
 
-	<div class="container">
+	<div class="container fadeInDown wow">
 		<div class="page">
 			<h1> Bestuur 2015 - 2016 </h1>
 
@@ -118,7 +118,7 @@
 		</div>
 	</div>
 
-	<section class="container">
+	<section class="container fadeInDown wow">
 		
 		<div class="row">
 			
@@ -182,7 +182,7 @@
 
 
 
-	<div class="container">
+	<div class="container fadeInDown wow">
 		
 		<div class="row">
 			

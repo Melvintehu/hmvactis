@@ -14,12 +14,12 @@
 			
 			<div class="row">
 				
-				<div class="col-lg-8">
+				<div class="col-lg-8 fadeInDown wow">
 					
 					<div class="row" >
 
 
-						<div class="col-lg-12 xs-text-center">
+						<div class="col-lg-12 xs-text-center ">
 							
 							<h1 class="text-color-light"> {{ $data['vacature']->title }} </h1>
 
@@ -39,7 +39,7 @@
 
 				</div>
 
-				<div class="col-lg-4 xs-text-center">
+				<div class="col-lg-4 xs-text-center fadeInDown wow">
 					
 					<div class="image lg-rect-lg"> 
 
@@ -67,7 +67,7 @@
 
 		<div class="row">
 
-			<div class="col-lg-12 space-outside-md ">
+			<div class="col-lg-12 space-outside-md fadeInDown wow">
 
 				<p class="xs-text-center">
 
@@ -82,7 +82,7 @@
 
 		</div>
 
-		<div class="col-lg-12 xs-text-center space-outside-down-md">
+		<div class="col-lg-12 xs-text-center space-outside-down-md fadeInDown wow">
 
 			<a href='/vacatures' class="btn-standard bg-main text-color-light space-outside-md block"> Ga terug </a>
 			

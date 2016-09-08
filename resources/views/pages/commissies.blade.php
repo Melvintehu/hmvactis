@@ -14,7 +14,7 @@
 
 		<div class="row">
 
-			<h1 class="space-outside-lg xs-text-center"> COMMISSIES </h1>
+			<h1 class="space-outside-lg xs-text-center fadeInDown wow"> COMMISSIES </h1>
 
 			@include('partials.page-introduction', $data['pageSection'])
 
@@ -22,7 +22,7 @@
 
 			@foreach($data['committees'] as $committee)
 
-			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-centered">
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-centered   fadeInDown wow">
 
 				<a href="commissies/{{ $committee->id }}">
 

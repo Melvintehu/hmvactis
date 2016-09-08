@@ -10,7 +10,7 @@
 
 @section('content')
 
-	<section class="container space-inside-up-lg space-inside-down-md">
+	<section class="container space-inside-up-lg space-inside-down-md fadeInDown wow">
 		
 		<div class="row">
 			
@@ -36,7 +36,7 @@
 
 
 
-	<section class="container space-inside-down-lg"> 
+	<section class="container space-inside-down-lg fadeInDown wow"> 
 
 		<div class="row">
 			
