@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->date('date');
             $table->longText('description');
             $table->enum('lustrum_event', ['ja', 'nee']);
+            $table->enum('subscription', ['yes', 'no']);
             $table->time('time');
             $table->timestamps();
         });

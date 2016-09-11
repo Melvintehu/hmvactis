@@ -9,6 +9,20 @@
 
 
 @section('content')
+	
+	<div class="container"> 
+
+		<div class="row">
+				
+			<div class="col-lg-12 text-center space-outside-lg">
+				
+			<p class="bold">Heb je eerder al een account aangemaakt maar je bent nog geen lid? Log dan eerst in om lid te worden. <br> <a class="text-color-main" href="/login">Inloggen</a></p>
+
+			</div>
+
+		</div>
+
+	</div>
 
 	<form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
 		
@@ -234,7 +248,7 @@
 
                             <span class="help-block">
 
-                                <strong>Vul je emailadres in.</strong>
+                                <strong>{{ $errors->first('email') }}</strong>
 
                             </span>
 
@@ -597,7 +611,7 @@
 
 				<input class="btn-standard bg-main text-color-light space-outside-xs" type="submit" value="Inschrijven" name="inschrijven">
 
-				<p class="space-outside-left-sm">Door je in te schrijven ga je akkoord met onze <u><a href="algemene-voorwaarden">algemene voorwaarden</a></u>.</p>
+				<p class="space-outside-left-sm">Door je in te schrijven ga je akkoord met onze <u><a target="_blank" href="Algemene voorwaarden website.pdf">algemene voorwaarden</a></u>.</p>
 
 			</div>
 

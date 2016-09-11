@@ -43,7 +43,7 @@
 			</div>
 
 			<div class="col-lg-6">
-				<a class="text-color-light block space-outside-xs" href="#">  Algemene voorwaarden </a>
+				<a class="text-color-light block space-outside-xs" href="Algemene voorwaarden website.pdf">  Algemene voorwaarden </a>
 				<a class="text-color-light block space-outside-xs" href="#"> Sitemap </a>
 				<a class="text-color-light block space-outside-xs" href="../../beleidsplan_definitief_15-16.docx"> Beleidsplan </a>
 				<a class="text-color-light block space-outside-xs" href="../../huishoudelijkreglement-2012.pdf"> Huishoudelijk Regelement</a>
