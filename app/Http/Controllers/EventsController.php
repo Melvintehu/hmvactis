@@ -88,7 +88,9 @@ class EventsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+
+
          Event::create($request->all());
          return redirect('cms/events');
     }
@@ -127,7 +129,7 @@ class EventsController extends Controller
 
         $event = Event::findOrFail($id);
         $event->update($request->all());
-
+        dd($event);
         return redirect('cms/events');
     }
 

@@ -34,6 +34,13 @@
     {!! Form::select('lustrum_event', array('ja' => 'Ja', 'nee' => 'Nee')) !!}
 </div>
 
+<!-- form textfield  -->
+<div class='form-group'>
+    {!! Form::label('subscription', '  Kan je je inschrijven voor deze activiteit ?  ') !!}
+    {!! Form::select('subscription', array('yes' => 'yes', 'no' => 'no')) !!}
+</div>
+
+
 <!-- form submit button -->
 <div class='form-group'>
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-success']) !!}

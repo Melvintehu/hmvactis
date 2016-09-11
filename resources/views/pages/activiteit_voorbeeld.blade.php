@@ -83,7 +83,7 @@
 
 				</div>
 				
-				@if($ingeschreven == true)
+				@if($ingeschreven == true && $data['activiteit']->subscription == 'yes')
 
 					<div class="col-lg-12 xs-text-center sm-text-center">
 						
@@ -111,7 +111,7 @@
 				@if (Auth::check())
 
 					
-					@if($ingeschreven == false)
+					@if($ingeschreven == false && $data['activiteit']->subscription == 'yes')
 
 							<button class="btn-standard bg-main text-color-light " href="/activiteiten" > Inschrijven </button>
 						
@@ -129,9 +129,7 @@
 	</div>
 
 
-
-
-	@if (!Auth::check())
+	@if (!Auth::check() && $data['activiteit']->subscription == 'yes')
 
 	<!-- Section inschrijven voor activiteit -->
 	<section class="container space-outside-down-lg fadeInDown wow">

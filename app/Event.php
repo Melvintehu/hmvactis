@@ -17,7 +17,8 @@ class Event extends Model
     	'date',
     	'time',
     	'description',
-    	'lustrum_event'
+    	'lustrum_event',
+        'subscription'
     ];
 
     public function photos(){
