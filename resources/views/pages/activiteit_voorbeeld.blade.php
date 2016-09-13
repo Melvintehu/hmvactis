@@ -83,7 +83,7 @@
 
 				</div>
 				
-				@if($ingeschreven == true && $data['activiteit']->subscription == 'yes')
+				@if($ingeschreven == true )
 
 					<div class="col-lg-12 xs-text-center sm-text-center">
 						

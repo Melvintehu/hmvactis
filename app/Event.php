@@ -11,6 +11,8 @@ class Event extends Model
 		'date'
 	];
 
+
+
     protected $fillable = [
     	'title',
     	'location',
@@ -25,9 +27,10 @@ class Event extends Model
         return $this->belongsToMany('App\Photo')->withPivot('type')->withTimeStamps();      
     }
 
+
     public function setMydateAttribute($date)
     {
-        $this->attributes['publish_date'] = Carbon::createFromFormat('Y/M/d', $date);
+        $this->attributes['date'] = Carbon::createFromFormat('Y/M/d', $date);
     }
 
 

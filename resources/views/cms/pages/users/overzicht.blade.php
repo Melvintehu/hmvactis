@@ -105,6 +105,7 @@
                                                         <th>#</th>
                                                         <th>Naam</th>
                                                         <th>Emailadres</th>
+                                                        <th>aangemeld op</th>
                                                         <th style='color:red'> X </th>
                                                     </tr>
                                                 </thead>
@@ -121,6 +122,8 @@
                                                         <td><b>{{ $user->name }}</b></td>
 
                                                         <td>{{ $user->email }}</td>
+
+                                                        <td>{{ $user->created_at }}</td>
 
                                                         <td >
                                                             {!! Form::open(['method' => 'delete', 'action' => [                             'UserController@destroy',  $user->id ]  ]) !!}
