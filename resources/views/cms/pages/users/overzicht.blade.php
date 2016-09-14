@@ -79,7 +79,7 @@
 
                                                         <td> {{ $user->profile['iban']}} </td>
                                                         <td >
-                                                            {!! Form::open(['method' => 'delete', 'action' => [                             'UserController@destroy',  $user->id ]  ]) !!}
+                                                            {!! Form::open(['method' => 'delete', 'action' => [                             'ProfilesController@destroy',  $user->profile->id ]  ]) !!}
                                                                 @include('cms.pages.partials.delete_form', ['submitButtonText' => 'X' ])      
                                                             {!! Form::close() !!}  
                                                         </td>
@@ -164,7 +164,7 @@
 
                                                         <td> {{ $user->profile['iban']}} </td>
                                                         <td >
-                                                            {!! Form::open(['method' => 'delete', 'action' => [                             'UserController@destroy',  $user->id ]  ]) !!}
+                                                            {!! Form::open(['method' => 'delete', 'action' => [                             'ProfilesController@destroy',  $user->profile->id ]  ]) !!}
                                                                 @include('cms.pages.partials.delete_form', ['submitButtonText' => 'X' ])      
                                                             {!! Form::close() !!}  
                                                         </td>
