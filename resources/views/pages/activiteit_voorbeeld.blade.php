@@ -1,4 +1,4 @@
-@extends('master')
+	@extends('master')
 
 @section('title')
 	{{ $data['activiteit']->title }}
@@ -111,7 +111,7 @@
 				@if (Auth::check())
 
 					
-					@if($ingeschreven == false && $data['activiteit']->subscription == 'yes')
+					@if($ingeschreven == false && $data['activiteit']->subscription == 'yes' && Carbon::now() <= $data['activiteit']->date)
 
 							<button class="btn-standard bg-main text-color-light " href="/activiteiten" > Inschrijven </button>
 						
@@ -129,7 +129,13 @@
 	</div>
 
 
-	@if (!Auth::check() && $data['activiteit']->subscription == 'yes')
+	User::save(function(){
+
+		
+
+	});
+
+	@if (!Auth::check() && $data['activiteit']->subscription == 'yes' && Carbon::now() <= $data['activiteit']->date)
 
 	<!-- Section inschrijven voor activiteit -->
 	<section class="container space-outside-down-lg fadeInDown wow">

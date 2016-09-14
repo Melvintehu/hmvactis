@@ -23,6 +23,7 @@
                                             <table class="table table-hover">
                                                 <thead>
                                                     <tr>
+                                                        <th> Aanpassen </th>
                                                         <th>#</th>
                                                         <th>Naam</th>
                                                         <th>Adres</th>
@@ -42,7 +43,11 @@
                                                     @foreach($data['users'] as $user)
                                                      @if($user->profile != null)
                                                     <tr>
-
+                                                        <td >
+                                                            {!! Form::open(['method' => 'GET', 'action' => [                             'UserController@edit',  $user->id ]  ]) !!}
+                                                                @include('cms.pages.partials.update_form')      
+                                                            {!! Form::close() !!}  
+                                                        </td>
 
                                                         <td>{{ $user->id }}</td>
 
@@ -63,17 +68,12 @@
                                                         <td> {{ $user->profile['student_number']}} </td>
 
                                                         <td> {{ $user->profile['iban']}} </td>
-
                                                         <td >
                                                             {!! Form::open(['method' => 'delete', 'action' => [                             'UserController@destroy',  $user->id ]  ]) !!}
                                                                 @include('cms.pages.partials.delete_form', ['submitButtonText' => 'X' ])      
                                                             {!! Form::close() !!}  
                                                         </td>
-                                                        <td >
-                                                            {!! Form::open(['method' => 'GET', 'action' => [                             'UserController@show',  $user->id ]  ]) !!}
-                                                                @include('cms.pages.partials.update_form')      
-                                                            {!! Form::close() !!}  
-                                                        </td>
+                                                       
                                                     </tr>
                                                     @endif
                                                     @endForeach
