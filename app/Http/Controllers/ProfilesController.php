@@ -90,4 +90,19 @@ class ProfilesController extends Controller
     {
         //
     }
+
+
+
+    public function processUser($id)
+    {
+       
+        $profile = Profile::where('user_id', $id)->first();
+
+        $profile->processed = 1;
+
+        $profile->save();
+
+        return redirect('cms/user');
+
+    }
 }

@@ -50,8 +50,10 @@ Route::group(['prefix' => 'cms'],  function () {
         Route::post('/boardMember/{id}/photos', 'BoardMembersController@addPhoto');
         Route::post('/vacancie/{id}/photos', 'VacanciesController@addPhoto');
 
+
         // get routes
         Route::get('/event/{id}/deelnemers', 'EventsController@displayDeelnemers');
+        Route::get('/user/{id}/process-user', 'ProfilesController@processUser');
 
     });
 });
