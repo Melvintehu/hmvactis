@@ -129,11 +129,6 @@
 	</div>
 
 
-	User::save(function(){
-
-		
-
-	});
 
 	@if (!Auth::check() && $data['activiteit']->subscription == 'yes' && Carbon::now() <= $data['activiteit']->date)
 
