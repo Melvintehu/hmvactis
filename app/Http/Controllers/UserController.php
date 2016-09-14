@@ -82,9 +82,14 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        $profile = Profile::where('user_id', $id)->get();
+    {   
+
+      
+        $profile = Profile::where('id', $id)->first();
+       
         $profile->update($request->all());
+
+
 
         return redirect('cms/user');
     }
