@@ -227,11 +227,7 @@
                                                                 @include('cms.pages.partials.delete_form', ['submitButtonText' => 'X' ])      
                                                             {!! Form::close() !!}  
                                                         </td>
-                                                        <td >
-                                                            {!! Form::open(['method' => 'GET', 'action' => [                             'UserController@show',  $user->id ]  ]) !!}
-                                                                @include('cms.pages.partials.update_form')      
-                                                            {!! Form::close() !!}  
-                                                        </td>
+                                                       
                                                     </tr>
                                                     @endif
                                                     @endForeach
