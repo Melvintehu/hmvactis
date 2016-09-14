@@ -37,7 +37,7 @@
 <!-- form textfield  -->
 <div class='form-group'>
     {!! Form::label('subscription', '  Kan je je inschrijven voor deze activiteit ?  ') !!}
-    {!! Form::select('subscription', array('yes' => 'yes', 'no' => 'no')) !!}
+    {!! Form::select('subscription', array('yes' => 'Ja', 'no' => 'nee')) !!}
 </div>
 
 

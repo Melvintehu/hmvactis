@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use App\Profile;
 
 class UserController extends Controller
 {
@@ -64,7 +65,13 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $data = [
+            'profile' => Profile::where('user_id', $id)->first(),
+        ];
+
+        return view('cms.pages.users.update', compact('data'));
+
     }
 
     /**
@@ -76,7 +83,10 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $profile = Profile::where('user_id', $id)->get();
+        $profile->update($request->all());
+
+        return redirect('cms/user');
     }
 
     /**
