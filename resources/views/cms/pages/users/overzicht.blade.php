@@ -61,7 +61,7 @@
 
                                                         <td>{{ $user->id }}</td>
 
-                                                        <td><b>{{ $user->name }}</b></td>
+                                                        <td><b>{{ $user->profile['name'] }}</b></td>
 
                                                         <td> {{ $user->profile['street']}} {{ $user->profile['house_number']}} {{ $user->profile['place']}} </td>
 
