@@ -153,7 +153,10 @@ class AuthController extends Controller
             $profile->student_number = $data['student_number'];
             $profile->iban = $data['iban'];
             $profile->tnv = $data['tnv'];
-            $profile->subscribed = $data['subscribed'];
+
+            if(isset($data['subscribed'])){
+	            $profile->subscribed = $data['subscribed'];
+            }
             $profile->admin = false;
             $profile->active = true;
 

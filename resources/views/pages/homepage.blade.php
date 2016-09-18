@@ -42,8 +42,14 @@
 							</div>
 
 							<div class="image">
-							@if($nieuwsmessage->photos->first()['path'] != null)	
-								<img class="img-responsive" src="{{$nieuwsmessage->photos->first()['path']}}">
+							@if($nieuwsmessage->photos->first()['thumbnail_path'] != null)	
+
+								<img class="" src="{{$nieuwsmessage->photos->first()['thumbnail_path']}}">
+
+							@elseif($nieuwsmessage->photos->first()['path'] != null)
+
+								<img class="" src="{{$nieuwsmessage->photos->first()['path']}}">
+
 							@else
 								<img class="height-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
 							@endif
@@ -296,9 +302,15 @@
 
 				  			<div style="height:200px;" class="image space-inside-up-md">
 						  				
-						  		@if($data['hoofdpartners']->photos->first()['path'] != null)
+						  		@if($data['hoofdpartners']->photos->first()['thumbnail_path'] != null)
 						  		
-						  			<img class="height-auto" src="{{$data['hoofdpartners']->photos->first()['path']}}">
+						  			<img class="height-auto" src="{{$data['hoofdpartners']->photos->first()['thumbnail_path']}}">
+
+					  			@elseif($data['hoofdpartners']->photos->first()['path'] != null)
+					  			
+					  				<img src="{{$partner->photos->first()['path']}}">
+
+					  		
 
 						  		@else
 						  		
@@ -335,9 +347,13 @@
 				  		<a class="block space-outside-down-sm" href='http://{{ $partner->website }}'>
 
 				  			<div style="height:150px;width:200px;" class="image imageCentered">
-						  				
-						  		@if($partner->photos->first()['path'] != null)
 						  		
+				  				@if($partner->photos->first()['thumbnail_path'] != null )
+
+				  					<img  src="{{$partner->photos->first()['thumbnail_path']}}">
+
+						  		@elseif($partner->photos->first()['path'] != null)
+						  			
 						  			<img src="{{$partner->photos->first()['path']}}">
 
 						  		@else

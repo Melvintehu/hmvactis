@@ -55,8 +55,7 @@
 
                                                 <td>
 
-                                                   <div id='newsPhoto' class="col-lg-3">    <img style="width:100%" src="/{{ $photo->path }}"> </div>
-
+                                                   <div id='newsPhoto' class="col-lg-3">    <img  src="../../../{{ $photo->thumbnail_path }}"> </div>
 
                                                 </td>
                                                 

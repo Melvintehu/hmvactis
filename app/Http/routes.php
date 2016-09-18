@@ -54,6 +54,7 @@ Route::group(['prefix' => 'cms'],  function () {
         // get routes
         Route::get('/event/{id}/deelnemers', 'EventsController@displayDeelnemers');
         Route::get('/user/{id}/process-user', 'ProfilesController@processUser');
+        Route::get('/oud-leden', 'ProfilesController@overzichtOudLeden');
 
     });
 });

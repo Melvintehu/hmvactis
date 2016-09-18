@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\photo;
 
 class CommitteeMember extends Model
 {
@@ -22,6 +23,13 @@ class CommitteeMember extends Model
     	return $this->belongsTo('App\Committee');
     }
 
+    public function addPhoto(Photo $photo)
+    {
+      
+      $this->photos()->attach($photo->id, ['type' => 'original']); 
+      
+      return $this->photos()->save($photo);
 
+    }
 
 }

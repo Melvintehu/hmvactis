@@ -34,7 +34,18 @@
 								
 								<div class="image xs-space-outside-down-md">
 
-									<img class="img-responsive" src="{{$hoofdpartner->photos->first()['path']}}">
+									@if($hoofdpartner->photos->first()['thumbnail_path'] != null)
+
+									<img class="img-responsive" src="{{$hoofdpartner->photos->first()['thumbnail_path']}}">
+
+									@elseif($hoofdpartner->photos->first()['path'] != null)
+
+										<img class="img-responsive" src="{{$hoofdpartner->photos->first()['path']}}">
+
+									@else
+							  			<img class="" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+							  		@endif
+
 
 								</div>
 								
@@ -86,10 +97,14 @@
 								<div class="top background-primary"></div>
 
 								<div class="image">
-									@if($partner->photos->first()['path'] != null)
+									@if($partner->photos->first()['thumbnail_path'] != null)
+							  			<img class="" src="{{$partner->photos->first()['thumbnail_path']}}">
+							  		@elseif($partner->photos->first()['path'] != null)
 							  			<img class="" src="{{$partner->photos->first()['path']}}">
 							  		@else
+
 							  			<img class="" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
+
 							  		@endif
 									
 

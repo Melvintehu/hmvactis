@@ -37,8 +37,15 @@
 						<div style="padding:0;" class="col-lg-4 col-md-4 ">
 
 							<div class="image lg-rect-lg">
-								@if($event->photos->first()['path'] != null)	
+								@if($event->photos->first()['thumbnail_path'] != null)	
+
+									<img class="responsive-image height-auto" src="{{$event->photos->first()['thumbnail_path']}}">
+
+								@elseif($event->photos->first()['path'] != null)	
+
 									<img class="responsive-image height-auto" src="{{$event->photos->first()['path']}}">
+
+
 								@else
 									<img class="responsive-image height-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
 								@endif

@@ -118,24 +118,31 @@ class SponsorDiscountsController extends Controller
         // check of er een foto bestaat voor dit nieuws id
         $sponsorDiscount = SponsorDiscount::findOrFail($id);
 
-        $photos  = $sponsorDiscount->photos;
+        // indien er al een foto is, verwijder deze.
+        $photos = $sponsorDiscount->photos;
 
+            // dd($photos);
         if(!$photos->isEmpty()){
             $photos->first()->delete();
         }
 
-        $file =  $request->file('file');
-        
-        $name = time() . $file->getClientOriginalName();
-
-        $file->move('application-photos/kortingen/photos', $name);
-           
         // create a new photo    
+        $photo = $this->makePhoto($request->file('file'));
 
-        $photo = Photo::create(['path' => "application-photos/kortingen/photos/{$name}"]);
+
+        $sponsorDiscount->addPhoto($photo);
         
-        $sponsorDiscount->photos()->attach($photo->id, ['type' => 'original']);
         return 'done';
+    }
+
+
+    public function makePhoto($file)
+    {
+        
+        return Photo::named($file->getClientOriginalName(), 'kortingen')
+            ->setThumbnailDimensions(250,150)
+            ->move($file);
+
     }
 
 

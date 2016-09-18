@@ -44,11 +44,17 @@
 						<h5>{{ $committeemember->role }}</h5>
 						<h5>{{ $committeemember->study }}</h5>
 					</div>
-					@if($committeemember->photos->first()['path'] != null)
+					@if($committeemember->photos->first()['thumbnail_path'] != null)
+					<div class="image round">
+						<img class="img-responsive" src="../{{$committeemember->photos->first()['thumbnail_path']}}">
+					</div>
+					<div style="clear:both;"></div>
+					@elseif($committeemember->photos->first()['path'] != null)
 					<div class="image round">
 						<img class="img-responsive" src="../{{$committeemember->photos->first()['path']}}">
 					</div>
 					<div style="clear:both;"></div>
+
 					@else
 					<div class="image round">
 						<img class="img-responsive" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">

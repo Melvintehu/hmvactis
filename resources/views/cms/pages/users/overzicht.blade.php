@@ -35,6 +35,7 @@
                                                         <th>Studiejaar</th>
                                                         <th>Studentnumber</th>
                                                         <th>IBAN</th>
+                                                        <th>Functie bekleden</th>
                                                         <th style='color:red'> X </th>
                                                     </tr>
                                                 </thead>
@@ -78,6 +79,16 @@
                                                         <td> {{ $user->profile['student_number']}} </td>
 
                                                         <td> {{ $user->profile['iban']}} </td>
+
+                                                        <td> 
+                                                            @if($user->profile->subscribed == 1)
+                                                                Ja 
+                                                            @else
+                                                                Nee
+                                                            @endif
+
+                                                        </td>
+
                                                         <td >
                                                             {!! Form::open(['method' => 'delete', 'action' => [                             'ProfilesController@destroy',  $user->profile->id ]  ]) !!}
                                                                 @include('cms.pages.partials.delete_form', ['submitButtonText' => 'X' ])      
