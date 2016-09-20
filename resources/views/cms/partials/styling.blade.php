@@ -19,3 +19,4 @@
 
 <!--Animation css-->
 <link href="{{ URL::asset("css/animate.css") }}" rel="stylesheet">
+<link href="{{ URL::asset("css/jquery.drag-n-crop.css") }}" rel="stylesheet">

@@ -308,7 +308,7 @@
 
 					  			@elseif($data['hoofdpartners']->photos->first()['path'] != null)
 					  			
-					  				<img src="{{$partner->photos->first()['path']}}">
+					  				<img src="{{$data['hoofdpartners']->photos->first()['path']}}">
 
 					  		
 

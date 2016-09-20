@@ -73,13 +73,7 @@
                                         <table class="table table-hover">
                                             
                                             <tbody>
-                                               @foreach($news->photos as $photo)
-                                                <td>
-
-                                                    <div id='newsPhoto' class="col-lg-3">    <img  src="../../{{ $photo->thumbnail_path }}"> </div>
-
-                                                </td>
-                                                @endforeach
+                                               
 
                                             </tbody>
 
@@ -129,7 +123,12 @@
 
                                                         <form  enctype="multipart/form-data" action='/cms/news/{{ $news->id }}/photos' method="POST" id="PhotoUpload" class="dropzone" >
                                                             {{ csrf_field() }}
+
+                                                            <input type="number" id='width' name="width">
+                                                            <input type="number" id='height' name="height">
                                                         </form>
+
+
 
                                                     </td>
 
@@ -157,11 +156,35 @@
         </div> <!--  outer column end -->
 
     </div> <!-- outer row end -->
+    <div style="width: 200px; height:200px" class="dragncrop"> 
+         @foreach($news->photos as $photo)
+        <div class="dragncrop-containment" style="top: 0px; bottom: 0px; left: -100px; right: -100px; position: absolute;"></div>
+        <img src="../../{{$photo->path}}" id="demo1" class="dragncrop-horizontal ui-draggable" style="position: relative; left: -4px;"> </div>
+        
+       
+       
+                                                
+          
 
+                                               
+                                                @endforeach
+
+      
+    </div>
 @stop
 
 
 @section('scripts')
+<script type="text/javascript">
+$('#demo1').dragncrop({overlay: true, overflow: true, drag: function(event, position){
+    console.log(position.dimension[0]);
+
+    $('#width').val(position.dimension[0]);
+    $('#height').val(position.dimension[1] * 100);
+}} );
+</script>
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
 <script >
@@ -191,7 +214,7 @@ Dropzone.options.myAwesomeDropzone = {
   }
 };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.min.js"></script>
-<script type="text/javascript" src="../../js/app.js"></script>
+
+
 
 @stop

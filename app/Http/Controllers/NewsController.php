@@ -49,7 +49,7 @@ class NewsController extends Controller
         }
 
         // create a new photo    
-        $photo = $this->makePhoto($request->file('file'));
+        $photo = $this->makePhoto($request->file('file'), $request->input('width'),  $request->input('height'));
 
 
         $news->addPhoto($photo);
@@ -58,11 +58,11 @@ class NewsController extends Controller
     }
 
 
-    public function makePhoto($file)
+    public function makePhoto($file, $width, $height)
     {
         
         return Photo::named($file->getClientOriginalName(), 'nieuws')
-            ->setThumbnailDimensions(250,150)
+            ->setThumbnailDimensions($width,$height)
             ->move($file);
 
     }
