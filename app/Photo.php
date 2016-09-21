@@ -37,24 +37,35 @@ class Photo extends Model
 
 	}
 
-	public function updateArea()
-	{
-		
-	}
+
 
 	public function overrideThumbnail($photo, $rightTrim, $leftTrim)
-	{
-		$img = Image::make($this->path);
+	{	
+
+		$img = Image::make($this->path);		
+
+		if($rightTrim == "" ){
+			$rightTrim = 0;
+		}
+
+		if($leftTrim == ""){
+			$leftTrim = 0;
+		}
+
 		
+
 		if($rightTrim != 0 || $leftTrim != 0){
 
 			$img->resizeCanvas($img->width() - $leftTrim, null, 'bottom-right');
 			$img->resizeCanvas($img->width() - $rightTrim, null, 'bottom-left');
 
 		}else{
-			$img->resize(250, 150);
-		}
 
+			$img->resize(250, 150, function($constraint){
+
+
+			});
+		}
 
 		$img->save($this->thumbnail_path);
 

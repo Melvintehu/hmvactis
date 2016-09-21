@@ -96,6 +96,12 @@
 
             <div class="row">
 
+            <div class="col-lg-12">
+                
+            <h1> Foto selectie maken </h1>
+
+            </div>
+ 
                 <div class="col-lg-6">
                     
                     <p> Sleep om een selectie te maken van de afbeelding. </p>
@@ -118,7 +124,7 @@
                  
                         <div class="dragncrop-containment" style="top: 0px; bottom: 0px; left: -100px; right: -100px; position: absolute;"></div>
 
-                        <img src="../../{{$photo->path}}" id="demo1" class="dragncrop-horizontal ui-draggable" style="position: relative; left: -4px;"> 
+                        <img src="../../{{$photo->path}}" id="demo1" class="dragncrop-horizontal ui-draggable" style="height:100%;position: relative; left: -4px;"> 
 
                     </div>
 
@@ -127,7 +133,7 @@
 
                 <div class="col-lg-6">
                     
-                        <div style="width:250px;height:150px;overlow:hidden;">
+                        <div style="width:250px;height:150px;overlow:hidden;border-style:solid;border-width:1px; border-color:rgba(0,0,0,.4)">
                             
                             <img style="height:100%;" src="../../{{$photo->thumbnail_path}}"   >
 
@@ -144,7 +150,7 @@
                         {!! Form::hidden('leftTrim', null, [ 'id' => 'leftTrim' ,'class' => 'form-control']) !!}
                         {!! Form::hidden('rightTrim', null, [ 'id' => 'rightTrim' ,'class' => 'form-control']) !!}
 
-                        <button class="btn btn-primary"> Foto opslaan </button>
+                        <button id='resizeImage' class="btn btn-primary"> Foto opslaan </button>
 
                     {!! Form::close() !!}
                                           
@@ -225,13 +231,14 @@
 
 @section('scripts')
 <script type="text/javascript">
+$('#resizeImage').hide();
 $('#demo1').dragncrop({overlay: true, overflow: true, drag: function(event, position){
     
     var leftTrim;
     var rightTrim;
 
 
-
+    $('#resizeImage').show();
 
 
 
@@ -239,6 +246,9 @@ $('#demo1').dragncrop({overlay: true, overflow: true, drag: function(event, posi
     $("#demo1") // Make in memory copy of image to avoid css issues
     .attr("src", $('#demo1').attr("src"))
     .load(function() {
+
+
+            
 
         pic_real_width = this.naturalWidth;   // Note: $(this).width() will not
         pic_real_height = this.naturalHeight; // work for in memory images.
@@ -268,6 +278,9 @@ $('#demo1').dragncrop({overlay: true, overflow: true, drag: function(event, posi
         $('#leftTrim').val(leftTrim);
         $('#rightTrim').val(rightTrim);
 
+
+
+       
     });    
 
 
