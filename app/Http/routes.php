@@ -49,13 +49,13 @@ Route::group(['prefix' => 'cms'],  function () {
         Route::post('/pageSection/{id}/photos', 'PageSectionsController@addPhoto');
         Route::post('/boardMember/{id}/photos', 'BoardMembersController@addPhoto');
         Route::post('/vacancie/{id}/photos', 'VacanciesController@addPhoto');
+        Route::post('/choosePhotoArea{id}', 'NewsController@choosePhotoArea');
 
 
         // get routes
         Route::get('/event/{id}/deelnemers', 'EventsController@displayDeelnemers');
         Route::get('/user/{id}/process-user', 'ProfilesController@processUser');
         Route::get('/oud-leden', 'ProfilesController@overzichtOudLeden');
-
     });
 });
 

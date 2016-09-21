@@ -29,11 +29,36 @@ class Photo extends Model
 	}
 
 
+
 	public static function named( $name, $dir)
 	{	
 
 		return (new static)->saveAs($name, $dir);
 
+	}
+
+	public function updateArea()
+	{
+		
+	}
+
+	public function overrideThumbnail($photo, $rightTrim, $leftTrim)
+	{
+		$img = Image::make($this->path);
+		
+		if($rightTrim != 0 || $leftTrim != 0){
+
+			$img->resizeCanvas($img->width() - $leftTrim, null, 'bottom-right');
+			$img->resizeCanvas($img->width() - $rightTrim, null, 'bottom-left');
+
+		}else{
+			$img->resize(250, 150);
+		}
+
+
+		$img->save($this->thumbnail_path);
+
+		return $this;
 	}
 
 	public function saveAs($name, $dir)

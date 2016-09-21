@@ -49,7 +49,7 @@ class NewsController extends Controller
         }
 
         // create a new photo    
-        $photo = $this->makePhoto($request->file('file'), $request->input('width'),  $request->input('height'));
+        $photo = $this->makePhoto($request->file('file'));
 
 
         $news->addPhoto($photo);
@@ -58,11 +58,29 @@ class NewsController extends Controller
     }
 
 
-    public function makePhoto($file, $width, $height)
+    public function choosePhotoArea(request $request, $id)
+    {   
+
+
+        // check of er een foto bestaat voor dit nieuws id
+        $news = News::findOrFail($id);
+
+        // indien er al een foto is, verwijder deze.
+        $photo = $news->photos->first();
+         
+        $photo = $photo->setThumbnailDimensions(250,150);
+
+        $photo->overrideThumbnail($photo, $request->input('rightTrim'), $request->input('leftTrim'));
+
+        return redirect()->back();
+
+    }
+
+    public function makePhoto($file)
     {
         
         return Photo::named($file->getClientOriginalName(), 'nieuws')
-            ->setThumbnailDimensions($width,$height)
+            ->setThumbnailDimensions(250,150)
             ->move($file);
 
     }
