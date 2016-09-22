@@ -120,7 +120,7 @@
                     
 
 
-                    <div style="width: 250px; height:150px" class="dragncrop"> 
+                    <div id='container' style="width: 250px; height:150px" class="dragncrop"> 
                  
                         <div class="dragncrop-containment" style="top: 0px; bottom: 0px; left: -100px; right: -100px; position: absolute;"></div>
 
@@ -232,44 +232,38 @@
 @section('scripts')
 <script type="text/javascript">
 $('#resizeImage').hide();
-$('#demo1').dragncrop({overlay: true, overflow: true, drag: function(event, position){
+$('#demo1').dragncrop({overlay: true, overflow: true, drag: function(event, position)
+{
     
     var leftTrim;
     var rightTrim;
 
-
     $('#resizeImage').show();
-
-
-
 
     $("#demo1") // Make in memory copy of image to avoid css issues
     .attr("src", $('#demo1').attr("src"))
-    .load(function() {
-
-
-            
+    .load(function() 
+    {
 
         pic_real_width = this.naturalWidth;   // Note: $(this).width() will not
         pic_real_height = this.naturalHeight; // work for in memory images.
 
         var imageContainerWidth = $(this).width();
-       
         var percentage = ( 100 / imageContainerWidth ) * pic_real_width;
         
         leftTrim = Math.round($(this).width() / 100 * ( position.dimension[0] * 100 ));
-        rightTrim = Math.round(($(this).width() - 250 ) - leftTrim ) ;
-
-
+        rightTrim = Math.round(($(this).width() - $("#container").width() ) - leftTrim ) ;
 
         rightTrim = Math.round((rightTrim / 100 ) * percentage) - 1;
         leftTrim = Math.round((leftTrim / 100) * percentage) ;
 
-        if(rightTrim < 0){
+        if(rightTrim < 0)
+        {
             rightTrim = 0;
         } 
 
-        if($(this).width() == 250 ){
+        if($(this).width() == $("#container").width() )
+        {
             leftTrim = 0;
             rightTrim = 0;
         }
@@ -278,22 +272,13 @@ $('#demo1').dragncrop({overlay: true, overflow: true, drag: function(event, posi
         $('#leftTrim').val(leftTrim);
         $('#rightTrim').val(rightTrim);
 
-
-
-       
     });    
 
 
-  
-   
 
-
-
- 
 }} );
 
 
-// $('#demo1').dragncrop('getPosition');
 </script>
 
 

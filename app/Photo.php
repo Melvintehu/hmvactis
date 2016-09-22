@@ -52,7 +52,7 @@ class Photo extends Model
 			$leftTrim = 0;
 		}
 
-		
+
 
 		if($rightTrim != 0 || $leftTrim != 0){
 
@@ -61,7 +61,7 @@ class Photo extends Model
 
 		}else{
 
-			$img->resize(250, 150, function($constraint){
+			$img->fit(250, 150, function($constraint){
 
 
 			});
@@ -97,7 +97,7 @@ class Photo extends Model
 
 	protected function makeThumbnail()
 	{
-
+		
 		Image::make($this->path)
 			->fit($this->thumbnailHeight, $this->thumbnailWidth)->save($this->thumbnail_path);
 

@@ -49,7 +49,11 @@ Route::group(['prefix' => 'cms'],  function () {
         Route::post('/pageSection/{id}/photos', 'PageSectionsController@addPhoto');
         Route::post('/boardMember/{id}/photos', 'BoardMembersController@addPhoto');
         Route::post('/vacancie/{id}/photos', 'VacanciesController@addPhoto');
-        Route::post('/choosePhotoArea{id}', 'NewsController@choosePhotoArea');
+
+        // foto resize selection routes
+        Route::post('/news/choosePhotoArea{id}', 'NewsController@choosePhotoArea');
+        Route::post('/event/choosePhotoArea{id}', 'EventsController@choosePhotoArea');
+        Route::post('/committee-member/choosePhotoArea{id}', 'CommitteeMembersController@choosePhotoArea');
 
 
         // get routes
