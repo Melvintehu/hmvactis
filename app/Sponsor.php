@@ -12,6 +12,7 @@ class Sponsor extends Model
     	'website',
     	'description',
     	'main_partner',
+        'no_sponsor'
     ];
 
 

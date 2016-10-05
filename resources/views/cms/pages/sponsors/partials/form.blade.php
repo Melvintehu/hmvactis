@@ -22,6 +22,11 @@
     {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 </div>
 
+<div class="form-group">
+    {!! Form::label('no_sponsor', 'Sponsor die alleen op de kortingenpagina te zien is.') !!}
+    {!! Form::select('no_sponsor', array('ja' => 'ja', 'nee' => 'nee')) !!}
+</div>
+
 <!-- form submit button -->
 <div class='form-group'>
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-success']) !!}

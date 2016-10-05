@@ -28,7 +28,7 @@ class SponsorsController extends Controller
          $data = [
             'pageSection' => PageSection::where('id', 6)->first(), 
             'hoofdpartners' => Sponsor::where('main_partner', 'ja')->get(),
-            'partners' => Sponsor::where('main_partner','nee')->get(),
+            'partners' => Sponsor::where('main_partner','nee')->where('no_sponsor', 'nee')->get(),
             ];
 
         return view('pages.partners', compact('data'));

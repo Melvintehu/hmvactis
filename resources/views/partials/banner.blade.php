@@ -15,9 +15,9 @@
 
 				
 
-			<h1 class="text-color-light space-outside-md"> GRATIS LID WORDEN</h1>
+			<h1 class="text-color-light space-outside-md"> VOOR 5 EURO LID WORDEN</h1>
 
-			<p class="text-color-light block space-outside-md">De komende weken kan je gratis lid worden van HMV Actis, <br> wacht niet langer en meld je aan!</p>
+			<p class="text-color-light block space-outside-md">Lid worden bij HMV Actis kost het eerste jaar slechts 5 euro. <br> Meld je snel aan!</p>
 
 			<a class="btn-standard bg-secondary text-color-light" href="/lid-worden">LID WORDEN</a>
 			
