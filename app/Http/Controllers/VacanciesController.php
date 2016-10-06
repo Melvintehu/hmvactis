@@ -122,24 +122,31 @@ class VacanciesController extends Controller
         // check of er een foto bestaat voor dit nieuws id
         $vacancie = Vacancie::findOrFail($id);
 
-        $photos  = $vacancie->photos;
+        // indien er al een foto is, verwijder deze.
+        $photos = $vacancie->photos;
 
+            // dd($photos);
         if(!$photos->isEmpty()){
             $photos->first()->delete();
         }
 
-        $file =  $request->file('file');
-        
-        $name = time() . $file->getClientOriginalName();
-
-        $file->move('application-photos/vacatures/photos', $name);
-           
         // create a new photo    
+        $photo = $this->makePhoto($request->file('file'));
 
-        $photo = Photo::create(['path' => "application-photos/vacatures/photos/{$name}"]);
+
+        $vacancie->addPhoto($photo);
         
-        $vacancie->photos()->attach($photo->id, ['type' => 'original']);
         return 'done';
+    }
+
+
+    public function makePhoto($file)
+    {
+        
+        return Photo::named($file->getClientOriginalName(), 'vacatures')
+            ->setThumbnailDimensions(250,150)
+            ->move($file);
+
     }
 
 }

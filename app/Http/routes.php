@@ -50,11 +50,16 @@ Route::group(['prefix' => 'cms'],  function () {
         Route::post('/boardMember/{id}/photos', 'BoardMembersController@addPhoto');
         Route::post('/vacancie/{id}/photos', 'VacanciesController@addPhoto');
 
+        // foto resize selection routes
+        Route::post('/news/choosePhotoArea{id}', 'NewsController@choosePhotoArea');
+        Route::post('/event/choosePhotoArea{id}', 'EventsController@choosePhotoArea');
+        Route::post('/committee-member/choosePhotoArea{id}', 'CommitteeMembersController@choosePhotoArea');
+
 
         // get routes
         Route::get('/event/{id}/deelnemers', 'EventsController@displayDeelnemers');
         Route::get('/user/{id}/process-user', 'ProfilesController@processUser');
-
+        Route::get('/oud-leden', 'ProfilesController@overzichtOudLeden');
     });
 });
 

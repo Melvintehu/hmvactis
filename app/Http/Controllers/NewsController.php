@@ -40,24 +40,49 @@ class NewsController extends Controller
         // check of er een foto bestaat voor dit nieuws id
         $news = News::findOrFail($id);
 
-        $photos  = $news->photos;
+        // indien er al een foto is, verwijder deze.
+        $photos = $news->photos;
 
+            // dd($photos);
         if(!$photos->isEmpty()){
             $photos->first()->delete();
         }
 
-        $file =  $request->file('file');
-        
-        $name = time() . $file->getClientOriginalName();
-
-        $file->move('application-photos/nieuws/photos', $name);
-           
         // create a new photo    
+        $photo = $this->makePhoto($request->file('file'));
 
-        $photo = Photo::create(['path' => "application-photos/nieuws/photos/{$name}"]);
+
+        $news->addPhoto($photo);
         
-        $news->photos()->attach($photo->id, ['type' => 'original']);
         return 'done';
+    }
+
+
+    public function choosePhotoArea(request $request, $id)
+    {   
+
+
+        // check of er een foto bestaat voor dit nieuws id
+        $news = News::findOrFail($id);
+
+        // indien er al een foto is, verwijder deze.
+        $photo = $news->photos->first();
+         
+        $photo = $photo->setThumbnailDimensions(250,150);
+
+        $photo->overrideThumbnail($photo, $request->input('rightTrim'), $request->input('leftTrim'));
+
+        return redirect()->back();
+
+    }
+
+    public function makePhoto($file)
+    {
+        
+        return Photo::named($file->getClientOriginalName(), 'nieuws')
+            ->setThumbnailDimensions(250,150)
+            ->move($file);
+
     }
 
     /**

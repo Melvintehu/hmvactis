@@ -34,12 +34,14 @@
 
 							<div class="image">
 
-								@if($korting->photos->first()['path'] != null)	
+								@if($korting->photos->first()['thumbnail_path'] != null)	
+
+									<img class="" src="{{$korting->photos->first()['thumbnail_path']}}">
+
+								@elseif($korting->photos->first()['path'] != null)	
 
 									<img class="" src="{{$korting->photos->first()['path']}}">
-
 								@else
-
 									<img class="" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
 
 								@endif

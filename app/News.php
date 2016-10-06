@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Photo;
+
 
 class News extends Model
 {
@@ -19,10 +21,10 @@ class News extends Model
    		'description',
    	];
 
-    public function photos(){
+    public function photos()
+    {
         return $this->belongsToMany('App\Photo')->withPivot('type')->withTimeStamps();      
     }
-
 
 
     public function setMydateAttribute($date)
@@ -30,6 +32,13 @@ class News extends Model
         $this->attributes['publish_date'] = Carbon::createFromFormat('Y/M/d', $date);
     }
 
+    public function addPhoto(Photo $photo)
+    {
+      
+      $this->photos()->attach($photo->id, ['type' => 'original']); 
+      
+      return $this->photos()->save($photo);
 
+    }
 
 }

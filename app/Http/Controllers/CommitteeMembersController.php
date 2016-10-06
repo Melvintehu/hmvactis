@@ -113,24 +113,50 @@ class CommitteeMembersController extends Controller
         // check of er een foto bestaat voor dit nieuws id
         $committeeMember = CommitteeMember::findOrFail($id);
 
-        $photos  = $committeeMember->photos;
+        // indien er al een foto is, verwijder deze.
+        $photos = $committeeMember->photos;
 
+            // dd($photos);
         if(!$photos->isEmpty()){
             $photos->first()->delete();
         }
 
-        $file =  $request->file('file');
-        
-        $name = time() . $file->getClientOriginalName();
-
-        $file->move('application-photos/commissie_leden/photos', $name);
-           
         // create a new photo    
+        $photo = $this->makePhoto($request->file('file'));
 
-        $photo = Photo::create(['path' => "application-photos/commissie_leden/photos/{$name}"]);
+
+        $committeeMember->addPhoto($photo);
         
-        $committeeMember->photos()->attach($photo->id, ['type' => 'original']);
         return 'done';
+    }
+
+
+    public function choosePhotoArea(request $request, $id)
+    {   
+
+
+        // check of er een foto bestaat voor dit nieuws id
+        $committeeMember = CommitteeMember::findOrFail($id);
+
+        // indien er al een foto is, verwijder deze.
+        $photo = $committeeMember->photos->first();
+         
+        $photo = $photo->setThumbnailDimensions(250,150);
+
+        $photo->overrideThumbnail($photo, $request->input('rightTrim'), $request->input('leftTrim'));
+
+        return redirect()->back();
+
+    }    
+
+
+    public function makePhoto($file)
+    {
+        
+        return Photo::named($file->getClientOriginalName(), 'commissie_leden')
+            ->setThumbnailDimensions(170,170)
+            ->move($file);
+
     }
 
 

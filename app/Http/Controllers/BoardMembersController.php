@@ -108,24 +108,31 @@ class BoardMembersController extends Controller
         // check of er een foto bestaat voor dit nieuws id
         $boardMember = BoardMember::findOrFail($id);
 
-        $photos  = $boardMember->photos;
+        // indien er al een foto is, verwijder deze.
+        $photos = $boardMember->photos;
 
+            // dd($photos);
         if(!$photos->isEmpty()){
             $photos->first()->delete();
         }
 
-        $file =  $request->file('file');
-        
-        $name = time() . $file->getClientOriginalName();
-
-        $file->move('application-photos/bestuurs_leden/photos', $name);
-           
         // create a new photo    
+        $photo = $this->makePhoto($request->file('file'));
 
-        $photo = Photo::create(['path' => "application-photos/bestuurs_leden/photos/{$name}"]);
+
+        $boardMember->addPhoto($photo);
         
-        $boardMember->photos()->attach($photo->id, ['type' => 'original']);
         return 'done';
+    }
+
+
+    public function makePhoto($file)
+    {
+        
+        return Photo::named($file->getClientOriginalName(), 'bestuursleden')
+            ->setThumbnailDimensions(250,150)
+            ->move($file);
+
     }
 
 

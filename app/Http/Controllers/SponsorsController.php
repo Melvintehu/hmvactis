@@ -28,7 +28,7 @@ class SponsorsController extends Controller
          $data = [
             'pageSection' => PageSection::where('id', 6)->first(), 
             'hoofdpartners' => Sponsor::where('main_partner', 'ja')->get(),
-            'partners' => Sponsor::where('main_partner','nee')->get(),
+            'partners' => Sponsor::where('main_partner','nee')->where('no_sponsor', 'nee')->get(),
             ];
 
         return view('pages.partners', compact('data'));
@@ -114,24 +114,31 @@ class SponsorsController extends Controller
         // check of er een foto bestaat voor dit nieuws id
         $sponsor = Sponsor::findOrFail($id);
 
-        $photos  = $sponsor->photos;
+        // indien er al een foto is, verwijder deze.
+        $photos = $sponsor->photos;
 
+            // dd($photos);
         if(!$photos->isEmpty()){
             $photos->first()->delete();
         }
 
-        $file =  $request->file('file');
-        
-        $name = time() . $file->getClientOriginalName();
-
-        $file->move('application-photos/sponsor/photos', $name);
-           
         // create a new photo    
+        $photo = $this->makePhoto($request->file('file'));
 
-        $photo = Photo::create(['path' => "application-photos/sponsor/photos/{$name}"]);
+
+        $sponsor->addPhoto($photo);
         
-        $sponsor->photos()->attach($photo->id, ['type' => 'original']);
         return 'done';
+    }
+
+
+    public function makePhoto($file)
+    {
+        
+        return Photo::named($file->getClientOriginalName(), 'partners')
+            ->setThumbnailDimensions(250,150)
+            ->move($file);
+
     }
 
 

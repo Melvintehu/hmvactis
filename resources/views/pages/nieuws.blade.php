@@ -34,12 +34,15 @@
 
 								<div class="image">
 
-									@if($nieuwsmessage->photos->first()['path'] != null)	
+									@if($nieuwsmessage->photos->first()['thumbnail_path'] != null)	
+
+										<img class="img-responsive" src="{{$nieuwsmessage->photos->first()['thumbnail_path']}}">
+
+									@elseif($nieuwsmessage->photos->first()['path'] != null)	
 
 										<img class="img-responsive" src="{{$nieuwsmessage->photos->first()['path']}}">
 
 									@else
-
 										<img class="width-auto" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
 
 									@endif

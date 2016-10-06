@@ -38,12 +38,15 @@
 
 					<div class="image">
 
-						@if($vacancie->photos->first()['path'] != null)	
+						@if($vacancie->photos->first()['thumbnail_path'] != null)	
+
+							<img class="" src="{{$vacancie->photos->first()['thumbnail_path']}}">
+
+						@elseif($vacancie->photos->first()['path'] != null)	
 
 							<img class="" src="{{$vacancie->photos->first()['path']}}">
 
 						@else
-
 							<img class="" src="http://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif">
 
 						@endif

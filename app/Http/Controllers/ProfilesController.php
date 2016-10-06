@@ -99,6 +99,18 @@ class ProfilesController extends Controller
     }
 
 
+    public function overzichtOudLeden()
+    {   
+
+     
+        $data = [
+            'users' => Profile::onlyTrashed()->get(),
+        ];
+
+
+        return view('cms.pages.users.overzicht', compact('data'));
+    }
+
 
     public function processUser($id)
     {
