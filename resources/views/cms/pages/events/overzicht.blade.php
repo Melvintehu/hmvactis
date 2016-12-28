@@ -24,7 +24,7 @@
                                                         <th>Locatie</th>
                                                         <th>Datum</th>
                                                         <th>Beschrijving</th>
-                                                        <th>Lustrum activiteit</th>
+                                                       <!--  <th>Lustrum activiteit</th> -->
                                                         <th>Tijdstip</th>
                                                         <th style='color:red'> X </th>
                                                     </tr>
@@ -37,7 +37,7 @@
                                                         <td>{{ $event->location }}</td>
                                                         <td>{{ $event->date }}</td>
                                                         <td>{{ $event->description }}</td>
-                                                        <td>{{ $event->lustrum_event }}</td>
+                                                       <!--  <td>{{ $event->lustrum_event }}</td> -->
                                                         <td>{{ $event->time }}</td>
                                                         <td >
                                                             {!! Form::open(['method' => 'delete', 'action' => [                             'EventsController@destroy',  $event->id ]  ]) !!}

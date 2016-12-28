@@ -29,10 +29,10 @@
 </div>
 
 <!-- form textfield  -->
-<div class='form-group'>
+<!-- <div class='form-group'>
     {!! Form::label('lustrum_event', '  Is dit een activiteit voor het lustrum?  ') !!}
     {!! Form::select('lustrum_event', array('ja' => 'Ja', 'nee' => 'Nee')) !!}
-</div>
+</div> -->
 
 <!-- form textfield  -->
 <div class='form-group'>

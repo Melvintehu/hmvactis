@@ -52,7 +52,7 @@
 
 								<h4> {{ $korting->sponsor->name }}</h4>
 
-								<p> {{ $korting->description }} </p>
+								<p> {{  str_limit($korting->description, 150) }} </p>
 
 							</div>
 
