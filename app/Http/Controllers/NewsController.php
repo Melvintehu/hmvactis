@@ -58,24 +58,6 @@ class NewsController extends Controller
     }
 
 
-    public function choosePhotoArea(request $request, $id)
-    {   
-
-
-        // check of er een foto bestaat voor dit nieuws id
-        $news = News::findOrFail($id);
-
-        // indien er al een foto is, verwijder deze.
-        $photo = $news->photos->first();
-         
-        $photo = $photo->setThumbnailDimensions(250,150);
-
-        $photo->overrideThumbnail($photo, $request->input('rightTrim'), $request->input('leftTrim'));
-
-        return redirect()->back();
-
-    }
-
     public function makePhoto($file)
     {
         

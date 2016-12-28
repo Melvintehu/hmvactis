@@ -88,7 +88,7 @@
 
 	<div class="container fadeInDown wow">
 		<div class="page">
-			<h1> Bestuur 2015 - 2016 </h1>
+			<h1> Bestuur 2016 - 2017 </h1>
 
 			<div class="row row-centered ">
 				@foreach($data['boards']->members as $boardMember)

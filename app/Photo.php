@@ -29,47 +29,11 @@ class Photo extends Model
 	}
 
 
-
 	public static function named( $name, $dir)
 	{	
 
 		return (new static)->saveAs($name, $dir);
 
-	}
-
-
-
-	public function overrideThumbnail($photo, $rightTrim, $leftTrim)
-	{	
-
-		$img = Image::make($this->path);		
-
-		if($rightTrim == "" ){
-			$rightTrim = 0;
-		}
-
-		if($leftTrim == ""){
-			$leftTrim = 0;
-		}
-
-
-
-		if($rightTrim != 0 || $leftTrim != 0){
-
-			$img->resizeCanvas($img->width() - $leftTrim, null, 'bottom-right');
-			$img->resizeCanvas($img->width() - $rightTrim, null, 'bottom-left');
-
-		}else{
-
-			$img->fit(250, 150, function($constraint){
-
-
-			});
-		}
-
-		$img->save($this->thumbnail_path);
-
-		return $this;
 	}
 
 	public function saveAs($name, $dir)
@@ -97,7 +61,7 @@ class Photo extends Model
 
 	protected function makeThumbnail()
 	{
-		
+
 		Image::make($this->path)
 			->fit($this->thumbnailHeight, $this->thumbnailWidth)->save($this->thumbnail_path);
 

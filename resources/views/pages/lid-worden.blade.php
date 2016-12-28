@@ -500,10 +500,7 @@
 				<!-- Voorwaarden betalingsgegevens -->
 
 				<p class="text-left space-outside-md font-sm">
-					Hierbij geef ik HMV Actis toestemming om contributie van mijn giro-/bankrekening af te schrijven. Dit betreft een lidmaatschap voor het schooljaar 2016 – 2017. Vervolgens wordt het lidmaatschap automatisch verlengd en zal er jaarlijks contributie van €12,- worden afgeschreven. Wederopzegging dient binnen twee maanden voor de start van het nieuwe collegejaar, 31 augustus 2017, ingediend te worden. 
-					<br><br>
-					<span class="bold">Let op: </span> je wordt niet automatisch uitgeschreven als je klaar/gestopt bent met je studie. Je dient hier zelf melding van te maken door een mail te sturen naar bestuur@hmvactis.nl.
-	
+					
 					Hierbij geef ik HMV Actis toestemming om contributie van mijn giro-/bankrekening af te schrijven. Dit betreft een gratis lidmaatschap voor het schooljaar 2016 – 2017 (alleen geldig bij inschrijvingen vóór 19/09/2016). Vervolgens wordt het lidmaatschap automatisch verlengd en zal er jaarlijks contributie van €12,- worden afgeschreven. Wederopzegging dient binnen twee maanden voor de start van het nieuwe collegejaar, 31 augustus 2017, ingediend te worden. 
 					<br><br>
 					<span class="bold">Let op: </span> je wordt niet automatisch uitgeschreven als je klaar/gestopt bent met je studie. Je dient hier zelf melding van te maken door een mail te sturen naar bestuur@hmvactis.nl.

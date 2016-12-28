@@ -84,12 +84,15 @@
                 <ul class="list-styled">
                     <li><a href="{{ URL::to("cms/user") }}"><i class="ion-grid"></i> Overzicht </a></li>
                     <li><a href="{{ URL::to("cms/user/create") }}"><i class="ion-person-add"></i> Toevoegen</a></li>
-                    <li><strong><a href="#">Oud leden</a></strong></li>
-                    <li><a href="{{ URL::to("cms/oud-leden") }}"><i class="ion-close-round"></i> Oude leden </a></li>
                 </ul>
             </li>
 
-            
+            <li class="has-submenu "><a href="#"><i class="ion-cash"></i> <span class="nav-label">Betalingen</span></a>
+                <ul class="list-styled">
+                    <li><a href="#overzicht"><i class="ion-grid"></i> Overzicht </a></li>
+                    <li><a href="#toevoegen"><i class="ion-person-add"></i> Toevoegen</a></li>
+                </ul>
+            </li>
 
             <li class="has-submenu "><a href="#"><i class="ion-person"></i> <span class="nav-label">Ingelogd als: {{ Auth::user()->name }}</span></a>
                 <ul class="list-styled">

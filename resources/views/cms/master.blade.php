@@ -1,3 +1,15 @@
+<?php 
+	$user = Auth::user();
+
+	if($user->admin == 0){
+		echo '
+		<script type="text/javascript">
+		    window.location = "/";//here double curly bracket
+		</script>';	
+	}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>

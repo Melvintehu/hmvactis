@@ -48,7 +48,7 @@ class PagesController extends Controller
             'inleidende_tekst' => PageSection::where('id', 1)->first(),
             'de_vereniging' => PageSection::where('id', 2)->first(),
             'onze_hoofddoelstelling' => PageSection::where('id', 3)->first(),
-            'boards' => Board::where('id', 1)->first(),
+            'boards' => Board::where('id', 7)->first(),
             'news' => News::orderBy('publish_date', 'desc')->take(4)->get(),
         ];
 

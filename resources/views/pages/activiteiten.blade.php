@@ -39,7 +39,7 @@
 							<div class="image lg-rect-lg">
 								@if($event->photos->first()['thumbnail_path'] != null)	
 
-									<img class="responsive-image " src="{{$event->photos->first()['thumbnail_path']}}">
+									<img class="responsive-image height-auto" src="{{$event->photos->first()['thumbnail_path']}}">
 
 								@elseif($event->photos->first()['path'] != null)	
 
