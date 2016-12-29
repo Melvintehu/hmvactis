@@ -17,7 +17,7 @@
 			<div class="col-lg-12 space-outside-lg">
 				
 				<h1 class="xs-text-center sm-text-center"> Welkom  {{ $data['profile']->name }} </h1>
-
+				
 			</div>
 
 			<div class="col-lg-12 bg-secondary padding-md">
@@ -80,7 +80,9 @@
 			
 
 			</div>
-
+			{!! Form::open(['method' => 'GET', 'action' => ['PDFController@generate',  'user/' . Auth::user()->id ]]) !!}
+                    <button class="btn-standard bg-main text-color-light space-outside-down-lg space-outside-up-sm"> Gegevens in pdf</button>  
+                {!! Form::close() !!}
 
 			<div class="col-lg-12">
 				
