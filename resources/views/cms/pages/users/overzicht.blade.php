@@ -9,7 +9,10 @@
     <div class="row">
         <div class="col-lg-12"> 
             
-            <h2>Aanmeldingen leden</h2>
+            <h2>Aanmeldingen leden</h2> 
+            {!! Form::open(['method' => 'GET', 'action' => ['PDFController@generate',  'aanmeldingen' ]]) !!}
+                <button class="btn btn-primary"> PDF Genereren </button>  
+            {!! Form::close() !!}
             <hr>
        
             <div class="row">
@@ -24,6 +27,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th> Verwerken </th>
+                                                        <th>PDF</th>
                                                         <th> Aanpassen </th>
                                                         <th>#</th>
                                                         <th>Naam</th>
@@ -50,6 +54,12 @@
                                                             {!! Form::open(['method' => 'GET', 'action' => [                             'ProfilesController@processUser',  $user->id ]  ]) !!}
                                                                 <button class="btn btn-primary"> Verwerk </button>  
                                                             {!! Form::close() !!}  
+                                                        </td>
+
+                                                        <td>
+                                                            {!! Form::open(['method' => 'GET', 'action' => ['PDFController@generate',  'user/' . $user->id ]]) !!}
+                                                                <button class="btn btn-primary"> PDF</button>  
+                                                            {!! Form::close() !!}
                                                         </td>
 
 
@@ -111,6 +121,9 @@
                 </div> <!-- End row -->
 
           <h2>Verwerkte leden </h2>
+           {!! Form::open(['method' => 'GET', 'action' => ['PDFController@generate',  'leden' ]]) !!}
+                <button class="btn btn-primary"> PDF Genereren </button>  
+            {!! Form::close() !!}
             <hr>
        
             <div class="row">
@@ -125,6 +138,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th> Aanpassen </th>
+                                                        <th>PDF</th>
                                                         <th>#</th>
                                                         <th>Naam</th>
                                                         <th>Adres</th>
@@ -152,6 +166,12 @@
                                                             {!! Form::open(['method' => 'GET', 'action' => [                             'UserController@edit',  $user->id ]  ]) !!}
                                                                 @include('cms.pages.partials.update_form')      
                                                             {!! Form::close() !!}  
+                                                        </td>
+
+                                                        <td>
+                                                            {!! Form::open(['method' => 'GET', 'action' => ['PDFController@generate',  'user/' . $user->id ]]) !!}
+                                                                <button class="btn btn-primary"> PDF</button>  
+                                                            {!! Form::close() !!}
                                                         </td>
 
 
@@ -197,6 +217,9 @@
 
 
           <h2>Niet-leden</h2>
+           {!! Form::open(['method' => 'GET', 'action' => ['PDFController@generate',  'niet-leden' ]]) !!}
+                <button class="btn btn-primary"> PDF Genereren </button>  
+            {!! Form::close() !!}
             <hr>
        
             <div class="row">
@@ -210,6 +233,7 @@
                                             <table class="table table-hover">
                                                 <thead>
                                                     <tr>
+                                                        <th>PDF</th>
                                                         <th>#</th>
                                                         <th>Naam</th>
                                                         <th>Emailadres</th>
@@ -224,6 +248,11 @@
                                                      @if($user->profile == null)
                                                     <tr>
 
+                                                         <td>
+                                                            {!! Form::open(['method' => 'GET', 'action' => ['PDFController@generate',  'user/' . $user->id ]]) !!}
+                                                                <button class="btn btn-primary"> PDF</button>  
+                                                            {!! Form::close() !!}
+                                                        </td>
 
                                                         <td>{{ $user->id }}</td>
 

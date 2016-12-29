@@ -55,6 +55,7 @@ Route::group(['prefix' => 'cms'],  function () {
         Route::get('/event/{id}/deelnemers', 'EventsController@displayDeelnemers');
         Route::get('/user/{id}/process-user', 'ProfilesController@processUser');
 
+        Route::get('/pdf-generate/{slug}', 'PDFController@generate')->where(['slug' => '.*']);
     });
 });
 
