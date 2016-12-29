@@ -159,6 +159,7 @@ return [
         HieuLe\Active\ActiveServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Snowfire\Beautymail\BeautymailServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 

@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-lg-12"> 
             
-            <h2>Leden</h2>
+            <h2>Aanmeldingen leden</h2>
             <hr>
        
             <div class="row">
