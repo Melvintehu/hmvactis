@@ -165,7 +165,7 @@ class AuthController extends Controller
             $mail->lidWorden($profile->name, $profile->email_address);
         }
 
-        
+        session()->flash('succeed', 'Succesvol ingeschreven!');
         return $user;
     }
 }
