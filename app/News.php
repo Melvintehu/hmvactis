@@ -21,9 +21,14 @@ class News extends Model
    		'description',
    	];
 
+    public static function latest($limit)
+    {
+      return self::orderBy('publish_date', 'desc')->take($limit)->get();
+    }
+
     public function photos()
     {
-        return $this->belongsToMany('App\Photo')->withPivot('type')->withTimeStamps();      
+        return $this->belongsToMany('App\Photo')->withPivot('type')->withTimeStamps();
     }
 
 
@@ -34,9 +39,9 @@ class News extends Model
 
     public function addPhoto(Photo $photo)
     {
-      
-      $this->photos()->attach($photo->id, ['type' => 'original']); 
-      
+
+      $this->photos()->attach($photo->id, ['type' => 'original']);
+
       return $this->photos()->save($photo);
 
     }

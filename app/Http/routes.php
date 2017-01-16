@@ -18,13 +18,13 @@ Route::auth();
 
 Route::group(['prefix' => 'cms'],  function () {
     Route::group(['middleware' => ['auth']], function(){
-   
+
         Route::get('/', function(){
             return view('cms.cms');
         });
 
 
-        
+
         Route::resource('sponsorDiscounts', 'SponsorDiscountsController');
         Route::resource('boards', 'BoardsController');
         Route::resource('boardMembers', 'BoardMembersController');
@@ -62,7 +62,7 @@ Route::group(['prefix' => 'cms'],  function () {
 
 Route::group(['middleware' => ['auth']], function(){
     // user omgeving routes, ook tijdelij
-   
+
 
     Route::get('/logout', function()
     {
@@ -70,7 +70,7 @@ Route::group(['middleware' => ['auth']], function(){
         return redirect('/');
     });
 
-  
+
 
 });
 
@@ -97,10 +97,10 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/vacatures', 'VacanciesController@overzicht');
     Route::get('/vacatures/{id}', 'PagesController@showVacature');
     Route::get('/nieuws', 'NewsController@overzicht');
-    Route::get('/nieuws/{id}', 'PagesController@showNieuws'); 
+    Route::get('/nieuws/{id}', 'PagesController@showNieuws');
     Route::get('/contact', 'PagesController@contact');
 
-    Route::get('/activiteit/{id}', 'PagesController@showActiviteit'); 
+    Route::get('/activiteit/{id}', 'PagesController@showActiviteit');
 
     // tijdelijke routes
     Route::get('/commissie_voorbeeld', function () {
@@ -123,7 +123,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/home', 'HomeController@index');
 
 
- 
+
 
 
 

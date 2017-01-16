@@ -21,10 +21,10 @@ use App\Profile;
 
 
 class PagesController extends Controller
-{   
+{
 
     public function __construct(){
-         setlocale(LC_TIME, 'Dutch'); 
+         setlocale(LC_TIME, 'Dutch');
     }
 
     /**
@@ -56,7 +56,7 @@ class PagesController extends Controller
     }
 
     public function homepage(){
-       
+
         $data = [
             'news' => News::orderBy('publish_date', 'desc')->take(4)->get(),
             'netwerk' => PageSection::where('id', 10)->first(),
@@ -68,8 +68,12 @@ class PagesController extends Controller
             'hoofdpartners' => Sponsor::where('main_partner','ja')->first(),
         ];
 
+        $news = News::latest(4);
 
-        return view('pages.homepage', compact('data'));
+        return view('pages.homepage', compact(
+            'data'
+            'news'
+        ));
     }
 
     public function contact(){
@@ -83,7 +87,7 @@ class PagesController extends Controller
     public function profiel()
     {
              $data = [
-                           
+
                 'profile' => Profile::where('user_id', '=', Auth::id())->first(),
                 'events' =>  Auth::user()->events()->get(),
             ];
