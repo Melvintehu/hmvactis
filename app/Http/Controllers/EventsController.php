@@ -16,7 +16,7 @@ class EventsController extends Controller
 {
 
     // public function __construct(){
-    //      setlocale(LC_TIME, 'Dutch'); 
+    //      setlocale(LC_TIME, 'Dutch');
     // }
 
     /**
@@ -33,42 +33,36 @@ class EventsController extends Controller
     }
 
     public function signUpUser($id){
-
         $user = User::find(Auth::user()->id);
-     
-
         $user->events()->attach($id);
+
         return redirect('/activiteit/'. $id);
     }
 
     public function overzicht(){
-        $data = [  
+        $data = [
             'pageSection'  => PageSection::where('id', 4)->first(),
-            'currentMonthsEvents' => Event::
-                where('lustrum_event', 'nee')
-              ->where('date', '>', new Carbon('last day of previous month'))
+            'currentMonthsEvents' => Event::where('date', '>', new Carbon('last day of previous month'))
               ->where('date', '<', new Carbon('first day of next month'))
               ->get(),
 
-            'nextMonthsEvents' => Event::
-                where('lustrum_event', 'nee')
-              ->where('date', '>=', new Carbon('first day of next month'))
+            'nextMonthsEvents' => Event::where('date', '>=', new Carbon('first day of next month'))
               ->where('date', '<=', new Carbon('last day of next month'))
               ->get(),
 
         ];
-        
+
         return view('pages.activiteiten', compact('data'));
     }
 
     public function lustrumOverzicht(){
-        $data = [  
+        $data = [
             'pageSection'  => PageSection::where('id', 11)->first(),
             'events' => Event::where('lustrum_event', 'ja')->get(),
         ];
 
-        return view('pages.lustrum', compact('data'));        
-    }    
+        return view('pages.lustrum', compact('data'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -88,7 +82,7 @@ class EventsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
 
 
          Event::create($request->all());
@@ -101,7 +95,7 @@ class EventsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {   
+    {
         $event = Event::find($id);
         return view('cms.pages.events.update', compact('event'));
     }
@@ -125,7 +119,7 @@ class EventsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {   
+    {
 
         $event = Event::findOrFail($id);
         $event->update($request->all());
@@ -148,7 +142,7 @@ class EventsController extends Controller
 
 
   public function addPhoto($id, Request $request)
-    {   
+    {
 
         // check of er een foto bestaat voor dit nieuws id
         $event = Event::findOrFail($id);
@@ -161,19 +155,19 @@ class EventsController extends Controller
             $photos->first()->delete();
         }
 
-        // create a new photo    
+        // create a new photo
         $photo = $this->makePhoto($request->file('file'));
 
 
         $event->addPhoto($photo);
-        
+
         return 'done';
     }
 
 
     public function makePhoto($file)
     {
-        
+
         return Photo::named($file->getClientOriginalName(), 'activiteiten')
             ->setThumbnailDimensions(250,150)
             ->move($file);
@@ -197,7 +191,7 @@ class EventsController extends Controller
 
         ];
 
-      
+
         return view('cms.pages.events.deelnemerOverzicht', compact('data'));
     }
 
